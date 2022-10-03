@@ -8,9 +8,14 @@
 /.settings/
 /.project/
 /target/
+/test/*.iml
+*.iml
+
 
 # Ignore Gradle build output directory
 bin
 build
 history
 target/site
+
+
