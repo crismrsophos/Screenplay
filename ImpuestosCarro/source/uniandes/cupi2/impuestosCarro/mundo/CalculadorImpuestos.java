@@ -403,6 +403,7 @@ public class CalculadorImpuestos
      */
     public void metodo1(String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta) throws Exception  //Agregar vehículo
     {
+<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 
         String texto, valores[], sMarca, sLinea, sModelo, sImagen;
         double precio;
@@ -488,6 +489,8 @@ public class CalculadorImpuestos
 
 
         //return "Respuesta 1";
+=======
+>>>>>>> 9437f6c Elimino respuesta de la linea 396 en la opcion 1 de la clase calculadoraimpuestos
     }
 
     /**
