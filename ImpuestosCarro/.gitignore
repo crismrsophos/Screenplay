@@ -3,6 +3,7 @@
 .idea 
 .classpath
 .project
+.iml
 /.gradle/
 /.idea/
 /.settings/
@@ -14,6 +15,7 @@
 out/
 =======
 >>>>>>> 4484d74 (Primera prueba de commit)
+
 
 # Ignore Gradle build output directory
 bin
