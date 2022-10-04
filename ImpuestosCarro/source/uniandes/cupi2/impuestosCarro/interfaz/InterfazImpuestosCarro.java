@@ -293,8 +293,30 @@ public class InterfazImpuestosCarro extends JFrame
 			 */
 			public void reqFuncOpcion1( )
 			{
-				String respuesta = calculador.metodo1( );
-				JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
+
+				//JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
+
+				DialogoAgregarVehiculo agregarVehiculo = new DialogoAgregarVehiculo(this);
+				agregarVehiculo.setTitle("Agregar vehículo");
+				agregarVehiculo.setVisible(true);
+				try{
+					//calculador.metodo1(agregarVehiculo.darMarca(), agregarVehiculo.darLinea(), agregarVehiculo.darAnio(), agregarVehiculo.darPrecio(), agregarVehiculo.darImagen());
+				}
+				catch (Exception e) {
+
+				}
+
+			}
+
+			public void agregarVehiculo (String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta)
+			{
+				try {
+					calculador.metodo1(pMarca, pLinea, pAnio, pPrecio, pRuta);
+				}
+				catch (Exception e)
+				{
+
+				}
 			}
 
 			/**
