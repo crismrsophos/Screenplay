@@ -1,4 +1,5 @@
 8
+<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 Ford,Taurus,2016,136340000,taurus2016.jpg
 Chevrolet,Camaro,2017,72000000,camaro2017.jpg
 Mazda,6,2017,10000000,mazda62017.jpg
@@ -7,3 +8,13 @@ Peugeot,208,2017,50000000,2082017.jpg
 Chevrolet,Corvette,2017,212200000,corvette2017.jpg
 Chevrolet,Silverado,2017,147000000,silverado2017.jpg
 Bmw,M6,2021,600000000,Bmw2021.jpg
+=======
+Ford,Taurus,2016,1.3634E8,taurus2016.jpg
+Chevrolet,Camaro,2017,7.2E7,camaro2017.jpg
+Mazda,6,2017,1.0E7,mazda62017.jpg
+Chevrolet,Colorado,2017,9.55E7,colorado2017.jpg
+Peugeot,208,2017,5.0E7,2082017.jpg
+Chevrolet,Corvette,2017,2.122E8,corvette2017.jpg
+Chevrolet,Silverado,2017,1.47E8,silverado2017.jpg
+Toyota,Hilux,2022,1.4E8,bugatti2022
+>>>>>>> 83a1c8b Primer punto funcionando - 221004 @ 2:58am

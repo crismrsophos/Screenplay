@@ -293,6 +293,7 @@ public class InterfazImpuestosCarro extends JFrame
 			 */
 			public void reqFuncOpcion1( )
 			{
+<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 				String respuesta = calculador.metodo1( );
 				JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
 
@@ -300,6 +301,32 @@ public class InterfazImpuestosCarro extends JFrame
 				ventana1.setVisible(true); // Hacemos visible la ventana.
 
 
+=======
+
+				//JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
+
+				DialogoAgregarVehiculo agregarVehiculo = new DialogoAgregarVehiculo(this);
+				agregarVehiculo.setTitle("Agregar vehículo");
+				agregarVehiculo.setVisible(true);
+				try{
+					//calculador.metodo1(agregarVehiculo.darMarca(), agregarVehiculo.darLinea(), agregarVehiculo.darAnio(), agregarVehiculo.darPrecio(), agregarVehiculo.darImagen());
+				}
+				catch (Exception e) {
+
+				}
+
+			}
+
+			public void agregarVehiculo (String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta)
+			{
+				try {
+					calculador.metodo1(pMarca, pLinea, pAnio, pPrecio, pRuta);
+				}
+				catch (Exception e)
+				{
+
+				}
+>>>>>>> 83a1c8b Primer punto funcionando - 221004 @ 2:58am
 			}
 
 			/**
