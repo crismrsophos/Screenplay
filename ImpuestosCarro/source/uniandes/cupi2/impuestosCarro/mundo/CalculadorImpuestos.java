@@ -67,6 +67,8 @@ public class CalculadorImpuestos
      * Se cargaron los datos correctamente a partir de los archivos.
      * @throws Exception Error al cargar los archivos.
      */
+
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
     public CalculadorImpuestos( ) throws Exception
     {
         cargarVehiculos( "data/vehiculos.txt" );
@@ -77,6 +79,7 @@ public class CalculadorImpuestos
     // Métodos
     // ----------------------------------------------------------------
 
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
     /**
      * Carga los datos de los vehículos que maneja el calculador de impuestos. <br>
      * <b>post: </b> Se cargan todos los vehículos del archivo con sus datos.
@@ -85,10 +88,12 @@ public class CalculadorImpuestos
      */
     private void cargarVehiculos( String pArchivo ) throws Exception
     {
+
         String texto, valores[], sMarca, sLinea, sModelo, sImagen;
         double precio;
         int cantidad = 0;
         Vehiculo vehiculo;
+
         try
         {
             File datos = new File( pArchivo );
@@ -101,6 +106,7 @@ public class CalculadorImpuestos
             posVehiculoActual = 0;
 
             texto = lector.readLine( );
+
             for( int i = 0; i < vehiculos.length; i++ )
             {
                 valores = texto.split( "," );
@@ -113,9 +119,11 @@ public class CalculadorImpuestos
 
                 vehiculo = new Vehiculo( sMarca, sLinea, sModelo, precio, sImagen );
                 vehiculos[ i ] = vehiculo;
+
                 // Siguiente línea
                 texto = lector.readLine( );
             }
+
             lector.close( );
 
             /*FileWriter fw = new FileWriter(datos);
@@ -135,6 +143,80 @@ public class CalculadorImpuestos
         {
             throw new Exception( "El archivo no tiene el formato esperado." );
         }
+    }
+
+    //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
+    private void AgregarVehiculoLista (String pArchivo, String Marca, String Linea, String Modelo, Double Valor, String RutaImagen) throws Exception
+    {
+
+        String texto, valores[], sMarca, sLinea, sModelo, sImagen;
+        double precio;
+        int cantidad = 0;
+
+        try
+        {
+            sMarca = Marca;
+            sLinea = Linea;
+            sModelo = Modelo;
+            precio = Valor;
+            sImagen = RutaImagen;
+
+            File datos = new File( pArchivo );
+
+            FileReader fr = new FileReader( datos );
+            BufferedReader lector = new BufferedReader( fr );
+            texto = lector.readLine( );
+            cantidad = Integer.parseInt( texto );
+            lector.close();
+
+            cantidad += 1;
+            String numero = Integer.toString(cantidad);
+
+            //
+            String newString = numero;
+            File myFile = new File( pArchivo );
+            // An array to store each line in the file
+            ArrayList<String> fileContent = new ArrayList<String>();
+            Scanner myReader = new Scanner(myFile);
+            while (myReader.hasNextLine()) {
+                // Reads the file content into an array
+                fileContent.add(myReader.nextLine());
+            }
+            myReader.close();
+
+            fileContent.remove(0);
+            fileContent.add(0, newString);
+            // Writes the new content to file
+            FileWriter myWriter = new FileWriter(pArchivo);
+            for (int i = 0; i < fileContent.size(); i++ ) {
+
+                if(i == fileContent.size() - 1)
+                {
+                    myWriter.write(fileContent.get(i));
+                }
+                else{
+                    myWriter.write(fileContent.get(i) + "\n");
+                }
+            }
+            myWriter.close();
+            //
+
+            FileWriter fw = new FileWriter( datos, true );
+            BufferedWriter escritor = new BufferedWriter( fw );
+            escritor.newLine();
+            escritor.write(sMarca+ "," + sLinea + "," + sModelo + "," + precio + "," + sImagen);
+            escritor.close();
+        }
+
+        catch ( IOException e )
+        {
+            throw new Exception( "Error al cargar los datos almacenados de vehículos." );
+        }
+        catch( NumberFormatException e )
+        {
+            throw new Exception( "El archivo no tiene el formato esperado." );
+        }
+
     }
 
     /**
@@ -401,8 +483,13 @@ public class CalculadorImpuestos
      * Método para la extensión 1 del ejercicio.
      * @return Respuesta 1.
      */
+<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
     public void metodo1(String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta) throws Exception  //Agregar vehículo
+=======
+    public String metodo1( String Marca, String Linea, String Modelo, String Valor, String RutaImagen) throws Exception
+>>>>>>> 5c6a317 Tarea finalizada con los puntos #1 y #2 ya realizados
     {
+<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 <<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 
         String texto, valores[], sMarca, sLinea, sModelo, sImagen;
@@ -491,6 +578,21 @@ public class CalculadorImpuestos
         //return "Respuesta 1";
 =======
 >>>>>>> 9437f6c Elimino respuesta de la linea 396 en la opcion 1 de la clase calculadoraimpuestos
+=======
+        String _Marca, _Modelo, _Linea, _RutaImagen;
+        Double _Valor;
+
+        _Marca = Marca;
+        _Linea = Linea;
+        _Modelo = Modelo;
+        _RutaImagen = RutaImagen;
+
+        _Valor  = Double.parseDouble(Valor);
+
+        AgregarVehiculoLista( "data/vehiculos.txt", _Marca, _Linea, _Modelo, _Valor, _RutaImagen);
+        cargarVehiculos( "data/vehiculos.txt" );
+        return "Mi respuesta 1 - AAM";
+>>>>>>> 5c6a317 Tarea finalizada con los puntos #1 y #2 ya realizados
     }
 
     /**
@@ -499,7 +601,7 @@ public class CalculadorImpuestos
      */
     public String metodo2( )
     {
-        return "Respuesta 2";
+        return "Mi respuesta 2 - AAM";
     }
 
 

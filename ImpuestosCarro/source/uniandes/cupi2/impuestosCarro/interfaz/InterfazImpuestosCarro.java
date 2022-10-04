@@ -84,6 +84,7 @@ public class InterfazImpuestosCarro extends JFrame
 		setDefaultCloseOperation( EXIT_ON_CLOSE );
 
 		// Crea el calculador de impuestos
+		// @@@@@@@@@@@@@@@@ MIRAR AQUI @@@@@@@@@@@@@@@@
 		calculador = new CalculadorImpuestos( );
 
 		setLayout( new BorderLayout( ) );
@@ -222,7 +223,8 @@ public class InterfazImpuestosCarro extends JFrame
 	public void buscarMasCaro( )
 	{
 		Vehiculo masCaro = calculador.buscarVehiculoMasCaro( );
-		panelVehiculo.actualizar( masCaro.darMarca( ), masCaro.darLinea( ), masCaro.darAnio( ), masCaro.darPrecio( ), masCaro.darRutaImagen( ) );
+		panelVehiculo.actualizar( masCaro.darMarca( ), masCaro.darLinea( ), masCaro.darAnio( ),
+		masCaro.darPrecio( ), masCaro.darRutaImagen( ) );
 
 	}
 
@@ -259,32 +261,89 @@ public class InterfazImpuestosCarro extends JFrame
 	}
 	
 
-		/**
-		 * Busca el primer vehículo de la marca y lo muestra. Si no hay ninguno informa al usuario.
-		 */
-		public void buscarPorMarca( )
-		{
-			String marca = panelBusquedas.darMarca();
+	/**
+	 * Busca el primer vehículo de la marca y lo muestra. Si no hay ninguno informa al usuario.
+	 */
+	public void buscarPorMarca( )
+	{
+		String marca = panelBusquedas.darMarca();
 
-			if( marca.isEmpty( ) )
+		if( marca.isEmpty( ) )
+		{
+			JOptionPane.showMessageDialog( this, "Debe ingresar una marca.", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
+			panelBusquedas.limpiar();
+		}
+		else
+		{
+			Vehiculo respuesta = calculador.buscarVehiculoPorMarca( marca );
+			if( respuesta == null )
 			{
-				JOptionPane.showMessageDialog( this, "Debe ingresar una marca.", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
-				panelBusquedas.limpiar();
+				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta marca", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
 			}
 			else
 			{
-				Vehiculo respuesta = calculador.buscarVehiculoPorMarca( marca );
-				if( respuesta == null )
-				{
-					JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta marca", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
-				}
-				else
-				{
-					panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ), respuesta.darAnio( ), respuesta.darPrecio( ), respuesta.darRutaImagen( ) );
-				}
+				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ), respuesta.darAnio( ), respuesta.darPrecio( ), respuesta.darRutaImagen( ) );
+			}
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// Puntos de Extensión
+	// ----------------------------------------------------------------
+	/**
+	 * Llamado para realizar el método de extensión 1.
+	 */
+	public void reqFuncOpcion1( )
+	{
+		String Marca, Linea, Modelo, Valor, RutaImagen;
+		Marca = JOptionPane.showInputDialog("Digita el nombre del carro");
+		Linea = JOptionPane.showInputDialog("Digita la linea del carro");
+		Modelo = JOptionPane.showInputDialog("Digita el modelo del carro");
+		Valor = JOptionPane.showInputDialog("Digita el valor del carro");
+		RutaImagen = JOptionPane.showInputDialog("Digita el nombre del archivo");
+
+		String respuesta = null;
+
+		try {
+			respuesta = calculador.metodo1(Marca, Linea, Modelo, Valor, RutaImagen );
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		JOptionPane.showMessageDialog( this, respuesta, "Agregar Vehículo", JOptionPane.INFORMATION_MESSAGE );
+	}
+
+	/**
+	 * Llamado para realizar el método de extensión 2.
+	 */
+	public void reqFuncOpcion2( )
+	{
+		String Linea;
+		Linea = JOptionPane.showInputDialog("Inserte la línea de vehículo a buscar");
+
+		if( Linea.isEmpty( ) )
+		{
+			JOptionPane.showMessageDialog( this, "Debe ingresar una línea.",
+					"Buscar por línea", JOptionPane.ERROR_MESSAGE );
+			panelBusquedas.limpiar();
+		}
+		else
+		{
+			Vehiculo respuesta = calculador.buscarVehiculoPorLinea(Linea);
+			if( respuesta == null )
+			{
+				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta línea",
+						"Buscar por línea", JOptionPane.ERROR_MESSAGE );
+			}
+			else
+			{
+				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ),
+						respuesta.darAnio( ), respuesta.darPrecio( ),
+						respuesta.darRutaImagen( ) );
+
 			}
 		}
 
+<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 			// ----------------------------------------------------------------
 			// Puntos de Extensión
 			// ----------------------------------------------------------------
@@ -328,37 +387,34 @@ public class InterfazImpuestosCarro extends JFrame
 				}
 >>>>>>> 83a1c8b Primer punto funcionando - 221004 @ 2:58am
 			}
+=======
+>>>>>>> 5c6a317 Tarea finalizada con los puntos #1 y #2 ya realizados
 
-			/**
-			 * Llamado para realizar el método de extensión 2.
-			 */
-			public void reqFuncOpcion2( )
-			{
-				String respuesta = calculador.metodo2( );
-				JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
-			}
+		String respuesta = calculador.metodo2( );
+		JOptionPane.showMessageDialog( this, respuesta, "Sacar primero lista", JOptionPane.INFORMATION_MESSAGE );
+	}
 
-			// -----------------------------------------------------------------
-			// Main
-			// -----------------------------------------------------------------
+	// -----------------------------------------------------------------
+	// Main
+	// -----------------------------------------------------------------
 
-			/**
-			 * Ejecuta la aplicación.
-			 * @param pArgs Parámetros de la ejecución. No son necesarios.
-			 */
-			public static void main( String[] pArgs )
-			{
-				try
-				{
-					// Unifica la interfaz para Mac y para Windows.
-					UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName( ) );
+	/**
+	 * Ejecuta la aplicación.
+	 * @param pArgs Parámetros de la ejecución. No son necesarios.
+	 */
+	public static void main( String[] pArgs )
+	{
+		try
+		{
+			// Unifica la interfaz para Mac y para Windows.
+			UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName( ) );
 
-					InterfazImpuestosCarro interfaz = new InterfazImpuestosCarro( );
-					interfaz.setVisible( true );
-				}
-				catch( Exception e )
-				{
-					e.printStackTrace( );
-				}
-			}
+			InterfazImpuestosCarro interfaz = new InterfazImpuestosCarro( );
+			interfaz.setVisible( true );
 		}
+		catch( Exception e )
+		{
+			e.printStackTrace( );
+		}
+	}
+}
