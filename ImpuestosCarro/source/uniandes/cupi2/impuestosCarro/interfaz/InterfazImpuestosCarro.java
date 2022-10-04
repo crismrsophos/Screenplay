@@ -295,6 +295,11 @@ public class InterfazImpuestosCarro extends JFrame
 			{
 				String respuesta = calculador.metodo1( );
 				JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
+
+				Ventana1 ventana1 = new Ventana1();
+				ventana1.setVisible(true); // Hacemos visible la ventana.
+
+
 			}
 
 			/**

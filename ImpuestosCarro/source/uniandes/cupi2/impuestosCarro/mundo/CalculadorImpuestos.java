@@ -10,6 +10,7 @@
  */
 package uniandes.cupi2.impuestosCarro.mundo;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -393,7 +394,7 @@ public class CalculadorImpuestos
      */
     public String metodo1( )
     {
-       
+        return "Respuesta 1";
     }
 
     /**
@@ -404,5 +405,6 @@ public class CalculadorImpuestos
     {
         return "Respuesta 2";
     }
+
 
 }

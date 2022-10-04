@@ -10,7 +10,7 @@
 /target/
 /test/*.iml
 *.iml
-
+/out/
 
 # Ignore Gradle build output directory
 bin
