@@ -100,7 +100,7 @@ public class PanelOpciones extends JPanel implements ActionListener
         btnCalcular.addActionListener( this );
         add(btnCalcular);
 
-        btnOpcion1 = new JButton( "Opción 1" );
+        btnOpcion1 = new JButton( "Agregar vehículo" );
         btnOpcion1.setActionCommand( OPCION_1 );
         btnOpcion1.addActionListener( this );
         add(btnOpcion1);

@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class DialogoAgregarVehiculo extends JFrame implements ActionListener {
@@ -27,7 +28,7 @@ public class DialogoAgregarVehiculo extends JFrame implements ActionListener {
 
     public DialogoAgregarVehiculo(InterfazImpuestosCarro ventanaPrincipal) {
         principal = ventanaPrincipal;
-        setSize(300, 230);
+        setSize(300, 200);
         setLocationRelativeTo(null);
         IniciarComponentes();
 
@@ -67,36 +68,46 @@ public class DialogoAgregarVehiculo extends JFrame implements ActionListener {
         panel.add(textBoxPrecio);
 
 
-        etiquetaImagen.setBounds(10,130,50,20);
+        /*etiquetaImagen.setBounds(10,130,50,20);
         panel.add(etiquetaImagen);
 
         textBoxImagen.setBounds(90, 130, 170, 20);
-        panel.add(textBoxImagen);
+        panel.add(textBoxImagen);*/
 
 
-        botonAgregarVehiculo.setBounds(90, 160, 170, 20);
+        botonAgregarVehiculo.setBounds(90, 130, 170, 20);
         botonAgregarVehiculo.setText("Agregar vehículo");
         panel.add(botonAgregarVehiculo);
         botonAgregarVehiculo.addActionListener(this::actionPerformed);
 
-        /*marca = pMarca;
-        linea = pLinea;
-        anio = pAnio;
-        precio = pPrecio;
-        rutaImagen = pRuta;*/
+
     }
 
     public void actionPerformed (ActionEvent evento){
+
+        String ruta = "";
+        JFileChooser seleccionadorArchivos = new JFileChooser();
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("JPG, PNG & GIF","jpg", "png", "gif");
+        seleccionadorArchivos.setFileFilter(filtro);
+
+        int respuesta = seleccionadorArchivos.showOpenDialog(this);
+
+        if (respuesta == JFileChooser.APPROVE_OPTION){
+            ruta = seleccionadorArchivos.getSelectedFile().getName();
+        }
 
         marca = textBoxMarca.getText();
         linea = textBoxLinea.getText();
         anio = textBoxAnio.getText();
         precio = textBoxPrecio.getText();
-        rutaImagen = textBoxImagen.getText();
+        rutaImagen = ruta;
+
+        //rutaImagen = textBoxImagen.getText();
 
         principal.agregarVehiculo(marca, linea, anio, precio, rutaImagen);
 
-        //calculador.metodo1(agregarVehiculo.darMarca(), agregarVehiculo.darLinea(), agregarVehiculo.darAnio(), agregarVehiculo.darPrecio(), agregarVehiculo.darImagen());
+        JOptionPane.showMessageDialog(this, "El vehículo " + marca + " " + linea + " modelo " + anio+ " ha sido agregado correctamente");
+        dispose();
 
     }
 
