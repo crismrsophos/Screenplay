@@ -10,21 +10,12 @@
 /.project/
 /target/
 /test/*.iml
-<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 *.iml
-<<<<<<< HEAD
 out/
-=======
->>>>>>> 4484d74 (Primera prueba de commit)
-
-=======
->>>>>>> ad0ac9f Correcion git ignore, faltaba un asterisco
 
 # Ignore Gradle build output directory
 bin
 build
 history
 target/site
-
-
-/classes/
+classes/

@@ -267,6 +267,7 @@ public class InterfazImpuestosCarro extends JFrame
 	public void buscarPorMarca( )
 	{
 		String marca = panelBusquedas.darMarca();
+<<<<<<< HEAD
 
 		if( marca.isEmpty( ) )
 		{
@@ -324,10 +325,17 @@ public class InterfazImpuestosCarro extends JFrame
 		{
 			JOptionPane.showMessageDialog( this, "Debe ingresar una línea.",
 					"Buscar por línea", JOptionPane.ERROR_MESSAGE );
+=======
+
+		if( marca.isEmpty( ) )
+		{
+			JOptionPane.showMessageDialog( this, "Debe ingresar una marca.", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
+>>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
 			panelBusquedas.limpiar();
 		}
 		else
 		{
+<<<<<<< HEAD
 			Vehiculo respuesta = calculador.buscarVehiculoPorLinea(Linea);
 			if( respuesta == null )
 			{
@@ -340,9 +348,56 @@ public class InterfazImpuestosCarro extends JFrame
 						respuesta.darAnio( ), respuesta.darPrecio( ),
 						respuesta.darRutaImagen( ) );
 
+=======
+			Vehiculo respuesta = calculador.buscarVehiculoPorMarca( marca );
+			if( respuesta == null )
+			{
+				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta marca", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
+			}
+			else
+			{
+				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ), respuesta.darAnio( ), respuesta.darPrecio( ), respuesta.darRutaImagen( ) );
+>>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
 			}
 		}
+	}
 
+	// ----------------------------------------------------------------
+	// Puntos de Extensión
+	// ----------------------------------------------------------------
+
+	/**
+	 * Llamado para realizar el método de extensión 1.
+	 */
+	public void reqFuncOpcion1( )
+	{
+
+		//JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
+
+		DialogoAgregarVehiculo agregarVehiculo = new DialogoAgregarVehiculo(this);
+		agregarVehiculo.setTitle("Agregar vehículo");
+		agregarVehiculo.setVisible(true);
+		try{
+			//calculador.metodo1(agregarVehiculo.darMarca(), agregarVehiculo.darLinea(), agregarVehiculo.darAnio(), agregarVehiculo.darPrecio(), agregarVehiculo.darImagen());
+		}
+		catch (Exception e) {
+
+		}
+
+	}
+
+	public void agregarVehiculo (String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta)
+	{
+		try {
+			calculador.metodo1(pMarca, pLinea, pAnio, pPrecio, pRuta);
+		}
+		catch (Exception e)
+		{
+
+		}
+	}
+
+<<<<<<< HEAD
 <<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 			// ----------------------------------------------------------------
 			// Puntos de Extensión
@@ -353,6 +408,29 @@ public class InterfazImpuestosCarro extends JFrame
 			public void reqFuncOpcion1( )
 			{
 <<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
+=======
+	/**
+	 * Llamado para realizar el método de extensión 2.
+	 */
+
+	public void reqFuncOpcion2( )
+	{
+		String Linea;
+		Linea = JOptionPane.showInputDialog("Inserte la línea de vehículo a buscar");
+
+		if( Linea.isEmpty( ) )
+		{
+			JOptionPane.showMessageDialog( this, "Debe ingresar una línea.",
+					"Buscar por línea", JOptionPane.ERROR_MESSAGE );
+			panelBusquedas.limpiar();
+		}
+		else
+		{
+			Vehiculo respuesta = calculador.buscarVehiculoPorLinea(Linea);
+			if( respuesta == null )
+			{
+<<<<<<< HEAD
+>>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
 				String respuesta = calculador.metodo1( );
 				JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
 
@@ -361,6 +439,7 @@ public class InterfazImpuestosCarro extends JFrame
 
 
 =======
+<<<<<<< HEAD
 
 				//JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
 
@@ -394,6 +473,25 @@ public class InterfazImpuestosCarro extends JFrame
 		JOptionPane.showMessageDialog( this, respuesta, "Sacar primero lista", JOptionPane.INFORMATION_MESSAGE );
 	}
 
+=======
+				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta línea",
+						"Buscar por línea", JOptionPane.ERROR_MESSAGE );
+>>>>>>> 87b0d327c4c0a2ee222b6c0d222682618ebbc5af
+			}
+			else
+			{
+				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ),
+						respuesta.darAnio( ), respuesta.darPrecio( ),
+						respuesta.darRutaImagen( ) );
+
+			}
+		}
+
+		String respuesta = calculador.metodo2( );
+		JOptionPane.showMessageDialog( this, respuesta, "Sacar primero lista", JOptionPane.INFORMATION_MESSAGE );
+	}
+
+>>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
 	// -----------------------------------------------------------------
 	// Main
 	// -----------------------------------------------------------------

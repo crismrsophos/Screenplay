@@ -483,6 +483,7 @@ public class CalculadorImpuestos
      * Método para la extensión 1 del ejercicio.
      * @return Respuesta 1.
      */
+<<<<<<< HEAD
 <<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
     public void metodo1(String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta) throws Exception  //Agregar vehículo
 =======
@@ -491,6 +492,10 @@ public class CalculadorImpuestos
     {
 <<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
 <<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
+=======
+    public void metodo1(String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta) throws Exception  //Agregar vehículo
+    {
+>>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
 
         String texto, valores[], sMarca, sLinea, sModelo, sImagen;
         double precio;
@@ -576,6 +581,7 @@ public class CalculadorImpuestos
 
 
         //return "Respuesta 1";
+<<<<<<< HEAD
 =======
 >>>>>>> 9437f6c Elimino respuesta de la linea 396 en la opcion 1 de la clase calculadoraimpuestos
 =======
@@ -593,6 +599,9 @@ public class CalculadorImpuestos
         cargarVehiculos( "data/vehiculos.txt" );
         return "Mi respuesta 1 - AAM";
 >>>>>>> 5c6a317 Tarea finalizada con los puntos #1 y #2 ya realizados
+=======
+
+>>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
     }
 
     /**
