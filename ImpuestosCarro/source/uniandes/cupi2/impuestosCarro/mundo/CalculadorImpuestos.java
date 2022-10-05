@@ -68,6 +68,11 @@ public class CalculadorImpuestos
      */
 
     //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
     public CalculadorImpuestos( ) throws Exception
     {
         cargarVehiculos( "data/vehiculos.txt" );
@@ -78,6 +83,9 @@ public class CalculadorImpuestos
     // Métodos
     // ----------------------------------------------------------------
 
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
     //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
     /**
      * Carga los datos de los vehículos que maneja el calculador de impuestos. <br>
@@ -135,6 +143,9 @@ public class CalculadorImpuestos
         }
     }
 
+    //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
+    //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
+    //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
     //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
     private void AgregarVehiculoLista (String pArchivo, String Marca, String Linea, String Modelo, Double Valor, String RutaImagen) throws Exception
     {

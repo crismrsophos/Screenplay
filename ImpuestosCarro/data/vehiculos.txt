@@ -1,4 +1,4 @@
-8
+11
 Ford,Taurus,2016,136340000,taurus2016.jpg
 Chevrolet,Camaro,2017,72000000,camaro2017.jpg
 Mazda,6,2017,10000000,mazda62017.jpg
@@ -7,3 +7,6 @@ Peugeot,208,2017,50000000,2082017.jpg
 Chevrolet,Corvette,2017,212200000,corvette2017.jpg
 Chevrolet,Silverado,2017,147000000,silverado2017.jpg
 Michi,Angora,2017,600000.0,michurado2018.jpg
+Michi,Naranja,2019,8000000.0,michurado2019.jpg
+Michi,Angora,2020,900000.0,michurado2020.jpg
+EJEMPLO,BWM,2021,3.8E7,2082017.jpg
