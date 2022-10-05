@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 8
 Ford,Taurus,2016,136340000,taurus2016.jpg
 Chevrolet,Camaro,2017,72000000,camaro2017.jpg
@@ -7,3 +8,15 @@ Peugeot,208,2017,50000000,2082017.jpg
 Chevrolet,Corvette,2017,212200000,corvette2017.jpg
 Chevrolet,Silverado,2017,147000000,silverado2017.jpg
 Bmw,M6,2021,600000000,Bmw2021.jpg
+=======
+9
+Ford,Taurus,2016,1.3634E8,taurus2016.jpg
+Chevrolet,Camaro,2017,7.2E7,camaro2017.jpg
+Mazda,6,2017,1.0E7,mazda62017.jpg
+Chevrolet,Colorado,2017,9.55E7,colorado2017.jpg
+Peugeot,208,2017,5.0E7,2082017.jpg
+Chevrolet,Corvette,2017,2.122E8,corvette2017.jpg
+Chevrolet,Silverado,2017,1.47E8,silverado2017.jpg
+Michi,Angora,2018,1.2E8,michurado2018.jpg
+Michiberto,Angora,2019,1.3E8,michurado2019.jpg
+>>>>>>> 87b0d327c4c0a2ee222b6c0d222682618ebbc5af
