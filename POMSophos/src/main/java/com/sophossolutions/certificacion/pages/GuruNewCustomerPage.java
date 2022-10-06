@@ -22,8 +22,8 @@ public class GuruNewCustomerPage extends PageObject {
         Action.navegateToUrl(getDriver(), url);
     }
 
-    public void newCustomerGuru(String name,String gender, String date, String address, String city
-            , String state, String pin, String mobile, String email, String password) {
+    public void newCustomerGuru(String name,String gender, String date, String address, String city,
+                                String state, String pin, String mobile, String email, String password) {
         Action.setText(getDriver(), this.name, name);
         Action.setText(getDriver(), this.gender, gender);
         Action.setText(getDriver(), this.date, date);
