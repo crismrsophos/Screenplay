@@ -38,3 +38,4 @@ public class GuruNewCustomerPage extends PageObject {
     }
 
 }
+
