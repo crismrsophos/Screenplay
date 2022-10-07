@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Demo POM" skipped="0" tests="1" time="20.56" timestamp="2022-10-06 10:47:59"><testcase name="Crear nuevo customer en Guru"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Demo POM" skipped="0" tests="1" time="20.85" timestamp="2022-10-07 11:30:57"><testcase name="Crear nuevo customer en Guru"><error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#dismiss\-button&quot;}&#10;  (Session info: chrome=106.0.5249.91)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.3.0', revision: 'a4995e2c09*'&#10;System info: host: 'SSBOG5CG1490DDD', ip: '192.168.10.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [0a31bf55f05fe7368c8e1b520cf4b451, findElement {using=id, value=dismiss-button}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.91, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\SANTIA~1.MOR\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55823}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55823/devtoo..., se:cdpVersion: 106.0.5249.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 0a31bf55f05fe7368c8e1b520cf4b451&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.3.0', revision: 'a4995e2c09*'&#10;System info: host: 'SSBOG5CG1490DDD', ip: '192.168.10.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">no such element: Unable to locate element: {"method":"css selector","selector":"#dismiss\-button"}
+  (Session info: chrome=106.0.5249.91)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'SSBOG5CG1490DDD', ip: '192.168.10.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a31bf55f05fe7368c8e1b520cf4b451, findElement {using=id, value=dismiss-button}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.91, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\SANTIA~1.MOR\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55823}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55823/devtoo..., se:cdpVersion: 106.0.5249.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a31bf55f05fe7368c8e1b520cf4b451
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'SSBOG5CG1490DDD', ip: '192.168.10.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: driver.version: unknown</error><system-err>no such element: Unable to locate element: {"method":"css selector","selector":"#dismiss\-button"}
+  (Session info: chrome=106.0.5249.91)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'SSBOG5CG1490DDD', ip: '192.168.10.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a31bf55f05fe7368c8e1b520cf4b451, findElement {using=id, value=dismiss-button}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 106.0.5249.91, chrome: {chromedriverVersion: 106.0.5249.61 (511755355844..., userDataDir: C:\Users\SANTIA~1.MOR\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55823}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55823/devtoo..., se:cdpVersion: 106.0.5249.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a31bf55f05fe7368c8e1b520cf4b451
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'SSBOG5CG1490DDD', ip: '192.168.10.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: driver.version: unknown&#13;
+com.sophossolutions.certificacion.actions.Action.clicTo(Action.java:23)&#13;
+com.sophossolutions.certificacion.pages.GuruNewCustomerEntryPage.entryNewCustomer(GuruNewCustomerEntryPage.java:46)&#13;
+com.sophossolutions.certificacion.stepdefinitions.GuruNewCostumerStepDefinitions.diligencioLosDatosY(GuruNewCostumerStepDefinitions.java:28)&#13;
+✽.Diligencio los datos "James Rodriguez", "male", "06/10/2010", "Avenida siempreviva 742", "Springfield", "Oregon", "123456", "3008382525", "jamesr101@gmail.com" y "ABC123"(file:///C:/Users/santiago.moreno/Documents/01%20Semillero%20Automatización/GitHub/semillero_0922_03/POMSophos/src/test/resources/features/guru_new_customer.feature:14)&#13;
+</system-err></testcase></testsuite>

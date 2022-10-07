@@ -18,11 +18,41 @@ public class GuruNewCustomerEntryPage extends PageObject {
     By password = By.name("password");
     By btnSubmit = By.xpath("//*[@value='Submit']");
 
-    By btnCloseSpam = By.xpath("//*[text()='close']");
+    By btnCloseSpam = By.xpath("//*[text()='Close']");
+    By btnCloseSpam2 = By.id("dismiss-button");
 
-    public void entryNewCustomer (String pCustomerName, String pGender, String pDateOfBirth, String pAddress, String pCity,
-                                  String pState, String pPin, String pMobileNumber, String pEmail, String pPassword) {
-        //Action.clicTo(getDriver(), btnCloseSpam); //Se agrega esta línea para clicar "close" en el aviso-spam de la página
+    By idFrame = By.id("google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0");
+
+    private final String ID_IFRAME = "google_ads_iframe_/24132379/INTERSTITIAL_DemoGuru99_0";
+    private final Long FIVE = 5L;
+
+    public void entryNewCustomer(String pCustomerName, String pGender, String pDateOfBirth, String pAddress, String pCity,
+                                 String pState, String pPin, String pMobileNumber, String pEmail, String pPassword) {
+
+
+        //Action.switchToFrameAndClick(getDriver(), btnCloseSpam, ID_IFRAME, FIVE);
+        /*if (Action.waitForElement(getDriver(), idFrame, FIVE)) {
+            Action.switchToFrame(getDriver(), ID_IFRAME, FIVE);
+
+        }*/
+
+        if (Action.waitForElement(getDriver(), idFrame, FIVE)) {
+            Action.switchToFrame(getDriver(), ID_IFRAME, FIVE);
+            By x = By.name("ad_iframe");
+            String x1 = "ad_iframe";
+
+            if (Action.waitForElement(getDriver(), x, FIVE)) {
+                Action.switchToFrame(getDriver(), x1, FIVE);
+                Action.clicTo(getDriver(), btnCloseSpam2);
+                getDriver().switchTo().parentFrame();
+            }
+            else if (Action.waitForElement(getDriver(), btnCloseSpam2, FIVE)) {
+                Action.clicTo(getDriver(), btnCloseSpam2);
+            }
+            getDriver().switchTo().parentFrame();
+        }
+
+
         Action.setText(getDriver(), customerName, pCustomerName);
         Action.clicTo(getDriver(), gender);
         Action.setText(getDriver(), dateOfBirth, pDateOfBirth);

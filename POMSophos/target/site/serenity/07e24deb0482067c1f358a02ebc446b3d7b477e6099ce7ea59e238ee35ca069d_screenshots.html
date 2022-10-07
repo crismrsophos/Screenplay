@@ -151,7 +151,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 06-10-2022 22:47</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 07-10-2022 11:30</span>
     <br style="clear:left"/>
 </div>
 
@@ -191,9 +191,9 @@ Para que los alumnos automaticen
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="success-color">Crear nuevo customer en Guru
+                                <span class="error-color">Crear nuevo customer en Guru
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -210,14 +210,49 @@ Para que los alumnos automaticen
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">No such element exception: no such element: Unable to locate element: {'method':'css selector','selector':'#dismiss\-button'}</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.NoSuchElementException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>com.sophossolutions.certificacion.actions.Action.clicTo(Action.java:23)<br />com.sophossolutions.certificacion.pages.GuruNewCustomerEntryPage.entryNewCustomer(GuruNewCustomerEntryPage.java:46)<br />com.sophossolutions.certificacion.stepdefinitions.GuruNewCostumerStepDefinitions.diligencioLosDatosY(GuruNewCostumerStepDefinitions.java:28)<br />✽.Diligencio los datos "James Rodriguez", "male", "06/10/2010", "Avenida siempreviva 742", "Springfield", "Oregon", "123456", "3008382525", "jamesr101@gmail.com" y "ABC123"(file:///C:/Users/santiago.moreno/Documents/01%20Semillero%20Automatización/GitHub/semillero_0922_03/POMSophos/src/test/resources/features/guru_new_customer.feature:14)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                <div class="panel-body">
+                    <a href="pagesource5990030659118674960.html" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
                 <img src="06c1fd0a55e597c9c4150b7566f6b80babae56104135bd29fc97a90d6e6055bb.png" title=" Given Deseo ir a la p&aacute;gina &quot;https://demo.guru99.com/V4/&quot;" width="1034"/>
-                <img src="f037cd4c9abc67000f6ab811d393e273ac9b4ef910d8d591c7846c7e66782c3f.png" title=" And Inicio sesion con los datos &quot;mgr123&quot; y &quot;mgr!23&quot;" width="1034"/>
-                <img src="b24f72bb45f07cc1c1ecf6642d5e84bfb61b1c6868f0efe5cea262fa011f2dc3.png" title=" And Valido que el mensaje de inicio sea &quot;Manger Id : mgr123&quot;" width="1034"/>
-                <img src="aff82b3911725e061ad50a2be1830719e4c04bea7c7ecd0905ec304c6723c126.png" title=" Given Deseo ir a la secci&oacute;n de new costumer &quot;https://demo.guru99.com/V4/manager/addcustomerpage.php&quot;" width="1034"/>
-                <img src="4f705993bbf86177e23d46b4b1d9ed21ca25514f08b3e63d45e0ce557c418689.png" title=" When Diligencio los datos &quot;Falcao Garcia&quot;, &quot;male&quot;, &quot;06/10/2010&quot;, &quot;Avenida siempreviva 742&quot;, &quot;Springfield&quot;, &quot;Oregon&quot;, &quot;123456&quot;, &quot;3008382525&quot;, &quot;falcagar@gmail.com&quot; y &quot;ABC123&quot;" width="1034"/>
-                <img src="4f705993bbf86177e23d46b4b1d9ed21ca25514f08b3e63d45e0ce557c418689.png" title=" Then Valido que el mensaje de registro sea &quot;Customer Registered Successfully!!!&quot;: <span class='success-color'>SUCCESS</span>" width="1034"/>
+                <img src="7d84b00d003dcb614cd82847a30a3390a70b687003337a6383151efd9f011034.png" title=" And Inicio sesion con los datos &quot;mgr123&quot; y &quot;mgr!23&quot;" width="1034"/>
+                <img src="44b9db43450bbe2fb0dd1f3a66d6605d78b0418426f020bd55d7adf44de86363.png" title=" And Valido que el mensaje de inicio sea &quot;Manger Id : mgr123&quot;" width="1034"/>
+                <img src="af17f739f1a2dadf976906326ffddf41729f3a575ea526563981fe38eba64685.png" title=" Given Deseo ir a la secci&oacute;n de new costumer" width="1034"/>
+                <img src="c8b9f215edb4dbbfc0bf98725d36c255eb422273c71b6af39440784e7bff0be7.png" title=" When Diligencio los datos &quot;James Rodriguez&quot;, &quot;male&quot;, &quot;06/10/2010&quot;, &quot;Avenida siempreviva 742&quot;, &quot;Springfield&quot;, &quot;Oregon&quot;, &quot;123456&quot;, &quot;3008382525&quot;, &quot;jamesr101@gmail.com&quot; y &quot;ABC123&quot;: <span class='error-color'>ERROR</span>" width="1034"/>
             </div>
         </div>
 
