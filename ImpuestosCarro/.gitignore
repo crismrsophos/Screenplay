@@ -10,9 +10,12 @@
 /.project/
 /target/
 /test/*.iml
+*.iml
+out/
 
 # Ignore Gradle build output directory
 bin
 build
 history
 target/site
+classes/

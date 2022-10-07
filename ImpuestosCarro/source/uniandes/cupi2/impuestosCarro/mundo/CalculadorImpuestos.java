@@ -10,6 +10,7 @@
  */
 package uniandes.cupi2.impuestosCarro.mundo;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.*;
 
@@ -132,6 +133,15 @@ public class CalculadorImpuestos
             }
 
             lector.close( );
+
+            /*FileWriter fw = new FileWriter(datos);
+            PrintWriter escritor = new PrintWriter(fw);
+            escritor.flush();
+            //escritor.write("9");
+            escritor.println("9");
+            escritor.write("10");
+            escritor.close();*/
+
         }
         catch( IOException e )
         {
@@ -484,21 +494,93 @@ public class CalculadorImpuestos
      * Método para la extensión 1 del ejercicio.
      * @return Respuesta 1.
      */
-    public String metodo1( String Marca, String Linea, String Modelo, String Valor, String RutaImagen) throws Exception
+    public void metodo1(String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta) throws Exception  //Agregar vehículo
     {
-        String _Marca, _Modelo, _Linea, _RutaImagen;
-        Double _Valor;
 
-        _Marca = Marca;
-        _Linea = Linea;
-        _Modelo = Modelo;
-        _RutaImagen = RutaImagen;
+        String texto, valores[], sMarca, sLinea, sModelo, sImagen;
+        double precio;
+        int cantidad = 0;
+        Vehiculo vehiculo;
+        try
+        {
+            File datos = new File("data/vehiculos.txt");
+            FileReader fr = new FileReader( datos );
+            BufferedReader lector = new BufferedReader( fr );
+            texto = lector.readLine( );
 
-        _Valor  = Double.parseDouble(Valor);
+            cantidad = Integer.parseInt(texto) + 1;
+            vehiculos = new Vehiculo[cantidad];
+            posVehiculoActual = 0;
 
-        AgregarVehiculoLista( "data/vehiculos.txt", _Marca, _Linea, _Modelo, _Valor, _RutaImagen);
-        cargarVehiculos( "data/vehiculos.txt" );
-        return "Mi respuesta 1 - AAM";
+            texto = lector.readLine( );
+            for( int i = 0; i < vehiculos.length; i++ )
+            {
+                if (i != vehiculos.length - 1) {
+                    valores = texto.split(",");
+
+                    sMarca = valores[0];
+                    sLinea = valores[1];
+                    sModelo = valores[2];
+                    sImagen = valores[4];
+                    precio = Double.parseDouble(valores[3]);
+
+                    vehiculo = new Vehiculo(sMarca, sLinea, sModelo, precio, sImagen);
+                    vehiculos[i] = vehiculo;
+                    // Siguiente línea
+                    texto = lector.readLine();
+                }
+                else {
+
+                    vehiculo = new Vehiculo(pMarca, pLinea, pAnio, Double.parseDouble(pPrecio) , pRuta);
+                    vehiculos[i] = vehiculo;
+                    // Siguiente línea
+                    texto = lector.readLine();
+                }
+            }
+            lector.close( );
+
+            FileWriter fw = new FileWriter("data/vehiculos.txt");
+            PrintWriter escritor = new PrintWriter(fw);
+            escritor.flush();
+            escritor.println(cantidad);
+
+            for( int i = 0; i < vehiculos.length; i++ )
+            {
+                escritor.println(vehiculos[i].darMarca() + "," + vehiculos[i].darLinea() + "," + vehiculos[i].darAnio()
+                        + "," + String.valueOf(vehiculos[i].darPrecio()) + "," + vehiculos[i].darRutaImagen());
+
+            }
+
+            escritor.close();
+
+            cargarVehiculos("data/vehiculos.txt");
+
+        }
+        catch( IOException e )
+        {
+            throw new Exception( "Error al cargar los datos almacenados de vehículos." );
+        }
+        catch( NumberFormatException e )
+        {
+            throw new Exception( "El archivo no tiene el formato esperado." );
+        }
+
+        /*String textoArchivo = "";
+        FileReader fr = null;
+        try{
+            fr = new FileReader("data/vehiculos.txt");
+            int c;
+            while((c = fr.read()) != -1){
+                textoArchivo += (char)c;
+            }
+        }
+        catch   (Exception e){
+            JOptionPane.showMessageDialog(null, "Error al leer archivo: " + e.getMessage());
+        }*/
+
+
+
+        //return "Respuesta 1";
     }
 
     /**
