@@ -12,5 +12,6 @@ Feature: Demo POM
   Scenario: Crear usuario
     Given Deseo ir a la página siguiente "https://demo.guru99.com/V4/manager/addcustomerpage.php"
     When Creo sesion con los siguientes datos "Jean","male","23/12/1995","calle 25","Toronto","Ontario","123456","3216789012","jean@true.com","123456789"
-    Then Valido que el texto de inicio sea: "Customer Registered Successfully!!!"
+    Then Valido que el texto de inicio sea "Customer Registered Successfully!!!"
+
 
