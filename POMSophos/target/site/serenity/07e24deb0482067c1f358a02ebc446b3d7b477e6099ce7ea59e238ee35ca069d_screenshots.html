@@ -151,7 +151,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 06-10-2022 19:11</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 06-10-2022 22:21</span>
     <br style="clear:left"/>
 </div>
 
@@ -191,9 +191,9 @@ Para que los alumnos automaticen
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="success-color">Crear nuevo customer en Guru
+                                <span class="error-color">Crear nuevo customer en Guru
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -210,14 +210,50 @@ Para que los alumnos automaticen
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">No such element exception: no such element: Unable to locate element: {'method':'xpath','selector':'//*[text()='Customer Registered Successfully!!!']'}</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.NoSuchElementException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>com.sophossolutions.certificacion.actions.Action.validateTextOfField(Action.java:22)<br />com.sophossolutions.certificacion.pages.GuruCustomerRegistration.validateText(GuruCustomerRegistration.java:14)<br />com.sophossolutions.certificacion.stepdefinitions.GuruNewCostumerStepDefinitions.validoQueElMensajeDeRegistroSea(GuruNewCostumerStepDefinitions.java:31)<br />✽.Valido que el mensaje de registro sea "Customer Registered Successfully!!!"(file:///C:/Users/santiago.moreno/Documents/01%20Semillero%20Automatización/GitHub/semillero_0922_03/POMSophos/src/test/resources/features/guru_new_customer.feature:15)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                <div class="panel-body">
+                    <a href="#" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
                 <img src="06c1fd0a55e597c9c4150b7566f6b80babae56104135bd29fc97a90d6e6055bb.png" title=" Given Deseo ir a la p&aacute;gina &quot;https://demo.guru99.com/V4/&quot;" width="1034"/>
-                <img src="1bbdfa60e09a07653499539a636acd1a9feb0de1b9815a44c21f102c2bcb10db.png" title=" And Inicio sesion con los datos &quot;mgr123&quot; y &quot;mgr!23&quot;" width="1034"/>
-                <img src="1bbdfa60e09a07653499539a636acd1a9feb0de1b9815a44c21f102c2bcb10db.png" title=" And Valido que el mensaje de inicio sea &quot;Manger Id : mgr123&quot;" width="1034"/>
+                <img src="bda7c95de103ad044ef9d1fa8caa26a3076bc482a83d6b6354dd3590ab6187bd.png" title=" And Inicio sesion con los datos &quot;mgr123&quot; y &quot;mgr!23&quot;" width="1034"/>
+                <img src="c4a26af29719d4259db87cf1a530d3bfe3609b60b6fbbc6248dd73adc4a2c764.png" title=" And Valido que el mensaje de inicio sea &quot;Manger Id : mgr123&quot;" width="1034"/>
                 <img src="aff82b3911725e061ad50a2be1830719e4c04bea7c7ecd0905ec304c6723c126.png" title=" Given Deseo ir a la secci&oacute;n de new costumer &quot;https://demo.guru99.com/V4/manager/addcustomerpage.php&quot;" width="1034"/>
-                <img src="ccc762d3b9ca2c80c10e243f4d9d5c3c6e19a9baec8c6304d156cf7ab4318f9a.png" title=" When Diligencio los datos &quot;Falcao Garcia&quot;, &quot;male&quot;, &quot;06/10/2010&quot;, &quot;Avenida siempreviva 742&quot;, &quot;Springfield&quot;, &quot;Oregon&quot;, &quot;123456&quot;, &quot;3008382525&quot;, &quot;falgar@gmail.com&quot; y &quot;ABC123&quot;" width="1034"/>
-                <img src="ccc762d3b9ca2c80c10e243f4d9d5c3c6e19a9baec8c6304d156cf7ab4318f9a.png" title=" Then Valido que el mensaje de registro sea &quot;Customer Registered Successfully!!!&quot;: <span class='success-color'>SUCCESS</span>" width="1034"/>
+                <img src="aff82b3911725e061ad50a2be1830719e4c04bea7c7ecd0905ec304c6723c126.png" title=" When Diligencio los datos &quot;Falcao Garcia&quot;, &quot;male&quot;, &quot;06/10/2010&quot;, &quot;Avenida siempreviva 742&quot;, &quot;Springfield&quot;, &quot;Oregon&quot;, &quot;123456&quot;, &quot;3008382525&quot;, &quot;falgar@gmail.com&quot; y &quot;ABC123&quot;" width="1034"/>
+                <img src="aff82b3911725e061ad50a2be1830719e4c04bea7c7ecd0905ec304c6723c126.png" title=" Then Valido que el mensaje de registro sea &quot;Customer Registered Successfully!!!&quot;: <span class='error-color'>ERROR</span>" width="1034"/>
             </div>
         </div>
 
