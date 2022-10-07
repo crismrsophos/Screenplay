@@ -3,6 +3,7 @@
 .idea 
 .classpath
 .project
+*.iml
 /.gradle/
 /.idea/
 /.settings/
@@ -10,12 +11,11 @@
 /target/
 /test/*.iml
 *.iml
-/out/
+out/
 
 # Ignore Gradle build output directory
 bin
 build
 history
 target/site
-
-
+classes/
