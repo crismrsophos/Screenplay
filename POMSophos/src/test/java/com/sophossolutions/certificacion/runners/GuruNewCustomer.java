@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         glue = "com.sophossolutions.certification.stepdefinitions",
-        features = "src/test/resources/guru_new_customer.feature",
+        features = "src/test/resources/features/guru_new_customer.feature",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         monochrome = true,
         dryRun = false
