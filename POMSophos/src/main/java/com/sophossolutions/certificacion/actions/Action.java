@@ -45,8 +45,4 @@ public class Action {
 		return new WebDriverWait(driver, seconds);
 	}
 
-	public static void moveTo(WebDriver driver, By target){
-		driver.switchTo();
-	}
-
 }
