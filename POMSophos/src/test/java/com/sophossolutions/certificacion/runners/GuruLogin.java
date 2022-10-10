@@ -13,7 +13,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		
 		snippets = SnippetType.CAMELCASE, 
         monochrome = true, 
-        dryRun = false 
+        dryRun = false
 		)
 
 public class GuruLogin {

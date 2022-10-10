@@ -6,45 +6,40 @@ import org.openqa.selenium.By;
 
 public class AutomationSelectPage extends PageObject {
 
-    By btnQuantity = By.xpath("//*[@id=\"quantity_wanted_p\"]/a[2]/span");
+	By btnQuantity = By.xpath("//*[@id=\"quantity_wanted_p\"]/a[2]/span");
+	By btnSizeList = By.id("uniform-group_1");
+	String sizeSelector = "//*[@title='%s']";
+	By btnSizeValue;
+	By btnCar = By.xpath("//*[text()='Add to cart']");
+	By btnCheckout = By.xpath("//*[@title='Proceed to checkout']");
 
-    By btnSize = By.xpath("//*[@id=\"group_1\"]");
+	public void selectQuantity(String quantity) {
 
-    By btnSize1;
+		int i = Integer.parseInt(quantity);
+		for (int j = 1; j < i; j++) {
+			Action.clicTo(getDriver(), btnQuantity);
+		}
+	}
 
-    By btnCar = By.xpath("//*[@id=\"add_to_cart\"]/button/span");
+	public void selectSize(String size) {
+		Action.clicTo(getDriver(), btnSizeList);
+		btnSizeValue = By.xpath(String.format(sizeSelector, size));
+		Action.clicTo(getDriver(), btnSizeValue);
+	}
 
-    By btnCheckout = By.xpath("//*[@title='Proceed to checkout']");
+	public void procedToCheckout() {
+		
+		Action.clicTo(getDriver(), btnCar);
 
-    public void clicSelect(String quantity, String size){
+		if (Action.waitForElement(getDriver(), btnCheckout, 6)) {
+			Action.clicTo(getDriver(), btnCheckout);
+		}
+	}
 
-        int i = Integer.parseInt(quantity);
-        for (int j = 1; j < i; j++){
-            Action.clicTo(getDriver(), btnQuantity);
-        }
-
-        //Action.clicTo(getDriver(), btnSize);
-
-        if (size.equals("S")){
-            btnSize1 = By.xpath("//*[@id=\"group_1\"]/option[1]");
-            Action.clicTo(getDriver(), btnSize1);
-
-        } else if (size.equals("M")) {
-            btnSize1 = By.xpath("//*[@id=\"group_1\"]/option[2]");
-            Action.clicTo(getDriver(), btnSize1);
-        } else if (size.equals("L")){
-            btnSize1 = By.xpath("//*[@id=\"group_1\"]/option[3]");
-            Action.clicTo(getDriver(), btnSize1);
-        }
-
-        Action.clicTo(getDriver(), btnCar);
-        if(Action.waitForElement(getDriver(),btnCheckout,6)){
-            Action.clicTo(getDriver(), btnCheckout);
-        }
-
-
-
-    }
-
+	public void theTShirt(String quantity, String size) {
+		selectQuantity(quantity);
+		selectSize(size);
+		procedToCheckout();
+	}
 
 }
