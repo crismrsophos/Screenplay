@@ -7,16 +7,12 @@ import org.openqa.selenium.By;
 public class AutomationBuyProceedPage extends PageObject {
 
 	By btnCheckout = By.xpath("//*[text()='Proceed to checkout']");
-
 	By email = By.id("email");
 	By password = By.id("passwd");
 	By btnSign = By.id("SubmitLogin");
 	By btnAgree = By.id("cgv");
-
 	By btnCheckoutShipping = By.name("processCarrier");
-
 	By btnProceedToCheckOut = By.name("processAddress");
-
 	By totalPrice = By.id("total_price");
 
 	public void clicCheckout() {
@@ -38,7 +34,7 @@ public class AutomationBuyProceedPage extends PageObject {
 		Action.clicTo(getDriver(), btnCheckoutShipping);
 	}
 
-	public void comparation(String total) {
+	public void comparison(String total) {
 		Action.validateTextOfField(getDriver(), totalPrice, total);
 	}
 

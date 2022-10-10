@@ -1,7 +1,6 @@
 package com.sophossolutions.certificacion.actions;
 
 import java.time.Duration;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,16 +28,6 @@ public class Action {
 				getMessage.equals(message));
 	}
 
-	public static Boolean waitForElement(WebDriver driver, By target, long seconds) {
-		try {
-			waitFor(driver, Duration.ofSeconds(seconds))
-					.until(ExpectedConditions.or(ExpectedConditions.visibilityOfElementLocated(target)));
-			return Boolean.TRUE;
-		} catch (Exception e) {
-			return Boolean.FALSE;
-		}
-	}
-	
 	public static Boolean waitForVisibility (WebDriver driver, By target, long seconds) {
         try{
             waitFor(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.or(
@@ -52,27 +41,20 @@ public class Action {
 	public static WebDriverWait waitFor(WebDriver driver, Duration seconds) {
 		return new WebDriverWait(driver, seconds);
 	}
-	
 
+	public static void waitForElement(WebDriver driver, By target, long seconds){
+		waitFor(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.or(
+				ExpectedConditions.elementToBeClickable(target),
+				ExpectedConditions.presenceOfElementLocated(target)
+		));
+	}
     public static void switchToFrame(WebDriver driver, String target, long seconds) {
         waitFor(driver, Duration.ofSeconds(seconds));
         driver.switchTo().frame(target);
     }
 
-    public static void switchToFrameAndClick(WebDriver driver, By target, By target2, long seconds) {
-        try {
-            if (waitForElement(driver, target, seconds)) {
-                //switchToFrame(driver, target, seconds);
-                clicTo(driver, target2);
-            }
-        } catch (Exception e) {
-
-        }
-    }
-
     public static float getNumberOfField (WebDriver driver, By target) {
         return Float.parseFloat(driver.findElement(target).getText());
     }
-
 
 }
