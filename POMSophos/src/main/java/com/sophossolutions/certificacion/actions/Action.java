@@ -16,6 +16,7 @@ public class Action {
     }
 
     public static void setText(WebDriver driver, By target, String text) {
+        driver.findElement(target).clear();
         driver.findElement(target).sendKeys(text);
     }
 
@@ -39,6 +40,16 @@ public class Action {
             return Boolean.TRUE;
         } catch (Exception e) {
             return Boolean.FALSE;
+        }
+    }
+
+    public static Boolean waitForVisibility (WebDriver driver, By target, long seconds) {
+        try{
+            waitFor(driver, Duration.ofSeconds(seconds)).until(ExpectedConditions.or(
+                    ExpectedConditions.visibilityOfElementLocated(target)));
+            return  Boolean.TRUE;
+        } catch (Exception e) {
+            return  Boolean.FALSE;
         }
     }
 
