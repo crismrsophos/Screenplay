@@ -13,7 +13,9 @@ public class AutomationBuyProceedPage extends PageObject {
 	By btnSign = By.id("SubmitLogin");
 	By btnAgree = By.id("cgv");
 
-	By btnProceedToCheckOut = By.xpath("//*[@class='button btn btn-default standard-checkout button-medium']");
+	By btnCheckoutShipping = By.name("processCarrier");
+
+	By btnProceedToCheckOut = By.name("processAddress");
 
 	By totalPrice = By.id("total_price");
 
@@ -33,7 +35,7 @@ public class AutomationBuyProceedPage extends PageObject {
 
 	public void clicAgree() {
 		Action.clicTo(getDriver(), btnAgree);
-		Action.clicTo(getDriver(), btnProceedToCheckOut);
+		Action.clicTo(getDriver(), btnCheckoutShipping);
 	}
 
 	public void comparation(String total) {

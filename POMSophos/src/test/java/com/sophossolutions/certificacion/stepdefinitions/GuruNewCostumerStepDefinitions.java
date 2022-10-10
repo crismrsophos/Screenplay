@@ -2,7 +2,7 @@ package com.sophossolutions.certificacion.stepdefinitions;
 
 import com.sophossolutions.certificacion.pages.GuruCustomerRegistration;
 import com.sophossolutions.certificacion.pages.GuruHomePage;
-import com.sophossolutions.certificacion.pages.GuruLoginPage;
+//import com.sophossolutions.certificacion.pages.GuruLoginPage;
 import com.sophossolutions.certificacion.pages.GuruNewCustomerEntryPage;
 
 import io.cucumber.java.en.Given;
