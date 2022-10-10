@@ -27,6 +27,7 @@ public class GuruNewCustomerStepDefinitions {
 
 	@Then("Valido que el mensaje de registro sea {string}")
 	public void validoQueElMensajeDeRegistroSea(String message) {
+
 		customer.validateText(message);
 	}
 
