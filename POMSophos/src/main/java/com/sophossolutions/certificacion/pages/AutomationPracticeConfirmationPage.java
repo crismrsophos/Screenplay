@@ -8,10 +8,9 @@ import java.time.Duration;
 
 public class AutomationPracticeConfirmationPage extends PageObject{
 
-    By posicionImagen = By.xpath("//*[@class='product_img_link']");
     By agregarCantidadCamiseta = By.xpath("//*[@id='quantity_wanted_p']/a[2]/span");
-    By colorCamisetaAzul = By.xpath("//*[@id='color_14']");
-    By camisetaTallaM= By.xpath("//*[@id=\"group_1\"]/option[2]");
+    By colorCamisetaAzul = By.xpath("//*[@id='color_2']");
+    By camisetaTallaM= By.xpath("//*[@id='group_1']/option[2]");
     By btnAgregarCarrito = By.xpath("//*[@id='add_to_cart']/button/span");
     By btnContinuarCompraOrdenCompra = By.xpath("//*[@title='Proceed to checkout']");
     By btnContinuarCompraResumenCompra = By.xpath("//*[@title = 'Proceed to checkout']/span[text()='Proceed to checkout']");
@@ -28,9 +27,6 @@ public class AutomationPracticeConfirmationPage extends PageObject{
     int seconds = 10;
 
     public void procesoCompra(String _email, String _password){
-
-        Action.waitForVisibility(getDriver(), posicionImagen, 10);
-        Action.clicTo(getDriver(), posicionImagen);
 
         Action.waitForVisibility(getDriver(), colorCamisetaAzul, 10);
         Action.clicTo(getDriver(), colorCamisetaAzul);
