@@ -73,5 +73,9 @@ public class Action {
         }
     }
 
+    public static float getNumberOfField (WebDriver driver, By target) {
+        return Float.parseFloat(driver.findElement(target).getText());
+    }
+
 
 }

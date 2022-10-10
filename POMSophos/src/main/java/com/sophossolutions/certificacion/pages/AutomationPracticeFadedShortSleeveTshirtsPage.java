@@ -11,6 +11,8 @@ public class AutomationPracticeFadedShortSleeveTshirtsPage extends PageObject {
     By size;
     By addToCart = By.xpath("//*[text()='Add to cart']");
     By proceedToCheckOutBtn = By.xpath("//*[@class='btn btn-default button button-medium']");
+
+
     private final long FIVE = 5L;
 
     public void setQuantity(String pQuantity) {
@@ -35,4 +37,5 @@ public class AutomationPracticeFadedShortSleeveTshirtsPage extends PageObject {
             Action.clicTo(getDriver(), proceedToCheckOutBtn);
         }
     }
+
 }
