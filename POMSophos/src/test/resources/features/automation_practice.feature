@@ -5,7 +5,7 @@ Feature: Automation practice
   Para probar el cálculo del valor total cuando a voy a comprar una t-shirt en la automation practice
 
   Scenario: Comprar camisetas en Automation Practice
-    Given Deseo ir a la página "http://automationpractice.com/index.php"
+    Given Deseo ir a la página "https://automationpractice.com/index.php"
     When Ingreso a la sección de T-Shirts
     And Selecciono la camiseta azul
     And Ingreso cantidad y talla "5" y "S"
