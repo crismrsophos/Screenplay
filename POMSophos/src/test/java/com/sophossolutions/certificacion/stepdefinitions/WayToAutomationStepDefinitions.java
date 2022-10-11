@@ -1,6 +1,8 @@
 package com.sophossolutions.certificacion.stepdefinitions;
 
 import com.sophossolutions.certificacion.pages.GuruNewCustomerPage;
+import com.sophossolutions.certificacion.pages.WayToAutomationHomePage;
+import com.sophossolutions.certificacion.pages.WayToAutomationRegistrationPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,20 +10,16 @@ import io.cucumber.java.en.When;
 public class WayToAutomationStepDefinitions {
 
 	GuruNewCustomerPage customer;
+	WayToAutomationHomePage way2Home;
+	WayToAutomationRegistrationPage way2Registration;
 
-
-
-	@When("Agrego un cliente en la pagina con los datos {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string} y {string}")
-	public void agregoUnClienteEnLaPaginaConLosDatosY(String customerName, String birthDate, String address,
-													  String city, String state, String pin,
-													  String mobileNumber, String eMail,
-													  String password) {
-		customer.newCustomer(customerName, birthDate, address, city, state, pin, mobileNumber,
-				eMail, password );
+	@When("Registro al usuario en Way2 con los siguientes datos")
+	public void registroAlUsuarioEnWay2ConLosSiguientesDatos() {
+		way2Home.clicRegistrationImage();
 	}
 
-	@Then("Valido que el mensaje de registro sea {string}")
-	public void validoQueElMensajeDeRegistroSea(String message) {
+	@Then("Valido que en way2 aparezca el mensaje de validacion igual a {string}")
+	public void validoQueEnWay2AparezcaElMensajeDeValidacionIgualA(String message) {
 		customer.validateText(message);
 	}
 

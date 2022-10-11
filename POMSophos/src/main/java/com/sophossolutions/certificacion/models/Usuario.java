@@ -20,7 +20,7 @@ public class Usuario {
 		this.username = username;
 		this.password = password;
 	}
-	
+
 	public String getName() {
 		return name;
 	}

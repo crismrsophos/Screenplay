@@ -15,10 +15,6 @@ public class AutomationSelectPage extends PageObject {
 	By btnCheckout = By.xpath("//*[@title='Proceed to checkout']");
 
 	public void selectQuantity(String quantity) {
-		//int i = Integer.parseInt(quantity);
-		//for (int j = 1; j < i; j++) {
-		//	Action.clicTo(getDriver(), btnQuantity);
-		//}
 		Action.setText(getDriver(), quantityField, quantity);
 	}
 

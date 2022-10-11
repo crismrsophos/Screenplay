@@ -8,7 +8,7 @@ Feature: Way to automation
     Given Deseo ir a la página "https://www.way2automation.com/demo.html"
     When Registro al usuario en Way2 con los siguientes datos
     | <Name> | <Phone> | <Email> | <Country> | <City> | <Username> | <Password> |
-    Then Valido que aparezca el mensaje de validacion <Mensaje>
+    Then Valido que en way2 aparezca el mensaje de validacion igual a <Mensaje>
 
     Examples:
       |  Name       |  Phone       |  Email                 |  Country   |  City      |  Username        |  Password   |  Mensaje                                                      |
