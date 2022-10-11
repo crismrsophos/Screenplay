@@ -69,6 +69,11 @@ public class CalculadorImpuestos
      */
 
     //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se carga los carros y las tablas de impuestos
     public CalculadorImpuestos( ) throws Exception
     {
         cargarVehiculos( "data/vehiculos.txt" );
@@ -79,6 +84,9 @@ public class CalculadorImpuestos
     // Métodos
     // ----------------------------------------------------------------
 
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
+    //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
     //@@@@@@@@@@@@@@@@@@@@@ Acá se agregan los carros
     /**
      * Carga los datos de los vehículos que maneja el calculador de impuestos. <br>
@@ -145,6 +153,9 @@ public class CalculadorImpuestos
         }
     }
 
+    //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
+    //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
+    //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
     //@@@@@@@@@@@@ Estamos haciendo esto @@@@@@@@@@@@
     private void AgregarVehiculoLista (String pArchivo, String Marca, String Linea, String Modelo, Double Valor, String RutaImagen) throws Exception
     {
@@ -483,19 +494,8 @@ public class CalculadorImpuestos
      * Método para la extensión 1 del ejercicio.
      * @return Respuesta 1.
      */
-<<<<<<< HEAD
-<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
-    public void metodo1(String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta) throws Exception  //Agregar vehículo
-=======
-    public String metodo1( String Marca, String Linea, String Modelo, String Valor, String RutaImagen) throws Exception
->>>>>>> 5c6a317 Tarea finalizada con los puntos #1 y #2 ya realizados
-    {
-<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
-<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
-=======
     public void metodo1(String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta) throws Exception  //Agregar vehículo
     {
->>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
 
         String texto, valores[], sMarca, sLinea, sModelo, sImagen;
         double precio;
@@ -581,27 +581,6 @@ public class CalculadorImpuestos
 
 
         //return "Respuesta 1";
-<<<<<<< HEAD
-=======
->>>>>>> 9437f6c Elimino respuesta de la linea 396 en la opcion 1 de la clase calculadoraimpuestos
-=======
-        String _Marca, _Modelo, _Linea, _RutaImagen;
-        Double _Valor;
-
-        _Marca = Marca;
-        _Linea = Linea;
-        _Modelo = Modelo;
-        _RutaImagen = RutaImagen;
-
-        _Valor  = Double.parseDouble(Valor);
-
-        AgregarVehiculoLista( "data/vehiculos.txt", _Marca, _Linea, _Modelo, _Valor, _RutaImagen);
-        cargarVehiculos( "data/vehiculos.txt" );
-        return "Mi respuesta 1 - AAM";
->>>>>>> 5c6a317 Tarea finalizada con los puntos #1 y #2 ya realizados
-=======
-
->>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
     }
 
     /**

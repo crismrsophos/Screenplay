@@ -234,10 +234,10 @@ public class InterfazImpuestosCarro extends JFrame
 	public void buscarPorLinea( )
 	{
 		String linea = panelBusquedas.darLinea();
-		
+
 		if( linea.isEmpty( ) )
 		{
-			JOptionPane.showMessageDialog( this, "Debe ingresar una línea.", 
+			JOptionPane.showMessageDialog( this, "Debe ingresar una línea.",
 					                             "Buscar por línea", JOptionPane.ERROR_MESSAGE );
 			panelBusquedas.limpiar();
 		}
@@ -247,19 +247,19 @@ public class InterfazImpuestosCarro extends JFrame
 			Vehiculo respuesta = calculador.buscarVehiculoPorLinea( linea );
 			if( respuesta == null )
 			{
-				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta línea", 
+				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta línea",
 						                             "Buscar por línea", JOptionPane.ERROR_MESSAGE );
 			}
 			else
 			{
-				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ), 
-						                  respuesta.darAnio( ), respuesta.darPrecio( ), 
+				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ),
+						                  respuesta.darAnio( ), respuesta.darPrecio( ),
 						                  respuesta.darRutaImagen( ) );
 
 			}
 		}
 	}
-	
+
 
 	/**
 	 * Busca el primer vehículo de la marca y lo muestra. Si no hay ninguno informa al usuario.
@@ -267,7 +267,6 @@ public class InterfazImpuestosCarro extends JFrame
 	public void buscarPorMarca( )
 	{
 		String marca = panelBusquedas.darMarca();
-<<<<<<< HEAD
 
 		if( marca.isEmpty( ) )
 		{
@@ -288,88 +287,7 @@ public class InterfazImpuestosCarro extends JFrame
 		}
 	}
 
-	// ----------------------------------------------------------------
-	// Puntos de Extensión
-	// ----------------------------------------------------------------
-	/**
-	 * Llamado para realizar el método de extensión 1.
-	 */
-	public void reqFuncOpcion1( )
-	{
-		String Marca, Linea, Modelo, Valor, RutaImagen;
-		Marca = JOptionPane.showInputDialog("Digita el nombre del carro");
-		Linea = JOptionPane.showInputDialog("Digita la linea del carro");
-		Modelo = JOptionPane.showInputDialog("Digita el modelo del carro");
-		Valor = JOptionPane.showInputDialog("Digita el valor del carro");
-		RutaImagen = JOptionPane.showInputDialog("Digita el nombre del archivo");
-
-		String respuesta = null;
-
-		try {
-			respuesta = calculador.metodo1(Marca, Linea, Modelo, Valor, RutaImagen );
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-		JOptionPane.showMessageDialog( this, respuesta, "Agregar Vehículo", JOptionPane.INFORMATION_MESSAGE );
-	}
-
-	/**
-	 * Llamado para realizar el método de extensión 2.
-	 */
-	public void reqFuncOpcion2( )
-	{
-		String Linea;
-		Linea = JOptionPane.showInputDialog("Inserte la línea de vehículo a buscar");
-
-		if( Linea.isEmpty( ) )
-		{
-			JOptionPane.showMessageDialog( this, "Debe ingresar una línea.",
-					"Buscar por línea", JOptionPane.ERROR_MESSAGE );
-=======
-
-		if( marca.isEmpty( ) )
-		{
-			JOptionPane.showMessageDialog( this, "Debe ingresar una marca.", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
->>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
-			panelBusquedas.limpiar();
-		}
-		else
-		{
-<<<<<<< HEAD
-			Vehiculo respuesta = calculador.buscarVehiculoPorLinea(Linea);
-			if( respuesta == null )
-			{
-				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta línea",
-						"Buscar por línea", JOptionPane.ERROR_MESSAGE );
-			}
-			else
-			{
-				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ),
-						respuesta.darAnio( ), respuesta.darPrecio( ),
-						respuesta.darRutaImagen( ) );
-
-=======
-			Vehiculo respuesta = calculador.buscarVehiculoPorMarca( marca );
-			if( respuesta == null )
-			{
-				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta marca", "Buscar por marca", JOptionPane.ERROR_MESSAGE );
-			}
-			else
-			{
-				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ), respuesta.darAnio( ), respuesta.darPrecio( ), respuesta.darRutaImagen( ) );
->>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
-			}
-		}
-	}
-
-	// ----------------------------------------------------------------
-	// Puntos de Extensión
-	// ----------------------------------------------------------------
-
-	/**
-	 * Llamado para realizar el método de extensión 1.
-	 */
-	public void reqFuncOpcion1( )
+	public void reqFuncOpcion1()
 	{
 
 		//JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
@@ -378,13 +296,67 @@ public class InterfazImpuestosCarro extends JFrame
 		agregarVehiculo.setTitle("Agregar vehículo");
 		agregarVehiculo.setVisible(true);
 		try{
-			//calculador.metodo1(agregarVehiculo.darMarca(), agregarVehiculo.darLinea(), agregarVehiculo.darAnio(), agregarVehiculo.darPrecio(), agregarVehiculo.darImagen());
+			calculador.metodo1(agregarVehiculo.darMarca(), agregarVehiculo.darLinea(), agregarVehiculo.darAnio(), agregarVehiculo.darPrecio(), agregarVehiculo.darImagen());
 		}
 		catch (Exception e) {
-
 		}
-
 	}
+
+	/**
+	 * Llamado para realizar el método de extensión 2.
+	 */
+	public void reqFuncOpcion2( ) {
+		String Linea;
+		String Marca;
+		Linea = JOptionPane.showInputDialog("Inserte la línea de vehículo a buscar");
+
+		if (Linea.isEmpty()) {
+			JOptionPane.showMessageDialog(this, "Debe ingresar una línea.",
+					"Buscar por línea", JOptionPane.ERROR_MESSAGE);
+
+			Marca = JOptionPane.showInputDialog("Inserte la línea de vehículo a buscar");
+
+			if (Marca.isEmpty())
+			{
+				JOptionPane.showMessageDialog(this, "Debe ingresar una marca.",
+						"Buscar por marca", JOptionPane.ERROR_MESSAGE);
+				panelBusquedas.limpiar();
+			}
+			else {
+
+				Vehiculo respuesta = calculador.buscarVehiculoPorLinea(Linea);
+
+				if (respuesta == null)
+				{
+					JOptionPane.showMessageDialog(this, "No se encontró ningún vehículo de esta línea",
+							"Buscar por línea", JOptionPane.ERROR_MESSAGE);
+				}
+				else
+				{
+					panelVehiculo.actualizar(respuesta.darMarca(), respuesta.darLinea(),
+							respuesta.darAnio(), respuesta.darPrecio(),
+							respuesta.darRutaImagen());
+				}
+				if (respuesta == null)
+				{
+					JOptionPane.showMessageDialog(this, "No se encontró ningún vehículo de esta marca", "Buscar por marca", JOptionPane.ERROR_MESSAGE);
+				}
+				else
+				{
+					panelVehiculo.actualizar(respuesta.darMarca(), respuesta.darLinea(), respuesta.darAnio(), respuesta.darPrecio(), respuesta.darRutaImagen());
+				}
+			}
+		}
+	}
+
+	// ----------------------------------------------------------------
+	// Puntos de Extensión
+	// ----------------------------------------------------------------
+
+	/**
+	 * Llamado para realizar el método de extensión 1.
+	 */
+
 
 	public void agregarVehiculo (String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta)
 	{
@@ -397,110 +369,11 @@ public class InterfazImpuestosCarro extends JFrame
 		}
 	}
 
-<<<<<<< HEAD
-<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
-			// ----------------------------------------------------------------
-			// Puntos de Extensión
-			// ----------------------------------------------------------------
-			/**
-			 * Llamado para realizar el método de extensión 1.
-			 */
-			public void reqFuncOpcion1( )
-			{
-<<<<<<< Upstream, based on f3bd4f0ffa1bb33307914c430dcc1b88a8915f30
-=======
-	/**
-	 * Llamado para realizar el método de extensión 2.
-	 */
-
-	public void reqFuncOpcion2( )
-	{
-		String Linea;
-		Linea = JOptionPane.showInputDialog("Inserte la línea de vehículo a buscar");
-
-		if( Linea.isEmpty( ) )
-		{
-			JOptionPane.showMessageDialog( this, "Debe ingresar una línea.",
-					"Buscar por línea", JOptionPane.ERROR_MESSAGE );
-			panelBusquedas.limpiar();
-		}
-		else
-		{
-			Vehiculo respuesta = calculador.buscarVehiculoPorLinea(Linea);
-			if( respuesta == null )
-			{
-<<<<<<< HEAD
->>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
-				String respuesta = calculador.metodo1( );
-				JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
-
-				Ventana1 ventana1 = new Ventana1();
-				ventana1.setVisible(true); // Hacemos visible la ventana.
-
-
-=======
-<<<<<<< HEAD
-
-				//JOptionPane.showMessageDialog( this, respuesta, "Respuesta", JOptionPane.INFORMATION_MESSAGE );
-
-				DialogoAgregarVehiculo agregarVehiculo = new DialogoAgregarVehiculo(this);
-				agregarVehiculo.setTitle("Agregar vehículo");
-				agregarVehiculo.setVisible(true);
-				try{
-					//calculador.metodo1(agregarVehiculo.darMarca(), agregarVehiculo.darLinea(), agregarVehiculo.darAnio(), agregarVehiculo.darPrecio(), agregarVehiculo.darImagen());
-				}
-				catch (Exception e) {
-
-				}
-
-			}
-
-			public void agregarVehiculo (String pMarca, String pLinea, String pAnio, String pPrecio, String pRuta)
-			{
-				try {
-					calculador.metodo1(pMarca, pLinea, pAnio, pPrecio, pRuta);
-				}
-				catch (Exception e)
-				{
-
-				}
->>>>>>> 83a1c8b Primer punto funcionando - 221004 @ 2:58am
-			}
-=======
->>>>>>> 5c6a317 Tarea finalizada con los puntos #1 y #2 ya realizados
-
-		String respuesta = calculador.metodo2( );
-		JOptionPane.showMessageDialog( this, respuesta, "Sacar primero lista", JOptionPane.INFORMATION_MESSAGE );
-	}
-
-=======
-				JOptionPane.showMessageDialog( this, "No se encontró ningún vehículo de esta línea",
-						"Buscar por línea", JOptionPane.ERROR_MESSAGE );
->>>>>>> 87b0d327c4c0a2ee222b6c0d222682618ebbc5af
-			}
-			else
-			{
-				panelVehiculo.actualizar( respuesta.darMarca( ), respuesta.darLinea( ),
-						respuesta.darAnio( ), respuesta.darPrecio( ),
-						respuesta.darRutaImagen( ) );
-
-			}
-		}
-
-		String respuesta = calculador.metodo2( );
-		JOptionPane.showMessageDialog( this, respuesta, "Sacar primero lista", JOptionPane.INFORMATION_MESSAGE );
-	}
-
->>>>>>> e3d5af987b6f1f09fb79db24cdfb77e27a5f5d36
-	// -----------------------------------------------------------------
-	// Main
-	// -----------------------------------------------------------------
-
 	/**
 	 * Ejecuta la aplicación.
 	 * @param pArgs Parámetros de la ejecución. No son necesarios.
 	 */
-	public static void main( String[] pArgs )
+	public static void main( String[] pArgs)
 	{
 		try
 		{

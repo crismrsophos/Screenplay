@@ -26,4 +26,5 @@ public class GuruLoginStepDefinitions {
 	public void validoQueElMensajeDeInicioSea(String message) {
 		home.validateText(message);
 	}
+
 }

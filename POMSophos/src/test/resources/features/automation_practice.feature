@@ -1,16 +1,11 @@
-#Author: santiago.moreno@sophossolutions.com
+#Author: juan.ayalag@sophossolutions.com, alejandro.araque@sophossolutions.com, santiago.moreno@sophossolutions.com
 Feature: Automation practice
-  Yo como estudiante
-  Necesito crear una automatización
-  Para probar el cálculo del valor total cuando a voy a comprar una t-shirt en la automation practice
+  Yo como aprendiz de automatización
+  Necesito realizar una automatización en un sitio de prueba
+  Para validar el cálculo del valor total al comprar una t-shirt
 
-  Scenario: Comprar camisetas en Automation Practice
-    Given Deseo ir a la página "https://automationpractice.com/index.php"
-    When Ingreso a la sección de T-Shirts
-    And Selecciono la camiseta azul
-    And Ingreso cantidad y talla "5" y "S"
-    And Agrego la camiseta al carro de compras
-    And Procedo a hacer checkout
-    And Inicio sesion con "jamesr10@gmail.com" y "jamesr10123"
-    And Acepto los términos de servicio
-    Then Valido que el cálculo del valor unitario multiplicado por la cantidad, más los impuestos, más el envío, sea igual al valor total mostrado por la página
+  Scenario: Compra con un usuario previamente creado en una pagina de practica
+    Given Deseo ir a la página "http://automationpractice.com/index.php"
+    When Compro camisa de mujer con las siguientes caracteristicas "Blue", "8", "L", "juan.ayalag@sophossolutions.com", "1234sophos"
+    Then Valido que el precio final de la compra es igual a "$134.08"
+
