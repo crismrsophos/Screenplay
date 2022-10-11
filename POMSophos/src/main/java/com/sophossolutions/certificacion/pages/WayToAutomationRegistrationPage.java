@@ -3,10 +3,6 @@ package com.sophossolutions.certificacion.pages;
 import com.sophossolutions.certificacion.actions.Action;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 import java.util.Set;
 
 public class WayToAutomationRegistrationPage extends PageObject {
