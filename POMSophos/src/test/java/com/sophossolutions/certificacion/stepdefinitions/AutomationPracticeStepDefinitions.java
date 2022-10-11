@@ -4,7 +4,7 @@ import com.sophossolutions.certificacion.pages.AutomationBuyProceedPage;
 import com.sophossolutions.certificacion.pages.AutomationHomePage;
 import com.sophossolutions.certificacion.pages.AutomationSelectPage;
 import com.sophossolutions.certificacion.pages.AutomationTshirtPage;
-
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -27,7 +27,7 @@ public class AutomationPracticeStepDefinitions {
 
 	@Then("Valido que el precio final de la compra es igual a {string}")
 	public void validoLaCompraCuandoElPrecioFinalEsIgualAlPrecioEstablecido(String total) {
-		shipping.comparation(total);
+		shipping.comparison(total);
 	}
 
 }

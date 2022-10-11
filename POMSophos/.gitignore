@@ -5,6 +5,7 @@
 .idea
 *.iml
 *.class
+../.idea
 
 # Ignore build output directory
 build/
