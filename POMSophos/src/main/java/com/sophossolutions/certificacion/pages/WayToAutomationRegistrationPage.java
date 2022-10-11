@@ -35,7 +35,7 @@ public class WayToAutomationRegistrationPage extends PageObject {
 		Action.clicTo(getDriver(), btnSubmit);
 	}
 
-	public void resultValidation(String message){
+	public void submitValidation(String message){
 		Action.validateTextOfField(getDriver(), validationMessage, message);
 	}
 
