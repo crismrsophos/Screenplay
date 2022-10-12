@@ -1,6 +1,9 @@
 package com.sophossolutions.certificacion.actions;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Set;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -62,4 +65,10 @@ public class Action {
 		return Float.parseFloat(driver.findElement(target).getText());
 	}
 
+	public static void moveToNewWindow(WebDriver driver) {
+		String currentWindow = driver.getWindowHandle();
+		ArrayList<String> allWindows = new ArrayList<>(driver.getWindowHandles());
+		allWindows.remove(currentWindow);
+		driver.switchTo().window(allWindows.get(0));
+	}
 }
