@@ -1,0 +1,17 @@
+#Author: juan.ayalag@sophossolutions.com
+Feature: Demo POM
+  Yo como alumno de semillero de automatización
+  Necesito crear un registro de usuario en la página Way2
+  Para la tarea numero 3
+
+
+  Scenario: Registro dummy usuario
+    Given Deseo ir a la página "https://www.way2automation.com/demo.html"
+    When Registro usuario con los siguientes datos
+      | <name> | <phone> | <email> | <country> | <city> | <user> | <password> |
+    Then Valido que el precio final de la compra es igual a <validation>
+
+    Example:
+      | name | phone      | email          | country  | city    | user   | password | validation |
+      | Jean | 3248901234 | jean@false.com | colombia | pereira | jean10 | 1234jean | "This is just a dummy form, you just clicked SUBMIT BUTTON"    |
+
