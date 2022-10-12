@@ -1,6 +1,8 @@
 package com.sophossolutions.certificacion.actions;
 
 import java.time.Duration;
+import java.util.Set;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -60,6 +62,15 @@ public class Action {
 
 	public static float getNumberOfField(WebDriver driver, By target) {
 		return Float.parseFloat(driver.findElement(target).getText());
+	}
+
+	public static void getWindows(WebDriver driver, String parentWindow){
+		Set<String> handles = driver.getWindowHandles();
+		for (String windowHandle : handles) {
+			if (!windowHandle.equals(parentWindow)) {
+				driver.switchTo().window(windowHandle);
+			}
+		}
 	}
 
 }
