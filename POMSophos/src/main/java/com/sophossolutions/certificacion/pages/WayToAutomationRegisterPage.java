@@ -1,7 +1,7 @@
 package com.sophossolutions.certificacion.pages;
 
 import com.sophossolutions.certificacion.actions.Action;
-import com.sophossolutions.certificacion.models.newUserWay2Automation;
+import com.sophossolutions.certificacion.models.NewUserWay2Automation;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 
@@ -21,7 +21,7 @@ public class WayToAutomationRegisterPage extends PageObject {
 
     By alertMessage = By.id("alert");
 
-    public void setInformationAndSubmit(newUserWay2Automation newUserInfo) {
+    public void setInformationAndSubmit(NewUserWay2Automation newUserInfo) {
         Action.setText(getDriver(), nameField, newUserInfo.getName());
         Action.setText(getDriver(), phoneField, newUserInfo.getPhone());
         Action.setText(getDriver(), emailField, newUserInfo.getEmail());

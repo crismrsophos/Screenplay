@@ -1,6 +1,6 @@
 package com.sophossolutions.certificacion.models;
 
-public class newUserWay2Automation {
+public class NewUserWay2Automation {
 
     private  String section;
     private String name;
@@ -11,7 +11,7 @@ public class newUserWay2Automation {
     private String username;
     private String password;
 
-    public newUserWay2Automation(String _section, String _name, String _phone, String _email, String _country, String _city, String _username, String _password) {
+    public NewUserWay2Automation(String _section, String _name, String _phone, String _email, String _country, String _city, String _username, String _password) {
         super();
         section = _section;
         name = _name;

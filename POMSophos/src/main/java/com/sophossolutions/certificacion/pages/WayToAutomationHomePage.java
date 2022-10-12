@@ -1,7 +1,6 @@
 package com.sophossolutions.certificacion.pages;
 
 import com.sophossolutions.certificacion.actions.Action;
-import com.sophossolutions.certificacion.models.newUserWay2Automation;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 

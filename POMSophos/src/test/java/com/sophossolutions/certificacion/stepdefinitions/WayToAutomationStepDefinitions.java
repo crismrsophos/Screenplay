@@ -1,13 +1,8 @@
 package com.sophossolutions.certificacion.stepdefinitions;
 
-import java.util.List;
-
-import com.sophossolutions.certificacion.models.TShirt;
-import com.sophossolutions.certificacion.models.newUserWay2Automation;
+import com.sophossolutions.certificacion.models.NewUserWay2Automation;
 import com.sophossolutions.certificacion.pages.*;
 
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -18,7 +13,7 @@ public class WayToAutomationStepDefinitions {
 
 
     @When("Ubicarme en la sección de registro e ingresar")
-    public void ubicarmeEnLaSecciónDeRegistroEIngresar(newUserWay2Automation data) {
+    public void ubicarmeEnLaSecciónDeRegistroEIngresar(NewUserWay2Automation data) {
 
         homePage.goToSection(data.getSection());
         registerPage.setInformationAndSubmit(data);
