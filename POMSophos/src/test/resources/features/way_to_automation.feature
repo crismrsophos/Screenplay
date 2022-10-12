@@ -2,9 +2,14 @@
 Feature: Way to automation
   Yo como aprendiz de automatización
   Necesito realizar un registro de un nuevo usuario en la página way2automation.com
-  Para realizar el registro de un usuario en el sitio
+  Para realizar de forma satisfactoria el registro de un usuario en el sitio
 
-  Scenario: Compra con un usuario previamente creado en una pagina de practica
-    Given Deseo ir a la página "http://automationpractice.com/index.php"
-    When Compro camisa de mujer con las siguientes caracteristicas "Blue", "8", "L", "juan.ayalag@sophossolutions.com", "1234sophos"
-    Then Valido que el precio final de la compra es igual a "$134.08"
+  Scenario Outline: Registrarse en la pagina Way 2 automation
+    Given Deseo ir a la página "https://www.way2automation.com/demo.html"
+    When Registro al usuario en Way2 con los siguientes datos
+    | <Name> | <Phone> | <Email> | <Country> | <City> | <Username> | <Password> |
+    Then Valido que en way2 aparezca el mensaje de validacion igual a <Message>
+
+    Examples:
+      |  Name       |  Phone       |  Email                 |  Country   |  City      |  Username        |  Password   |  Message                                                      |
+      |  Alejandro  |  3042467297  |  alaraquema@gmail.com  |  Colombia  |  Medellin  |  alaraqueMaster  |  messi1234  |  "This is just a dummy form, you just clicked SUBMIT BUTTON"  |
