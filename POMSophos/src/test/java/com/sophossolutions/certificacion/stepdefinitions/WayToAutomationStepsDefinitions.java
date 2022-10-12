@@ -3,7 +3,6 @@ package com.sophossolutions.certificacion.stepdefinitions;
 import java.util.List;
 
 import com.sophossolutions.certificacion.models.Registration;
-import com.sophossolutions.certificacion.models.TShirt;
 import com.sophossolutions.certificacion.pages.*;
 
 import io.cucumber.datatable.DataTable;
@@ -19,12 +18,9 @@ public class WayToAutomationStepsDefinitions {
     @When("Registro usuario con los siguientes datos")
     public void registroUsuarioConLosSiguientesDatos(Registration datatable) {
         home.clickHome();
-        registrator.registrateUser(datatable.getCName(), datatable.getPhone(), datatable.getEmail(),
+        registrator.registrateUser(datatable.getName(), datatable.getPhone(), datatable.getEmail(),
                 datatable.getCountry(), datatable.getCity(), datatable.getUser(), datatable.getPassword());
     }
-    @Then("Valido que el precio final de la compra es igual a <validation>")
-    public void validoQueElPrecioFinalDeLaCompraEsIgualAValidation() {
 
-    }
 
 }

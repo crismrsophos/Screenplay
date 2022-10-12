@@ -22,7 +22,7 @@ public class Registration {
         this.password = password;
     }
 
-    public String getCName() {
+    public String getName() {
         return name;
     }
 
