@@ -64,10 +64,10 @@ public class Action {
 		return Float.parseFloat(driver.findElement(target).getText());
 	}
 
-	public static void getWindows(WebDriver driver, String parentWindow){
-		Set<String> handles = driver.getWindowHandles();
+	public static void getWindows(WebDriver driver){
+		Set <String> handles = driver.getWindowHandles();
 		for (String windowHandle : handles) {
-			if (!windowHandle.equals(parentWindow)) {
+			if (!windowHandle.equals(driver.getWindowHandle())) {
 				driver.switchTo().window(windowHandle);
 			}
 		}
