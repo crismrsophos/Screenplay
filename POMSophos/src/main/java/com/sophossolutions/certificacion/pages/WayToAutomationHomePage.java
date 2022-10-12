@@ -7,10 +7,12 @@ import org.openqa.selenium.By;
 
 public class WayToAutomationHomePage extends PageObject {
 
-    By registrationSection = By.xpath("//a[text()='Registration']"); //PDTE mejorar
+    String selectedSection = "//a[text()='%s']";
+    By section;
 
-    public void goToSection() {
-        Action.clicTo(getDriver(), registrationSection);
+    public void goToSection(String _registerSection) {
+        section = By.xpath(String.format(selectedSection, _registerSection));
+        Action.clicTo(getDriver(), section);
         Action.moveToNewWindow(getDriver());
     }
 

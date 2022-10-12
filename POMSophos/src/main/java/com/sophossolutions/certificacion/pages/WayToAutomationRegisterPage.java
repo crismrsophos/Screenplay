@@ -11,7 +11,8 @@ public class WayToAutomationRegisterPage extends PageObject {
     By phoneField = By.name("phone");
     By emailField = By.name("email");
     By countryField = By.name("country");
-    By country = By.xpath("//*[@value='Colombia']"); //PDTE mejorar
+    String selectedCountry ="//*[@value='%s']";
+    By country;
     By cityField = By.name("city");
     By userNameField = By.xpath("//*[@id='load_box']//*[@name='username']");
     By passwordField = By.xpath("//*[@id='load_box']//*[@name='password']");
@@ -25,6 +26,7 @@ public class WayToAutomationRegisterPage extends PageObject {
         Action.setText(getDriver(), phoneField, newUserInfo.getPhone());
         Action.setText(getDriver(), emailField, newUserInfo.getEmail());
         Action.clicTo(getDriver(), countryField);
+        country = By.xpath(String.format(selectedCountry, newUserInfo.getCountry()));
         Action.clicTo(getDriver(), country);
         Action.setText(getDriver(), cityField, newUserInfo.getCity());
         Action.setText(getDriver(), userNameField, newUserInfo.getUsername());

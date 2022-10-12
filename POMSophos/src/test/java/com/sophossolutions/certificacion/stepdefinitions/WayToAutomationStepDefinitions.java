@@ -20,7 +20,7 @@ public class WayToAutomationStepDefinitions {
     @When("Ubicarme en la sección de registro e ingresar")
     public void ubicarmeEnLaSecciónDeRegistroEIngresar(newUserWay2Automation data) {
 
-        homePage.goToSection();
+        homePage.goToSection(data.getSection());
         registerPage.setInformationAndSubmit(data);
 
 
