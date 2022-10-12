@@ -23,14 +23,7 @@ public class WayToAutomationRegistrationPage extends PageObject {
 
 	public void fillForm(String _name, String _phone, String _email,
 									String _country, String _city, String _username, String _password){
-
-		Set<String> handles = getDriver().getWindowHandles(); //gets all the windows (this code assumes there are only two in total
-		for (String windowHandle : handles) {
-			if (!windowHandle.equals(parentWindow)) {
-				getDriver().switchTo().window(windowHandle); //switches to the popup window
-			}
-		}
-
+		Action.getWindows(getDriver(), parentWindow);
 		Action.setText(getDriver(), name, _name);
 		Action.setText(getDriver(), phone, _phone);
 		Action.setText(getDriver(), email, _email);
