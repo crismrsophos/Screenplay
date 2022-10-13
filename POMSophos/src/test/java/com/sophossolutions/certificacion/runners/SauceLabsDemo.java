@@ -9,12 +9,12 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @CucumberOptions(
         glue = {"com.sophossolutions.certificacion.stepdefinitions",
                 "com.sophossolutions.certificacion.hooks"},
-        features = "src/test/resources/features/way_to_automation.feature",
+        features = "src/test/resources/features/sauce_labs_demo.feature",
 
         snippets = SnippetType.CAMELCASE,
         monochrome = true,
         dryRun = false
 )
 
-public class WayToAutomation {
+public class SauceLabsDemo {
 }
