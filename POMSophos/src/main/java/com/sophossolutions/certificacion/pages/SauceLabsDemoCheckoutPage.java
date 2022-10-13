@@ -13,8 +13,7 @@ public class SauceLabsDemoCheckoutPage extends PageObject {
 	By btnContinueStepOne = By.id("continue");
 	By btnFinish = By.id("finish");
 	By validationText = By.xpath("(//*[@id='checkout_complete_container'])/div");
-
-	String comparativo, valorTexto;
+	String cssValueComparison = "div.summary_subtotal_label";
 	Float valor;
 	public void continueStepOne(String _firstName, String _lastName, String _postalCode){
 		Action.setText(getDriver(), firstName, _firstName);
@@ -24,10 +23,7 @@ public class SauceLabsDemoCheckoutPage extends PageObject {
 	}
 
 	public void continueStepTwo(){
-		WebElement totalAccount = getDriver().findElement(By.cssSelector("div.summary_subtotal_label"));
-		comparativo = totalAccount.getText();
-		valorTexto = comparativo.replace("Item total: $", "");
-		valor = Float.parseFloat(valorTexto);
+		valor = Float.parseFloat(getDriver().findElement(By.cssSelector(cssValueComparison)).getText().replace("Item total: $", ""));
 		System.out.println(valor);
 		Action.clicTo(getDriver(), btnFinish);
 	}
