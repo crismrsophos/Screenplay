@@ -6,7 +6,7 @@ import com.sophossolutions.certificacion.actions.Action;
 
 import net.serenitybdd.core.pages.PageObject;
 
-public class AutomationHomePage extends PageObject {
+public class AutomationIndexPage extends PageObject {
 
 	By btnTshirt = By.xpath("//*[@id='block_top_menu']/ul/li/a[text() = 'T-shirts']");
 

@@ -4,7 +4,7 @@ import com.sophossolutions.certificacion.actions.Action;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 
-public class AutomationSelectPage extends PageObject {
+public class AutomationSelectionPage extends PageObject {
 
 	By btnQuantity = By.xpath("//*[@id='quantity_wanted_p']/a[2]/span");
 	By quantityField = By.id("quantity_wanted");

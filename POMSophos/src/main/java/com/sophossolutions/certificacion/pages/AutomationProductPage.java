@@ -4,7 +4,7 @@ import com.sophossolutions.certificacion.actions.Action;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 
-public class AutomationTshirtPage extends PageObject {
+public class AutomationProductPage extends PageObject {
 
 	By tShirtColorOrange = By.xpath("//*[@id='color_1']");
 	By tShirtColorBlue = By.xpath("//*[@id='color_2']");

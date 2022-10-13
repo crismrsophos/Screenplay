@@ -5,13 +5,13 @@ Feature: Demo POM
   Para la tarea numero 3
 
 
-  Scenario: Registro dummy usuario
-    Given Deseo ir a la página "https://www.way2automation.com/demo.html"
+  Scenario Outline: Registro dummy usuario
+    Given Deseo ir a la página "<page>"
     When Registro usuario con los siguientes datos
       | <name> | <phone> | <email> | <country> | <city> | <user> | <password> |
     Then Valido que registre el usuario "This is just a dummy form, you just clicked SUBMIT BUTTON"
 
-    Example:
-      | name | phone      | email          | country  | city    | user   | password |
-      | Jean | 3248901234 | jean@false.com | colombia | pereira | jean10 | 1234jean |
+    Examples:
+      | page                                     | name | phone      | email          | country  | city    | user   | password |
+      | https://www.way2automation.com/demo.html | Jean | 3248901234 | jean@false.com | colombia | pereira | jean10 | 1234jean |
 

@@ -1,10 +1,11 @@
 package com.sophossolutions.certificacion.pages;
 
 import com.sophossolutions.certificacion.actions.Action;
+import com.sophossolutions.certificacion.utils.GetTarget;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 
-public class AutomationBuyProceedPage extends PageObject {
+public class AutomationShoppingPage extends PageObject {
 
 	By btnCheckout = By.xpath("//*[text()='Proceed to checkout']");
 	By email = By.id("email");
@@ -19,10 +20,10 @@ public class AutomationBuyProceedPage extends PageObject {
 		Action.clicTo(getDriver(), btnCheckout);
 	}
 
-	public void signAutomation(String email, String password) {
-		Action.setText(getDriver(), this.email, email);
-		Action.setText(getDriver(), this.password, password);
-		Action.clicTo(getDriver(), btnSign);
+	public void login(String user, String passw, String app) {
+		Action.setText(getDriver(), GetTarget.ofApp(app).get(0), user);
+		Action.setText(getDriver(), GetTarget.ofApp(app).get(1), passw);
+		Action.clicTo(getDriver(), GetTarget.ofApp(app).get(2));
 	}
 
 	public void clicCheckoutA() {
@@ -38,9 +39,9 @@ public class AutomationBuyProceedPage extends PageObject {
 		Action.validateTextOfField(getDriver(), totalPrice, total);
 	}
 
-	public void shippingTShirt(String email, String password) {
+	public void shippingTShirt(String email, String password, String app) {
 		clicCheckout();
-		signAutomation(email, password);
+		login(email, password, app);
 		clicCheckoutA();
 		clicAgree();
 	}

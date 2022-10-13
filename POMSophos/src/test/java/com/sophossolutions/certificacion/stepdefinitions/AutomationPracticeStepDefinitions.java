@@ -1,33 +1,36 @@
 package com.sophossolutions.certificacion.stepdefinitions;
 
-import com.sophossolutions.certificacion.pages.AutomationBuyProceedPage;
-import com.sophossolutions.certificacion.pages.AutomationHomePage;
-import com.sophossolutions.certificacion.pages.AutomationSelectPage;
-import com.sophossolutions.certificacion.pages.AutomationTshirtPage;
-import io.cucumber.java.en.Given;
+import com.sophossolutions.certificacion.models.TShirt;
+import com.sophossolutions.certificacion.pages.AutomationIndexPage;
+import com.sophossolutions.certificacion.pages.AutomationProductPage;
+import com.sophossolutions.certificacion.pages.AutomationSelectionPage;
+import com.sophossolutions.certificacion.pages.AutomationShoppingPage;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class AutomationPracticeStepDefinitions {
 
-	AutomationHomePage home;
-	AutomationTshirtPage tshirt;
-	AutomationSelectPage select;
-	AutomationBuyProceedPage shipping;
+    AutomationIndexPage indexPage;
+    AutomationProductPage productPage;
+    AutomationSelectionPage selectionPage;
+    AutomationShoppingPage shoppingPage;
 
-	@When("Compro camisa de mujer con las siguientes caracteristicas {string}, {string}, {string},"
-			+ " {string}, {string}")
-	public void comproCamisaDeMujerConLasSiguientesCaracteristicas(String color, String quantity, String size,
-			String email, String password) {
-		home.clicTshirt();
-		tshirt.clicColor(color);
-		select.theTShirt(quantity, size);
-		shipping.shippingTShirt(email, password);
-	}
+    @When("Escojo el producto con las siguientes caracteristicas")
+    public void diligencio_los_campos_con_los_datos(TShirt data) {
+        indexPage.clicTshirt();
+        productPage.clicColor(data.getDescription());
+        selectionPage.theTShirt(data.getQuantity(), data.getSize());
 
-	@Then("Valido que el precio final de la compra es igual a {string}")
-	public void validoLaCompraCuandoElPrecioFinalEsIgualAlPrecioEstablecido(String total) {
-		shipping.comparison(total);
-	}
+    }
+    @When("Inicio sesión con los datos del usuario {string} y {string} en {string}")
+    public void inicioSesionConLosDatosY(String user, String password, String app) {
+        shoppingPage.shippingTShirt(user, password, app);
+    }
+    @Then("Se muestra la respuesta {string}")
+    public void se_muestra_el_mensaje(String total) {
+        shoppingPage.comparison(total);
+
+    }
 
 }
