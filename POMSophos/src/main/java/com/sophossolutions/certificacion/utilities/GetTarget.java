@@ -15,6 +15,8 @@ public class GetTarget {
                 return MappingLogin.automationFields();
             case "Guru":
                 return MappingLogin.guruFields();
+            case "SauceDemo":
+                return MappingLogin.sauceDemoFields();
             default:
                 break;
         }

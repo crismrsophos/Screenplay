@@ -6,8 +6,8 @@ Feature: Demo POM
 
   Background: Iniciar sesión en Guru
     Given Deseo ir a la página "https://demo.guru99.com/V4/"
-    And Inicio sesion con los datos "mgr123" y "mgr!23"
-    And Valido que el mensaje de inicio sea "Manger Id : mgr123"
+    When Inicio sesión con los datos "mgr123" y "mgr!23" en "Guru"
+    Then Valido que el mensaje de inicio sea "Manger Id : mgr123"
 
   Scenario: Agregar cliente en Guru
     Given Deseo ir a la pagina "https://demo.guru99.com/V4/manager/addcustomerpage.php"

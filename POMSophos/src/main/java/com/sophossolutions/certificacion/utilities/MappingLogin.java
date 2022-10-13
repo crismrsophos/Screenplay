@@ -22,6 +22,13 @@ public class MappingLogin {
         return addFields(emailAddress, password, btnSignIn2);
     }
 
+    public static List<By> sauceDemoFields(){
+        By userName = By.id("user-name");
+        By password = By.id("password");
+        By btnLogin = By.id("login-button");
+        return addFields(userName, password, btnLogin);
+    }
+
     public static  List<By> addFields(By... by){
         List <By> fields = new ArrayList<By>();
         fields.add(by[0]);
