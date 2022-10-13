@@ -7,12 +7,12 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-		glue = "com.sophossolutions.certificacion.stepdefinitions", 
+		glue = "com.sophossolutions.certificacion.stepdefinitions",
 		features = "src/test/resources/features/automation_practice.feature",
 
-		snippets = SnippetType.CAMELCASE, 
-        monochrome = true, 
-        dryRun = false 
+		snippets = SnippetType.CAMELCASE,
+        monochrome = true,
+        dryRun = false
 		)
 
 public class AutomationPractice {

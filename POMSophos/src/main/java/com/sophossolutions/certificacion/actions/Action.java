@@ -3,6 +3,7 @@ package com.sophossolutions.certificacion.actions;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+
 import java.util.Set;
 
 import org.junit.Assert;
@@ -99,6 +100,40 @@ public class Action {
 		for(int j = btnToClick.size() -1; j >= 0; j--){
 			clicTo(driver, btnToClick.get(j));
 		}
+
+	}
+
+	public static void moveToNewWindow(WebDriver driver) {
+		String currentWindow = driver.getWindowHandle();
+		ArrayList<String> allWindows = new ArrayList<>(driver.getWindowHandles());
+		allWindows.remove(currentWindow);
+		driver.switchTo().window(allWindows.get(0));
+	}
+
+	public static void selectProductsWithValueUnderOf (WebDriver driver, By target, String strBtnAddToCart, String maxValue) {
+
+		List<WebElement> productList = new ArrayList<>();
+		List<WebElement> productListUnderValueOF = new ArrayList<>();
+		List<Integer> xpathProductPosition = new ArrayList<>();
+
+		productList = driver.findElements(target);
+
+		for (int i = 0; i < productList.size(); i ++) {
+			if (Float.parseFloat(productList.get(i).getText().replace("$", "").replace("ADD TO CART", "")) < Float.parseFloat(maxValue)) {
+				productListUnderValueOF.add(productList.get(i));
+				xpathProductPosition.add(i+1);
+			}
+		}
+
+		for (int i = 0; i < productListUnderValueOF.size(); i ++) {
+			By btnAddToCart;
+			Integer newProductPosition;
+			newProductPosition = xpathProductPosition.get(i) - i;
+			btnAddToCart = By.xpath(String.format(strBtnAddToCart, newProductPosition.toString()));
+			clicTo(driver, btnAddToCart);
+
+		}
+
 
 	}
 
