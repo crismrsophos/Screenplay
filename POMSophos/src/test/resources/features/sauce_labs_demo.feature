@@ -13,5 +13,5 @@ Feature: Automatizacion compra SauceDemo
 
     Examples:
       | Url                        | Username      | Password     | Page      | MaxValue | FirstName | LastName     | PostalCode | Message                                                                                 |
-      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 20       | Alejandro | Araque Marín | 05515      | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
-      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 20       | Akira     | Toriyama     | 1111       | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
+      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 15       | Alejandro | Araque Marín | 05515      | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
+      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 40       | Akira     | Toriyama     | 1111       | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
