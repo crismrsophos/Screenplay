@@ -1,10 +1,8 @@
 package com.sophossolutions.certificacion.stepdefinitions;
 
-import com.sophossolutions.certificacion.pages.AutomationBuyProceedPage;
-import com.sophossolutions.certificacion.pages.AutomationHomePage;
-import com.sophossolutions.certificacion.pages.AutomationSelectPage;
-import com.sophossolutions.certificacion.pages.AutomationTshirtPage;
-import io.cucumber.java.en.Given;
+import com.sophossolutions.certificacion.models.TShirt;
+import com.sophossolutions.certificacion.pages.*;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -29,5 +27,4 @@ public class AutomationPracticeStepDefinitions {
     public void validoLaCompraCuandoElPrecioFinalEsIgualAlPrecioEstablecido(String total) {
         shipping.comparison(total);
     }
-
 }

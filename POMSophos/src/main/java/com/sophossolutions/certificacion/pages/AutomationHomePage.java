@@ -8,10 +8,10 @@ import net.serenitybdd.core.pages.PageObject;
 
 public class AutomationHomePage extends PageObject {
 
-	By btnTshirt = By.xpath("//*[@id='block_top_menu']/ul/li/a[text() = 'T-shirts']");
+    By btnTshirt = By.xpath("//*[@id='block_top_menu']/ul/li/a[text() = 'T-shirts']");
 
-	public void clicTshirt() {
-		Action.clicTo(getDriver(), btnTshirt);
-	}
+    public void clicTshirt() {
+        Action.clicTo(getDriver(), btnTshirt);
+    }
 
 }

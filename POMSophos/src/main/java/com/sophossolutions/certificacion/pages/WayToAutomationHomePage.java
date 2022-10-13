@@ -6,12 +6,11 @@ import org.openqa.selenium.By;
 
 public class WayToAutomationHomePage extends PageObject {
 
+    By registrationSection;
+    String strRegistrationSection = "//a[text()='%s']";
 
-	By registrationSection = By.xpath("//a[text()='Registration']");
-
-	public void clicRegistrationImage() {
-		Action.clicTo(getDriver(), registrationSection);
-	}
-
-
+    public void clicRegistration(String section) {
+        registrationSection = By.xpath(String.format(strRegistrationSection, section));
+        Action.clicTo(getDriver(), registrationSection);
+    }
 }

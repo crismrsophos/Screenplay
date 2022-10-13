@@ -15,7 +15,7 @@ public class WayToAutomationStepDefinitions {
 
 	@When("Registro al usuario en Way2 con los siguientes datos")
 	public void registroAlUsuarioEnWay2ConLosSiguientesDatos(Usuario userData) {
-		way2Home.clicRegistrationImage();
+		way2Home.clicRegistration(userData.getSection());
 		way2Registration.fillForm(userData.getName(), userData.getPhone(), userData.getEmail(),
 				userData.getCountry(), userData.getCity(), userData.getUsername(), userData.getPassword());
 	}
