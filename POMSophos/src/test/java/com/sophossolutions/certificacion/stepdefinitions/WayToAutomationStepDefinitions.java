@@ -1,10 +1,10 @@
 package com.sophossolutions.certificacion.stepdefinitions;
 
+
 import com.sophossolutions.certificacion.models.Usuario;
-import com.sophossolutions.certificacion.pages.GuruNewCustomerPage;
-import com.sophossolutions.certificacion.pages.WayToAutomationHomePage;
-import com.sophossolutions.certificacion.pages.WayToAutomationRegistrationPage;
-import io.cucumber.java.en.Given;
+
+import com.sophossolutions.certificacion.pages.*;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 

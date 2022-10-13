@@ -8,15 +8,15 @@ import java.util.Set;
 public class WayToAutomationRegistrationPage extends PageObject {
 
 	By name = By.name("name");
-	By phone = By.xpath("//*[@name='phone']");
-	By email = By.xpath("//*[@name='email']");
-	By btnCountryList = By.xpath("//*[@name='country']");
+	By phone = By.name("phone");
+	By email = By.name("email");
+	By btnCountryList = By.name("country");
 	String countrySelector = "//*[@value='%s']";
 	By btnCountryValue;
-	By city = By.xpath("//*[@name='city']");
-	By userName = By.xpath("//*[@id='load_form']/fieldset[6]/input");
-	By password = By.xpath("//*[@id='load_form']/fieldset[7]/input");
-	By btnSubmit = By.xpath("//*[@class='fancybox-inner']/div/form/div[1]/div[2]/input");
+	By city = By.name("city");
+	By userName =  By.xpath("//*[@id='load_box']//*[@name='username']");
+	By password = By.xpath("//*[@id='load_box']//*[@name='password']");
+	By btnSubmit = By.xpath("//*[@id='load_box']//*[@value='Submit']");
 	By validationMessage = By.id("alert");
 	final long FOUR = 4L;
 
