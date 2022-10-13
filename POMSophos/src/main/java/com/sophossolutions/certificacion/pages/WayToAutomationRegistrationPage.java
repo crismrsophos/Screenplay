@@ -19,11 +19,10 @@ public class WayToAutomationRegistrationPage extends PageObject {
 	By btnSubmit = By.xpath("//*[@class='fancybox-inner']/div/form/div[1]/div[2]/input");
 	By validationMessage = By.id("alert");
 	final long FOUR = 4L;
-	String parentWindow = getDriver().getWindowHandle();
 
 	public void fillForm(String _name, String _phone, String _email,
 									String _country, String _city, String _username, String _password){
-		Action.getWindows(getDriver(), parentWindow);
+		Action.getWindows(getDriver());
 		Action.setText(getDriver(), name, _name);
 		Action.setText(getDriver(), phone, _phone);
 		Action.setText(getDriver(), email, _email);

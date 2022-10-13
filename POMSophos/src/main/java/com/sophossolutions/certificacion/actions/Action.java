@@ -1,11 +1,14 @@
 package com.sophossolutions.certificacion.actions;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -64,13 +67,39 @@ public class Action {
 		return Float.parseFloat(driver.findElement(target).getText());
 	}
 
-	public static void getWindows(WebDriver driver, String parentWindow){
-		Set<String> handles = driver.getWindowHandles();
+	public static void getWindows(WebDriver driver){
+		Set <String> handles = driver.getWindowHandles();
 		for (String windowHandle : handles) {
-			if (!windowHandle.equals(parentWindow)) {
+			if (!windowHandle.equals(driver.getWindowHandle())) {
 				driver.switchTo().window(windowHandle);
 			}
 		}
+	}
+
+	public static void locateAndAdd(WebDriver driver, String lookedClass, String addedClass){
+		List <WebElement> botones = driver.findElements(By.cssSelector(lookedClass));
+		List <String> precios = new ArrayList<String>();
+		List <Float> valores = new ArrayList<Float>();
+		List <By> btnToClick = new ArrayList<By>();
+
+		for (WebElement boton : botones){
+			precios.add(boton.getText());
+		}
+
+		int pivote = 1;
+
+		for(int i = 0; i < precios.size(); i++){
+			valores.add(Float.parseFloat(precios.get(i).replace("$", "")));
+			if(valores.get(i) < 20){
+				btnToClick.add(By.xpath(addedClass + "["+pivote+"]"));
+			}
+			pivote += 1;
+		}
+
+		for(int j = btnToClick.size() -1; j >= 0; j--){
+			clicTo(driver, btnToClick.get(j));
+		}
+
 	}
 
 }

@@ -17,9 +17,9 @@ public class GuruLoginStepDefinitions {
 		login.goToUrl(url);
 	}
 
-	@When("Inicio sesion con los datos {string} y {string}")
-	public void inicioSesionConLosDatosY(String user, String password) {
-		login.loginGuru(user, password);
+	@When("Inicio sesión con los datos {string} y {string} en {string}")
+	public void inicioSesionConLosDatosY(String user, String password, String app) {
+		login.login(user, password, app);
 	}
 
 	@Then("Valido que el mensaje de inicio sea {string}")
