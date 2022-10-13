@@ -2,6 +2,7 @@ package com.sophossolutions.certificacion.models;
 
 public class Usuario {
 
+	private  String section;
 	private String name;
 	private String phone;
 	private String email;
@@ -10,8 +11,9 @@ public class Usuario {
 	private String username;
 	private String password;
 
-	public Usuario(String name, String phone, String email, String country, String city, String username, String password) {
+	public Usuario(String section, String name, String phone, String email, String country, String city, String username, String password) {
 		super();
+		this.section = section;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;
@@ -19,6 +21,10 @@ public class Usuario {
 		this.city = city;
 		this.username = username;
 		this.password = password;
+	}
+
+	public String getSection() {
+		return section;
 	}
 
 	public String getName() {

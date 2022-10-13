@@ -9,11 +9,10 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @CucumberOptions(
 		glue = "com.sophossolutions.certificacion.stepdefinitions",
 		features = "src/test/resources/features/automation_practice.feature",
-
 		snippets = SnippetType.CAMELCASE,
-        monochrome = true,
-        dryRun = false
-		)
+		monochrome = true,
+		dryRun = false
+)
 
 public class AutomationPractice {
 

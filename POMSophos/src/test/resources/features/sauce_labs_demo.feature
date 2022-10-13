@@ -1,4 +1,4 @@
-#Author: alejandro.araque@sophossolutions.com y santiago.moreno@sophossolutions.com
+#Author: alejandro.araque@sophossolutions.com, santiago.moreno@sophossolutions.com y juan.ayalag@sophossolutions.com
 Feature: Automatizacion compra SauceDemo
   Yo como aprendiz de automatizacion
   Necesito comprar todos los productos con precio menor a 20 doláres
@@ -13,5 +13,6 @@ Feature: Automatizacion compra SauceDemo
 
     Examples:
       | Url                        | Username      | Password     | Page      | MaxValue | FirstName | LastName     | PostalCode | Message                                                                                 |
-      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 15       | Alejandro | Araque Marín | 05515      | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
-      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 40       | Akira     | Toriyama     | 1111       | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
+      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 20       | Alejandro | Araque Marín | 05515      | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
+      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 20       | Akira     | Toriyama     | 1111       | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
+      | https://www.saucedemo.com/ | standard_user | secret_sauce | SauceDemo | 20       | Cr7       | Dos Santo    | 7689       | Your order has been dispatched, and will arrive just as fast as the pony can get there! |
