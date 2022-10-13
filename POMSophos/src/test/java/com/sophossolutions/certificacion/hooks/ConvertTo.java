@@ -16,7 +16,7 @@ public class ConvertTo {
 
 	@DataTableType
 	public Cliente toCliente(List<String> list) {
-		return new Cliente(list.get(0), list.get(1), list.get(2), list.get(3), list.get(4));
+		return new Cliente(list.get(0), list.get(1), list.get(2));
 	}
 
 }

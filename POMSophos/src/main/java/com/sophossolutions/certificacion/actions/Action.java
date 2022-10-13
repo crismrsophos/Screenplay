@@ -76,8 +76,8 @@ public class Action {
 		}
 	}
 
-	public static void recorrer(WebDriver driver, String claseABuscar){
-		List <WebElement> botones = driver.findElements(By.cssSelector(claseABuscar));
+	public static void locateAndAdd(WebDriver driver, String lookedClass, String addedClass){
+		List <WebElement> botones = driver.findElements(By.cssSelector(lookedClass));
 		List <String> precios = new ArrayList<String>();
 		List <Float> valores = new ArrayList<Float>();
 		List <By> btnToClick = new ArrayList<By>();
@@ -91,7 +91,7 @@ public class Action {
 		for(int i = 0; i < precios.size(); i++){
 			valores.add(Float.parseFloat(precios.get(i).replace("$", "")));
 			if(valores.get(i) < 20){
-				btnToClick.add(By.xpath("(//*[@class='btn btn_primary btn_small btn_inventory'])["+pivote+"]"));
+				btnToClick.add(By.xpath(addedClass + "["+pivote+"]"));
 			}
 			pivote += 1;
 		}
