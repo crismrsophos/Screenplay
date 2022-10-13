@@ -15,8 +15,7 @@ public class AutomationPracticeStepDefinitions {
 	AutomationSelectPage select;
 	AutomationBuyProceedPage shipping;
 
-	@When("Compro camisa de mujer con las siguientes caracteristicas {string}, {string}, {string},"
-			+ " {string}, {string}")
+	@When("Compro camisa de mujer con las siguientes caracteristicas {string}, {string}, {string}, {string} y {string}")
 	public void comproCamisaDeMujerConLasSiguientesCaracteristicas(String color, String quantity, String size,
 			String email, String password) {
 		home.clicTshirt();
