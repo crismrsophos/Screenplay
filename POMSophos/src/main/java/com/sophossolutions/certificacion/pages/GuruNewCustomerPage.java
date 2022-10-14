@@ -34,9 +34,7 @@ public class GuruNewCustomerPage extends PageObject{
 	public void newCustomer(String _customerName, String _dateOfBirth, String _address,
 							String _city, String _state, String _pin, String _mobileNumber, String _eMail,
 							String _password) {
-		
-		closePublicity();
-		
+
 		Action.setText(getDriver(), customerName, _customerName);
 		Action.clicTo(getDriver(), radioBtnGender);
 		Action.setText(getDriver(), dateOfBirth, _dateOfBirth);

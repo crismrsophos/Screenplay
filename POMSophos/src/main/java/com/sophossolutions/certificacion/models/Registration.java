@@ -1,30 +1,25 @@
 package com.sophossolutions.certificacion.models;
 
-public class NewUserWay2Automation {
+public class Registration {
 
-    private  String section;
     private String name;
     private String phone;
     private String email;
     private String country;
     private String city;
-    private String username;
+    private String user;
     private String password;
 
-    public NewUserWay2Automation(String _section, String _name, String _phone, String _email, String _country, String _city, String _username, String _password) {
+    public Registration(String name, String phone, String email, String country, String city,
+                        String user, String password) {
         super();
-        section = _section;
-        name = _name;
-        phone = _phone;
-        email = _email;
-        country = _country;
-        city = _city;
-        username = _username;
-        password = _password;
-    }
-
-    public String getSection() {
-        return section;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.country = country;
+        this.city = city;
+        this.user = user;
+        this.password = password;
     }
 
     public String getName() {
@@ -47,8 +42,8 @@ public class NewUserWay2Automation {
         return city;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUser() {
+        return user;
     }
 
     public String getPassword() {

@@ -1,9 +1,9 @@
 package com.sophossolutions.certificacion.runners;
 
-import org.junit.runner.RunWith;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
@@ -16,5 +16,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
         dryRun = false
 )
 
+
 public class SauceLabsDemo {
+
 }
