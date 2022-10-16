@@ -3,7 +3,6 @@ package com.sophossolutions.certificacion.pages;
 import com.sophossolutions.certificacion.actions.Action;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
-
 import java.time.Duration;
 
 public class AutomationPracticeConfirmationPage extends PageObject{

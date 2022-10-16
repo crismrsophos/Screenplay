@@ -1,10 +1,10 @@
 package com.sophossolutions.certificacion.stepdefinitions;
 
+
 import com.sophossolutions.certificacion.models.Usuario;
-import com.sophossolutions.certificacion.pages.GuruNewCustomerPage;
-import com.sophossolutions.certificacion.pages.WayToAutomationHomePage;
-import com.sophossolutions.certificacion.pages.WayToAutomationRegistrationPage;
-import io.cucumber.java.en.Given;
+
+import com.sophossolutions.certificacion.pages.*;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -15,7 +15,7 @@ public class WayToAutomationStepDefinitions {
 
 	@When("Registro al usuario en Way2 con los siguientes datos")
 	public void registroAlUsuarioEnWay2ConLosSiguientesDatos(Usuario userData) {
-		way2Home.clicRegistrationImage();
+		way2Home.clicRegistration(userData.getSection());
 		way2Registration.fillForm(userData.getName(), userData.getPhone(), userData.getEmail(),
 				userData.getCountry(), userData.getCity(), userData.getUsername(), userData.getPassword());
 	}

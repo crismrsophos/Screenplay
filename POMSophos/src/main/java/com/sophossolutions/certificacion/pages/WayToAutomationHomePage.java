@@ -6,10 +6,11 @@ import org.openqa.selenium.By;
 
 public class WayToAutomationHomePage extends PageObject {
 
-	By registrationFormImage = By.xpath("//*[@id=\"wrapper\"]/div[2]/div[2]/div[5]/ul/li/a/figure/img");
+    By registrationSection;
+    String strRegistrationSection = "//a[text()='%s']";
 
-	public void clicRegistrationImage() {
-		Action.clicTo(getDriver(), registrationFormImage);
-	}
-
+    public void clicRegistration(String section) {
+        registrationSection = By.xpath(String.format(strRegistrationSection, section));
+        Action.clicTo(getDriver(), registrationSection);
+    }
 }
