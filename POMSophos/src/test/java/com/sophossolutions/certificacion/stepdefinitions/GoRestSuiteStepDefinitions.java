@@ -20,4 +20,14 @@ public class GoRestSuiteStepDefinitions {
     public void ejecutoElMetodoGetEnElEndpointParaElÚltimoUsuarioConsultado(String endpoint) {
         ApiService.executeGetforLastUser(endpoint);
     }
+
+    @When("ejecuto el metodo delete en el endpoint {string} para el último usuario consultado")
+    public void ejecutoElMetodoDeleteEnElEndpointParaElÚltimoUsuarioConsultado(String endpoint) {
+        ApiService.executeDeleteforLastUser(endpoint);
+    }
+
+    @Then("valido que el status_code sea {int}")
+    public void validoQueElStatusCodeSea(Integer statusCode) {
+        ApiService.validateStatus(statusCode);
+    }
 }

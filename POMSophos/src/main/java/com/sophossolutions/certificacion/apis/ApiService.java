@@ -53,7 +53,17 @@ public class ApiService {
 		SerenityRest.given()
 				.contentType(ContentType.JSON)
 				.header("Authorization", " Bearer 851e30583ee2be4656b7f50749c7b7a5860b1adf01fbf110c840106c70ef7246")
-				.get(baseUrl.concat(endpoint).concat("/").concat(lastUserID));
+				.get(baseUrl.concat(endpoint).concat(lastUserID));
+
+		SerenityRest.lastResponse().body().prettyPeek();
+	}
+
+	public static void executeDeleteforLastUser(String endpoint) {
+		String lastUserID = SerenityRest.lastResponse().body().jsonPath().getString("id");
+		SerenityRest.given()
+				.contentType(ContentType.JSON)
+				.header("Authorization", " Bearer 851e30583ee2be4656b7f50749c7b7a5860b1adf01fbf110c840106c70ef7246")
+				.delete(baseUrl.concat(endpoint).concat(lastUserID));
 
 		SerenityRest.lastResponse().body().prettyPeek();
 	}
