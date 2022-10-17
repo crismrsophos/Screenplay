@@ -7,7 +7,7 @@ Feature: Ejemplo de consumo de API en GO REST
   @serviceGet
   Scenario: Consultar un usuario por medio de ID
     Given deseo establecer la base uri "https://gorest.co.in/"
-    When ejecuto el método get en el endpoint "public/v2/users/1434"
+    When Deseo consultar la informacion en el "public/v2/users/" para el usuario "1434"
     Then valido que el status_code sea 200 y los datos de la reserva sean
       | name   | Chapal Mehra           |
       | email  | mehra_chapal@terry.net |

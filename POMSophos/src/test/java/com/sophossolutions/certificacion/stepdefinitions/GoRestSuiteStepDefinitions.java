@@ -9,6 +9,9 @@ import java.util.Map;
 
 public class GoRestSuiteStepDefinitions {
 
-
+    @When("Deseo consultar la informacion en el {string} para el usuario {string}")
+    public void deseoConsultarLaInformacionEnElParaElUsuario(String endpoint, String id) {
+        ApiService.endpointIdGet(endpoint, id);
+    }
 
 }
