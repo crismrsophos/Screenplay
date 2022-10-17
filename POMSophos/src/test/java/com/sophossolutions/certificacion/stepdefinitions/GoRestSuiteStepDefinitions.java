@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class GoRestSuiteStepDefinitions {
 
-    @When("deseo consultar la informacion en el endpoint {string} para el id {string}")
-    public void deseoConsultarLaInformacionEnElEndpointParaElId(String endpoint, String id) {
+    @When("consulto la informacion en el endpoint {string} para el id {string}")
+    public void consultoLaInformacionEnElEndpointParaElId(String endpoint, String id) {
         ApiService.endpointIdGet(endpoint, id);
     }
 
@@ -19,8 +19,18 @@ public class GoRestSuiteStepDefinitions {
         ApiService.endpointIdDelete(endpoint, id);
     }
 
+    @When("agrego en el endpoint {string} los siguientes datos")
+    public void agregoEnElEndpointLosSiguientesDatos(String endpoint, Map<String, String> user){
+        ApiService.endpointPost(endpoint, user);
+    }
+
     @Then ("valido que el status_code de eliminacion sea {int}")
     public void validoQueElStatusCodeDeEliminacionSea(int statusCode){
+        ApiService.validateStatus(statusCode);
+    }
+
+    @Then("valido que el status_code de posteo sea {int}")
+    public void validoQueElStatusCodeDePosteoSea(int statusCode){
         ApiService.validateStatus(statusCode);
     }
 
