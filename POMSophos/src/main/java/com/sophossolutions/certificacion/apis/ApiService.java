@@ -27,6 +27,15 @@ public class ApiService {
 				.concat(id));
 	}
 
+	public static void endpointPost(String endpoint){
+		SerenityRest.given().auth().oauth2(TOKEN).contentType(CONTENT_TYPE).post(baseUrl.concat(endpoint));
+	}
+
+	public static void endpointIdDelete(String endpoint, String id){
+		SerenityRest.given().auth().oauth2(TOKEN).contentType(CONTENT_TYPE).delete(baseUrl.concat(endpoint)
+				.concat(id));
+	}
+
 	public static void validateStatus(int statusCode) {
 		Assert.assertEquals(statusCode, SerenityRest.lastResponse().statusCode());
 	}
