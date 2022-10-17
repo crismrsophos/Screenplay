@@ -1,14 +1,15 @@
 #Author: alejandro.araque@sophossolutions.com
-Feature: Ejemplo consultar de reserva hostel
-  Yo como aprendiz
-  Quiero automatizar el consumo de una API
-  Para conocer su funcionamiento
+Feature: Ejemplo de consumo de API en GO REST
+  Yo como aprendiz de automatización
+  Quiero automatizar el consumo de una API de prueba
+  Para entender el funcionamiento del consumo de API's
 
-  Scenario: Obtener una reserva método - GET
-    Given deseo establecer la base uri "https://restful-booker.herokuapp.com/"
-    When ejecuto el método get en el endpoint "booking/557"
+  @serviceGet
+  Scenario: Consultar un usuario por medio de ID
+    Given deseo establecer la base uri "https://gorest.co.in/"
+    When ejecuto el método get en el endpoint "public/v2/users/1434"
     Then valido que el status_code sea 200 y los datos de la reserva sean
-      | firstname             | Camila     |
-      | lastname              | Cuevas     |
-      | bookingdates.checkin  | 2022-10-28 |
-      | bookingdates.checkout | 2022-11-08 |
+      | name   | Chapal Mehra           |
+      | email  | mehra_chapal@terry.net |
+      | gender | male                   |
+      | status | inactive               |
