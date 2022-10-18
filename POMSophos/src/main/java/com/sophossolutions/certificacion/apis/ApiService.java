@@ -41,9 +41,7 @@ public class ApiService {
 				.oauth2(TOKEN)
 				.contentType(CONTENT_TYPE)
 				.body(jsonBody)
-				.post(baseUrl.concat(endpoint))
-				//.then().assertThat()
-				/*.statusCode(HttpStatus.SC_OK)*/;
+				.post(baseUrl.concat(endpoint));
 
 		SerenityRest.lastResponse().body().prettyPeek();
 		idCreado = SerenityRest.lastResponse().body().jsonPath().getString("id");
