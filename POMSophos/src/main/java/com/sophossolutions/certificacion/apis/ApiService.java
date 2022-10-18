@@ -35,8 +35,6 @@ public class ApiService {
 		jsonBody = String.format(jsonBody, jsonBodyArray.get(0),
 				jsonBodyArray.get(1), jsonBodyArray.get(2), jsonBodyArray.get(3));
 
-		System.out.println(jsonBody);
-
 		SerenityRest.given()
 				.auth()
 				.oauth2(TOKEN)
@@ -44,25 +42,30 @@ public class ApiService {
 				.body(jsonBody)
 				.post(baseUrl.concat(endpoint))
 				//.then().assertThat()
-				//.statusCode(HttpStatus.SC_OK)
-		;
+				/*.statusCode(HttpStatus.SC_OK)*/;
+
+		SerenityRest.lastResponse().body().prettyPeek();
 
 	}
 
-	public static void endpointIdGet(String endpoint, String id){
+	public static void endpointIdGet(String endpoint){
+		String idCreado = SerenityRest.lastResponse().body().jsonPath().getString("id");
+
 		SerenityRest.given()
 				.auth()
 				.oauth2(TOKEN)
 				.contentType(CONTENT_TYPE)
-				.get(baseUrl.concat(endpoint).concat(id));
+				.get(baseUrl.concat(endpoint).concat(idCreado));
 	}
 
-	public static void endpointIdDelete(String endpoint, String id){
+	public static void endpointIdDelete(String endpoint){
+		String idCreado = SerenityRest.lastResponse().body().jsonPath().getString("id");
+
 		SerenityRest.given()
 				.auth()
 				.oauth2(TOKEN)
 				.contentType(CONTENT_TYPE)
-				.delete(baseUrl.concat(endpoint).concat(id));
+				.delete(baseUrl.concat(endpoint).concat(idCreado));
 	}
 
 	public static void validateStatus(int statusCode) {

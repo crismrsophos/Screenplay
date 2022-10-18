@@ -9,28 +9,23 @@ import java.util.Map;
 
 public class GoRestSuiteStepDefinitions {
 
-    @When("consulto la informacion en el endpoint {string} para el id {string}")
-    public void consultoLaInformacionEnElEndpointParaElId(String endpoint, String id) {
-        ApiService.endpointIdGet(endpoint, id);
-    }
-
-    @When("elimino un usuario en el endpoint {string} para el id {string}")
-    public void eliminoUnUsuarioEnElEndpointParaElId(String endpoint, String id) {
-        ApiService.endpointIdDelete(endpoint, id);
-    }
-
     @When("agrego en el endpoint {string} los siguientes datos")
     public void agregoEnElEndpointLosSiguientesDatos(String endpoint, Map<String, String> user){
         ApiService.endpointPost(endpoint, user);
     }
 
-    @Then ("valido que el status_code de eliminacion sea {int}")
-    public void validoQueElStatusCodeDeEliminacionSea(int statusCode){
-        ApiService.validateStatus(statusCode);
+    @When("consulto la informacion en el endpoint {string} para el usuario creado")
+    public void consultoLaInformacionEnElEndpointParaElId(String endpoint) {
+        ApiService.endpointIdGet(endpoint);
     }
 
-    @Then("valido que el status_code de posteo sea {int}")
-    public void validoQueElStatusCodeDePosteoSea(int statusCode){
+    @When("elimino un usuario en el endpoint {string} para el usuario creado")
+    public void eliminoUnUsuarioEnElEndpointParaElId(String endpoint) {
+        ApiService.endpointIdDelete(endpoint);
+    }
+
+    @Then ("valido que el status_code sea {int}")
+    public void validoQueElStatusCodeSea(int statusCode){
         ApiService.validateStatus(statusCode);
     }
 
