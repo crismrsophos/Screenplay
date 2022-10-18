@@ -15,6 +15,7 @@ public class ApiService {
 	private static String baseUrl = "";
 	private static String jsonBody= "{\"name\": \"%s\", \"email\": \"%s\",\"gender\": \"%s\",\"status\": \"%s\"}";
 	private static ArrayList<String> jsonBodyArray = new ArrayList<String>();
+	private static String idCreado;
 	public static final String TOKEN = "01975b765012c8903bfa001607d38c350e90d06c6fbeaf6006cdac04228be425";
 	public static final String CONTENT_TYPE = "application/json";
 
@@ -45,12 +46,11 @@ public class ApiService {
 				/*.statusCode(HttpStatus.SC_OK)*/;
 
 		SerenityRest.lastResponse().body().prettyPeek();
+		idCreado = SerenityRest.lastResponse().body().jsonPath().getString("id");
 
 	}
 
 	public static void endpointIdGet(String endpoint){
-		String idCreado = SerenityRest.lastResponse().body().jsonPath().getString("id");
-
 		SerenityRest.given()
 				.auth()
 				.oauth2(TOKEN)
@@ -59,8 +59,6 @@ public class ApiService {
 	}
 
 	public static void endpointIdDelete(String endpoint){
-		String idCreado = SerenityRest.lastResponse().body().jsonPath().getString("id");
-
 		SerenityRest.given()
 				.auth()
 				.oauth2(TOKEN)
