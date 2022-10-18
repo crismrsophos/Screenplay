@@ -1,19 +1,8 @@
 package com.sophossolutions.certificacion.apis;
 
-
-import java.util.ArrayList;
 import java.util.Map;
-
-import groovy.lang.GString;
-import org.apache.http.HttpStatus;
-
-import java.util.Map;
-
 import com.google.gson.JsonObject;
-import io.restassured.http.Header;
-
 import org.junit.Assert;
-
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 
@@ -21,8 +10,6 @@ public class ApiService {
 
 
     private static String baseUrl;
-    private static String jsonBody = "{\"name\": \"%s\", \"email\": \"%s\",\"gender\": \"%s\",\"status\": \"%s\"}";
-    private static ArrayList<String> jsonBodyArray = new ArrayList<String>();
     private static String lastUserID;
     public static final String TOKEN = "01975b765012c8903bfa001607d38c350e90d06c6fbeaf6006cdac04228be425";
     public static final String CONTENT_TYPE = "application/json";
