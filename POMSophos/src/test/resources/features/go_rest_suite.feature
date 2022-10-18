@@ -1,4 +1,4 @@
-#Author: alejandro.araque@sophossolutions.com
+#Author: alejandro.araque@sophossolutions.com, santiago.moreno@sophossolutions.com
 Feature: Ejemplo de consumo de API en GO REST
   Yo como aprendiz de automatización
   Quiero automatizar el consumo de una API de prueba

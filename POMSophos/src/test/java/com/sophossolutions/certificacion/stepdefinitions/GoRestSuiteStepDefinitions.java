@@ -1,32 +1,33 @@
 package com.sophossolutions.certificacion.stepdefinitions;
 
 import com.sophossolutions.certificacion.apis.ApiService;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.datatable.DataTable;
 
 import java.util.Map;
 
 public class GoRestSuiteStepDefinitions {
 
     @When("agrego en el endpoint {string} los siguientes datos")
-    public void agregoEnElEndpointLosSiguientesDatos(String endpoint, Map<String, String> user){
-        ApiService.endpointPost(endpoint, user);
+    public void agregoEnElEndpointLosSiguientesDatos(String endpoint, Map<String, String> user) {
+        ApiService.executePost(endpoint, user);
     }
 
     @When("consulto la informacion en el endpoint {string} para el usuario creado")
     public void consultoLaInformacionEnElEndpointParaElId(String endpoint) {
-        ApiService.endpointIdGet(endpoint);
+        ApiService.executeGetforLastUser(endpoint);
     }
 
     @When("elimino un usuario en el endpoint {string} para el usuario creado")
     public void eliminoUnUsuarioEnElEndpointParaElId(String endpoint) {
-        ApiService.endpointIdDelete(endpoint);
+        ApiService.executeDeleteforLastUser(endpoint);
     }
 
-    @Then ("valido que el status_code sea {int}")
-    public void validoQueElStatusCodeSea(int statusCode){
+    @Then("valido que el status_code sea {int}")
+    public void validoQueElStatusCodeSea(Integer statusCode) {
         ApiService.validateStatus(statusCode);
     }
-
 }

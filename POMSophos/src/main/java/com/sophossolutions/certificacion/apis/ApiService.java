@@ -1,10 +1,17 @@
 package com.sophossolutions.certificacion.apis;
 
+
 import java.util.ArrayList;
 import java.util.Map;
 
 import groovy.lang.GString;
 import org.apache.http.HttpStatus;
+
+import java.util.Map;
+
+import com.google.gson.JsonObject;
+import io.restassured.http.Header;
+
 import org.junit.Assert;
 
 import io.restassured.http.ContentType;
@@ -12,74 +19,65 @@ import net.serenitybdd.rest.SerenityRest;
 
 public class ApiService {
 
-	private static String baseUrl = "";
-	private static String jsonBody= "{\"name\": \"%s\", \"email\": \"%s\",\"gender\": \"%s\",\"status\": \"%s\"}";
-	private static ArrayList<String> jsonBodyArray = new ArrayList<String>();
-	private static String idCreado;
-	public static final String TOKEN = "01975b765012c8903bfa001607d38c350e90d06c6fbeaf6006cdac04228be425";
-	public static final String CONTENT_TYPE = "application/json";
 
-	public static void setBaseUrl(String baseUrl) {
-		ApiService.baseUrl = baseUrl;
-	}
+    private static String baseUrl;
+    private static String jsonBody = "{\"name\": \"%s\", \"email\": \"%s\",\"gender\": \"%s\",\"status\": \"%s\"}";
+    private static ArrayList<String> jsonBodyArray = new ArrayList<String>();
+    private static String lastUserID;
+    public static final String TOKEN = "01975b765012c8903bfa001607d38c350e90d06c6fbeaf6006cdac04228be425";
+    public static final String CONTENT_TYPE = "application/json";
 
-	public static void executeGet(String endpoint) {
-		SerenityRest.given().contentType(ContentType.JSON).get(baseUrl.concat(endpoint));
-	}
+    public static void setBaseUrl(String baseUrl) {
+        ApiService.baseUrl = baseUrl;
+    }
 
-	public static void endpointPost(String endpoint, Map<String, String> user){
+    public static void executeGet(String endpoint) {
+        SerenityRest.given().contentType(ContentType.JSON).get(baseUrl.concat(endpoint));
+    }
 
-		for (Map.Entry<String, String> entry : user.entrySet()) {
-			jsonBodyArray.add(entry.getValue());
-		}
+    public static void validateStatus(int statusCode) {
+        Assert.assertEquals(statusCode, SerenityRest.lastResponse().statusCode());
+    }
 
-		jsonBody = String.format(jsonBody, jsonBodyArray.get(0),
-				jsonBodyArray.get(1), jsonBodyArray.get(2), jsonBodyArray.get(3));
+    public static void validateResponse(Map<String, String> booking) {
+        for (Map.Entry<String, String> entry : booking.entrySet()) {
+            Assert.assertEquals(entry.getValue(), SerenityRest.lastResponse().getBody().jsonPath().get(entry.getKey()));
+        }
+    }
 
-		SerenityRest.given()
-				.auth()
-				.oauth2(TOKEN)
-				.contentType(CONTENT_TYPE)
-				.body(jsonBody)
-				.post(baseUrl.concat(endpoint))
-				//.then().assertThat()
-				/*.statusCode(HttpStatus.SC_OK)*/;
+    public static void executePost(String endpoint, Map<String, String> newUserData) {
+        JsonObject data = new JsonObject();
 
-		SerenityRest.lastResponse().body().prettyPeek();
-		idCreado = SerenityRest.lastResponse().body().jsonPath().getString("id");
+        for (Map.Entry<String, String> entry : newUserData.entrySet()) {
+            data.addProperty(entry.getKey(), entry.getValue());
+        }
 
-	}
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .auth()
+                .oauth2(TOKEN)
+                .body(data.toString())
+                .post(baseUrl.concat(endpoint));
 
-	public static void endpointIdGet(String endpoint){
-		SerenityRest.given()
-				.auth()
-				.oauth2(TOKEN)
-				.contentType(CONTENT_TYPE)
-				.get(baseUrl.concat(endpoint).concat(idCreado));
-	}
+        SerenityRest.lastResponse().body().prettyPeek();
+        lastUserID = SerenityRest.lastResponse().body().jsonPath().getString("id");
+    }
 
-	public static void endpointIdDelete(String endpoint){
-		SerenityRest.given()
-				.auth()
-				.oauth2(TOKEN)
-				.contentType(CONTENT_TYPE)
-				.delete(baseUrl.concat(endpoint).concat(idCreado));
-	}
+    public static void executeGetforLastUser(String endpoint) {
+        SerenityRest.given()
+                .auth()
+                .oauth2(TOKEN)
+                .contentType(CONTENT_TYPE)
+                .get(baseUrl.concat(endpoint).concat(lastUserID));
+        SerenityRest.lastResponse().body().prettyPeek();
+    }
 
-	public static void validateStatus(int statusCode) {
-		Assert.assertEquals(statusCode, SerenityRest.lastResponse().statusCode());
-	}
-
-	public static void validateResponse(Map<String, String> booking) {
-		for (Map.Entry<String, String> entry : booking.entrySet()) {
-			Assert.assertEquals(entry.getValue(), SerenityRest.lastResponse()
-					.getBody()
-					.jsonPath()
-					.get(entry.getKey()));
-		}
-		SerenityRest.lastResponse()
-				.body()
-				.prettyPeek();
-	}
-
+    public static void executeDeleteforLastUser(String endpoint) {
+        SerenityRest.given()
+                .auth()
+                .oauth2(TOKEN)
+                .contentType(CONTENT_TYPE)
+                .delete(baseUrl.concat(endpoint).concat(lastUserID));
+        SerenityRest.lastResponse().body().prettyPeek();
+    }
 }
