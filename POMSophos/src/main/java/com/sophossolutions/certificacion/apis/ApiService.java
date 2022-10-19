@@ -4,6 +4,7 @@ import java.util.Map;
 import com.google.gson.JsonObject;
 import org.junit.Assert;
 import io.restassured.http.ContentType;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.rest.SerenityRest;
 
 public class ApiService {
@@ -47,7 +48,7 @@ public class ApiService {
                 .post(baseUrl.concat(endpoint));
 
         SerenityRest.lastResponse().body().prettyPeek();
-        lastUserID = SerenityRest.lastResponse().body().jsonPath().getString("id");
+        Serenity.setSessionVariable("id").to(SerenityRest.lastResponse().body().jsonPath().getString("id").toString());
     }
 
     public static void executeGetforLastUser(String endpoint) {
@@ -55,7 +56,7 @@ public class ApiService {
                 .auth()
                 .oauth2(TOKEN)
                 .contentType(CONTENT_TYPE)
-                .get(baseUrl.concat(endpoint).concat(lastUserID));
+                .get(baseUrl.concat(endpoint).concat(Serenity.sessionVariableCalled("id")));
         SerenityRest.lastResponse().body().prettyPeek();
     }
 
@@ -64,7 +65,7 @@ public class ApiService {
                 .auth()
                 .oauth2(TOKEN)
                 .contentType(CONTENT_TYPE)
-                .delete(baseUrl.concat(endpoint).concat(lastUserID));
+                .delete(baseUrl.concat(endpoint).concat(Serenity.sessionVariableCalled("id")));
         SerenityRest.lastResponse().body().prettyPeek();
     }
 }

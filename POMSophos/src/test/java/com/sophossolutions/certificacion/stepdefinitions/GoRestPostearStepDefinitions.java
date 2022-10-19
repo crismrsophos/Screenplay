@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 
 import java.util.Map;
 
-public class GoRestSuiteStepDefinitions {
+public class GoRestPostearStepDefinitions {
 
     @When("agrego en el endpoint {string} los siguientes datos")
     public void agregoEnElEndpointLosSiguientesDatos(String endpoint, Map<String, String> user) {
