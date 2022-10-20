@@ -1,14 +1,18 @@
 package com.sophossolutions.certification.stepdefinitions;
 
+import static com.sophossolutions.certification.userinfaces.CheckoutCompleteSauceDemoPage.TITLE_BUY_FINISHED;
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
+import com.sophossolutions.certification.models.CheckoutSauceCredential;
 import com.sophossolutions.certification.models.UserCredential;
 import com.sophossolutions.certification.questions.GetText;
+import com.sophossolutions.certification.tasks.CheckoutSauce;
 import com.sophossolutions.certification.tasks.Login;
 
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -36,10 +40,18 @@ public class SauceDemoLoginStepDefinitions {
 		theActorInTheSpotlight().attemptsTo(Login.in(credentials));
 	}
 
+	// MÉTODO EXPERIMENTAL
+	@And("selecciona el producto a comprar y diligencia los campos del formulario de checkout con los datos")
+	public void seleccionaElProductoAComprarYDiligenciaLosCamposDelFormularioDeCheckoutConLosDatos(CheckoutSauceCredential data) {
+		theActorInTheSpotlight().attemptsTo(CheckoutSauce.checkoutProcess(data));
+	}
+
 	@Then("verifica que el mensaje sea {string}")
 	public void verificaQueElMensajeSea(String msg) {
+		/*theActorInTheSpotlight()
+				.should(GivenWhenThen.seeThat(GetText.theField(TITLE_SAUCE), containsStringIgnoringCase(msg)));*/
 		theActorInTheSpotlight()
-				.should(GivenWhenThen.seeThat(GetText.theField(TITLE_SAUCE), containsStringIgnoringCase(msg)));
+				.should(GivenWhenThen.seeThat(GetText.theField(TITLE_BUY_FINISHED), containsStringIgnoringCase(msg)));
 	}
 
 }
