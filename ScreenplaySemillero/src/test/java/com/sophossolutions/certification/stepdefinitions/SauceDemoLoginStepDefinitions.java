@@ -6,6 +6,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import com.sophossolutions.certification.models.UserCredential;
 import com.sophossolutions.certification.questions.GetText;
+import com.sophossolutions.certification.tasks.Inventory;
 import com.sophossolutions.certification.tasks.Login;
 
 import io.cucumber.java.Before;
@@ -34,6 +35,7 @@ public class SauceDemoLoginStepDefinitions {
 	@When("ingresa los siguientes datos")
 	public void ingresaLosSiguientesDatos(UserCredential credentials) {
 		theActorInTheSpotlight().attemptsTo(Login.in(credentials));
+		theActorInTheSpotlight().attemptsTo(Inventory.in());
 	}
 
 	@Then("verifica que el mensaje sea {string}")
