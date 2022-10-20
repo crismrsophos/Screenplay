@@ -35,7 +35,7 @@ public class SauceDemoLoginStepDefinitions {
 	@When("ingresa los siguientes datos")
 	public void ingresaLosSiguientesDatos(UserCredential credentials) {
 		theActorInTheSpotlight().attemptsTo(Login.in(credentials));
-		theActorInTheSpotlight().attemptsTo(Inventory.in());
+		theActorInTheSpotlight().attemptsTo(Inventory.in(credentials));
 	}
 
 	@Then("verifica que el mensaje sea {string}")
