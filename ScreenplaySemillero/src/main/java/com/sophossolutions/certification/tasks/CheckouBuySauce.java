@@ -16,8 +16,6 @@ public class CheckouBuySauce implements Task {
     private String firstname;
     private String lastname;
     private String postalCode;
-    private Target btnAddProductToCart;
-    private Target btnGoToCart;
     private Target btnCheckout;
     private Target btnContinue;
     private Target btnFinish;
@@ -28,10 +26,7 @@ public class CheckouBuySauce implements Task {
         lastname = credentials.getLastname();
         postalCode = credentials.getPostalCode();
 
-        // ===========================================
-        btnAddProductToCart = BTN_ADD_PRODUCT_TO_CART;
-        btnGoToCart = BTN_GO_TO_CART;
-        // ===========================================
+
 
         btnCheckout = BTN_CHECKOUT;
         btnContinue = BTN_CONTINUE;
@@ -41,8 +36,7 @@ public class CheckouBuySauce implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(btnAddProductToCart),
-                Click.on(btnGoToCart),
+                Select.theProduct(),
                 Click.on(btnCheckout),
                 Enter.theValue(firstname).into(FIRSTNAME),
                 Enter.theValue(lastname).into(LASTNAME),

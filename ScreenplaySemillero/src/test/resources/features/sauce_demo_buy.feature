@@ -4,7 +4,7 @@ Feature: Demo Screenplay
   Necesito crear una automatización
   Para realizar una compra en Sauce Demo
 
-  Background:
+  Background: Iniciar sesión Sauce Demo
     Given "Darlene" navega a la pagina "https://www.saucedemo.com/"
     When ingresa los siguientes datos
       | standard_user | secret_sauce |
