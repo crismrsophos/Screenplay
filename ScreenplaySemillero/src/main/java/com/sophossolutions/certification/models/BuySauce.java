@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class CheckoutBuySauceCredential {
+public class BuySauce {
     private String firstname;
     private String lastname;
     private String postalCode;

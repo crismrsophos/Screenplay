@@ -10,11 +10,13 @@ import static com.sophossolutions.certification.userinfaces.HomeSauceDemoPage.BT
 import static com.sophossolutions.certification.userinfaces.HomeSauceDemoPage.BTN_GO_TO_CART;
 
 public class Select implements Task {
+    private String product;
     private Target btnAddProductToCart;
     private Target btnGoToCart;
 
-    public Select() {
-        btnAddProductToCart = BTN_ADD_PRODUCT_TO_CART;
+    public Select(String product) {
+        this.product = product;
+        btnAddProductToCart = BTN_ADD_PRODUCT_TO_CART.of(product);
         btnGoToCart = BTN_GO_TO_CART;
     }
 
@@ -25,7 +27,7 @@ public class Select implements Task {
                 Click.on(btnGoToCart));
     }
 
-    public static Select theProduct() {
-        return Tasks.instrumented(Select.class);
+    public static Select theProduct(String product) {
+        return Tasks.instrumented(Select.class, product);
     }
 }

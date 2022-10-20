@@ -6,8 +6,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class UserCredential {
-
-	private String user;
-	private String password;
-
+    private String user;
+    private String password;
 }

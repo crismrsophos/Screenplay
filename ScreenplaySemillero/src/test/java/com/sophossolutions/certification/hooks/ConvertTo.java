@@ -2,7 +2,7 @@ package com.sophossolutions.certification.hooks;
 
 import java.util.List;
 
-import com.sophossolutions.certification.models.CheckoutBuySauceCredential;
+import com.sophossolutions.certification.models.BuySauce;
 import com.sophossolutions.certification.models.UserCredential;
 
 import io.cucumber.java.DataTableType;
@@ -14,7 +14,7 @@ public class ConvertTo {
     }
 
     @DataTableType
-    public CheckoutBuySauceCredential theBuyModel(List<String> entry) {
-        return new CheckoutBuySauceCredential(entry.get(0), entry.get(1), entry.get(2));
+    public BuySauce theBuyModel(List<String> entry) {
+        return new BuySauce(entry.get(0), entry.get(1), entry.get(2));
     }
 }

@@ -1,10 +1,10 @@
 package com.sophossolutions.certification.tasks;
 
+import static com.sophossolutions.certification.userinfaces.CartBuySauceDemoPage.BTN_CHECKOUT;
 import static com.sophossolutions.certification.userinfaces.CheckoutBuySauceDemoPage.*;
-import static com.sophossolutions.certification.userinfaces.HomeSauceDemoPage.BTN_ADD_PRODUCT_TO_CART;
-import static com.sophossolutions.certification.userinfaces.HomeSauceDemoPage.BTN_GO_TO_CART;
+import static com.sophossolutions.certification.userinfaces.OverviewBuySauceDemo.BTN_FINISH;
 
-import com.sophossolutions.certification.models.CheckoutBuySauceCredential;
+import com.sophossolutions.certification.models.BuySauce;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -12,7 +12,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class CheckouBuySauce implements Task {
+public class CheckoutBuySauce implements Task {
     private String firstname;
     private String lastname;
     private String postalCode;
@@ -20,14 +20,11 @@ public class CheckouBuySauce implements Task {
     private Target btnContinue;
     private Target btnFinish;
 
-    public CheckouBuySauce(CheckoutBuySauceCredential credentials) {
+    public CheckoutBuySauce(BuySauce data) {
         super();
-        firstname = credentials.getFirstname();
-        lastname = credentials.getLastname();
-        postalCode = credentials.getPostalCode();
-
-
-
+        firstname = data.getFirstname();
+        lastname = data.getLastname();
+        postalCode = data.getPostalCode();
         btnCheckout = BTN_CHECKOUT;
         btnContinue = BTN_CONTINUE;
         btnFinish = BTN_FINISH;
@@ -36,7 +33,6 @@ public class CheckouBuySauce implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Select.theProduct(),
                 Click.on(btnCheckout),
                 Enter.theValue(firstname).into(FIRSTNAME),
                 Enter.theValue(lastname).into(LASTNAME),
@@ -45,7 +41,7 @@ public class CheckouBuySauce implements Task {
                 Click.on(btnFinish));
     }
 
-    public static CheckouBuySauce checkoutProcess(CheckoutBuySauceCredential credentials) {
-        return Tasks.instrumented(CheckouBuySauce.class, credentials);
+    public static CheckoutBuySauce checkoutProcess(BuySauce credentials) {
+        return Tasks.instrumented(CheckoutBuySauce.class, credentials);
     }
 }
