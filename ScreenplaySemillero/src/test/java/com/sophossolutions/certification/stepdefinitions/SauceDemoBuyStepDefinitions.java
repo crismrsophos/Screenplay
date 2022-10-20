@@ -1,32 +1,24 @@
 package com.sophossolutions.certification.stepdefinitions;
 
-import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-
-import com.sophossolutions.certification.models.CheckoutSauceCredential;
-import com.sophossolutions.certification.models.PrepareForCheckoutSauce;
-import com.sophossolutions.certification.tasks.PrepareCheckoutSauce;
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
+import static org.hamcrest.core.StringContains.containsStringIgnoringCase;
+import static com.sophossolutions.certification.userinfaces.CheckoutBuyCompleteSauceDemoPage.*;
+import com.sophossolutions.certification.questions.GetText;
+import com.sophossolutions.certification.tasks.CheckouBuySauce;
+import com.sophossolutions.certification.models.CheckoutBuySauceCredential;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.actors.OnlineCast;
-import static com.sophossolutions.certification.userinfaces.HomeSauceDemoPage.*;
-import static org.hamcrest.core.StringContains.containsStringIgnoringCase;
 
 public class SauceDemoBuyStepDefinitions {
-    // PENDIENTE IMPLEMENTAR MÉTODO PARA SELECCIONAR PRODUCTOS Y AGREGAR A CARRITO).
-    @Given("selecciona el producto a comprar")
-    public void seleccionaElProductoAComprar() {
-        // TODO
-        //theActorInTheSpotlight().attemptsTo(PrepareCheckoutSauce.prepareFor());
+    @When("selecciona el producto y diligencia los campos del formulario de checkout con los datos")
+    public void vaAlCarroDeComprasYDiligenciaLosCamposDelFormularioDeCheckoutConLosDatos(CheckoutBuySauceCredential data) {
+        theActorInTheSpotlight().attemptsTo(CheckouBuySauce.checkoutProcess(data));
     }
-    // PENDIENTE REALIZAR PROCESO DE CHECKOUT DESDE LA VISTA DEL CARRITO DE COMPRAS.
-    @When("va al carro de compras y diligencia los campos del formulario de checkout con los datos")
-    public void vaAlCarroDeComprasYDiligenciaLosCamposDelFormularioDeCheckoutConLosDatos(CheckoutSauceCredential data) {
-        // TODO
+
+    @Then("verifica que el mensaje mostrado {string}")
+    public void verificaQueElMensajeSea(String msg) {
+        theActorInTheSpotlight()
+                .should(GivenWhenThen.seeThat(GetText.theField(TITLE_BUY_FINISHED), containsStringIgnoringCase(msg)));
     }
 }

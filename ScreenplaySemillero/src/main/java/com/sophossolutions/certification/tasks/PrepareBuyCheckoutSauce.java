@@ -8,11 +8,11 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class PrepareCheckoutSauce implements Task {
+public class PrepareBuyCheckoutSauce implements Task {
     private final Target btnAddProductToCart;
     private final Target btnGoToCart;
 
-    public PrepareCheckoutSauce(PrepareForCheckoutSauce prepare) {
+    public PrepareBuyCheckoutSauce(PrepareForCheckoutSauce data) {
         super();
         btnAddProductToCart = BTN_ADD_PRODUCT_TO_CART;
         btnGoToCart = BTN_GO_TO_CART;
@@ -26,7 +26,7 @@ public class PrepareCheckoutSauce implements Task {
     }
 
     // PENDIENTE IMPLEMENTAR EL MÉTODO PARA HACER LOS CLICKS.
-    public static PrepareCheckoutSauce prepareFor() {
-        return Tasks.instrumented(PrepareCheckoutSauce.class);
+    public static PrepareBuyCheckoutSauce prepareFor() {
+        return Tasks.instrumented(PrepareBuyCheckoutSauce.class);
     }
 }

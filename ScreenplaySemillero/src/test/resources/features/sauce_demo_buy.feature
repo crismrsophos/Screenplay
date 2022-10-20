@@ -10,8 +10,8 @@ Feature: Demo Screenplay
       | standard_user | secret_sauce |
     Then verifica que el mensaje sea "PRODUCTS"
 
-  Scenario: Realizar compra de un artículo
-    Given selecciona el producto a comprar
-    When va al carro de compras y diligencia los campos del formulario de checkout con los datos
+  Scenario: Realizar compra de un artículo en Sauce Demo
+    Given "Darlene" navega a la pagina "https://www.saucedemo.com/inventory.html"
+    When selecciona el producto y diligencia los campos del formulario de checkout con los datos
       | Darlene | Alderson | 10002 |
-    Then verifica que el mensaje sea "THANK YOU FOR YOUR ORDER"
+    Then verifica que el mensaje mostrado "THANK YOU FOR YOUR ORDER"
