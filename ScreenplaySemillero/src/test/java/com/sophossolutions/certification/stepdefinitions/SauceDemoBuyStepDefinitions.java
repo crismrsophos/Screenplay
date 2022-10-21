@@ -32,7 +32,7 @@ public class SauceDemoBuyStepDefinitions {
     public void setup() {
         setTheStage(new OnlineCast());
     }
-    @Given("{string} escoge un producto para adquirir")
+    @Given("{string} escoge un producto para adquirirlo")
     public void escogeUnProductoParaAdquirir(String string) {
 
     }

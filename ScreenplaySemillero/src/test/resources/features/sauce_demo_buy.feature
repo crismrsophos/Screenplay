@@ -5,13 +5,13 @@ Feature: Iniciar sesion en Sauce Demo
   Para iniciar sesion en Sauce Demo
 
 Background:
-    Given "Camila" navega a la pagina "https://www.saucedemo.com/"
+    Given "Diego" navega a la pagina "https://www.saucedemo.com/"
     When ingresa los siguientes datos
       | standard_user | secret_sauce |
     Then verifica que el mensaje sea "PRODUCTS"
 
 Scenario: Adquirir un producto en sauce
-  Given "Camila" escoge un producto para adquirir
+  Given "Diego" escoge un producto para adquirirlo
   When ingresa los datos de envio
       | AnuelAA | Badbunny | 6666 |
   Then Verifica que el mensaje sea "THANK YOU FOR YOUR ORDER"
