@@ -5,6 +5,7 @@
 .idea
 *.iml
 *.class
+.gradle
 
 # Ignore build output directory
 build/

@@ -16,7 +16,7 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
-import static com.sophossolutions.certification.userinfaces.CheckOutCompleteSauceDemoPage.*;
+import static com.sophossolutions.certification.userinfaces.CheckoutCompleteSauceDemoPage.*;
 
 
 
