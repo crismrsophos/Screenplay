@@ -5,10 +5,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import com.sophossolutions.certification.models.UserCredential;
-import com.sophossolutions.certification.models.UserInformation;
 import com.sophossolutions.certification.questions.GetText;
-import com.sophossolutions.certification.tasks.CheckoutInfo;
-import com.sophossolutions.certification.tasks.Inventory;
 import com.sophossolutions.certification.tasks.Login;
 
 import io.cucumber.java.Before;
