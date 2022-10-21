@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class BuySauce {
+public class UserInformation {
     private String firstname;
     private String lastname;
     private String postalCode;

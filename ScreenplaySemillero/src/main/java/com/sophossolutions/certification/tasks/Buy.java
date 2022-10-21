@@ -1,10 +1,10 @@
 package com.sophossolutions.certification.tasks;
 
-import static com.sophossolutions.certification.userinfaces.CartBuySauceDemoPage.BTN_CHECKOUT;
-import static com.sophossolutions.certification.userinfaces.CheckoutBuySauceDemoPage.*;
-import static com.sophossolutions.certification.userinfaces.OverviewBuySauceDemo.BTN_FINISH;
+import static com.sophossolutions.certification.userinfaces.CartSauceDemoPage.BTN_CHECKOUT;
+import static com.sophossolutions.certification.userinfaces.CheckoutStepOneSauceDemoPage.*;
+import static com.sophossolutions.certification.userinfaces.CheckoutStepTwoSauceDemoPage.BTN_FINISH;
 
-import com.sophossolutions.certification.models.BuySauce;
+import com.sophossolutions.certification.models.UserInformation;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -12,7 +12,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
 
-public class CheckoutBuySauce implements Task {
+public class Buy implements Task {
     private String firstname;
     private String lastname;
     private String postalCode;
@@ -20,7 +20,7 @@ public class CheckoutBuySauce implements Task {
     private Target btnContinue;
     private Target btnFinish;
 
-    public CheckoutBuySauce(BuySauce data) {
+    public Buy(UserInformation data) {
         super();
         firstname = data.getFirstname();
         lastname = data.getLastname();
@@ -41,7 +41,7 @@ public class CheckoutBuySauce implements Task {
                 Click.on(btnFinish));
     }
 
-    public static CheckoutBuySauce checkoutProcess(BuySauce credentials) {
-        return Tasks.instrumented(CheckoutBuySauce.class, credentials);
+    public static Buy checkoutProcess(UserInformation credentials) {
+        return Tasks.instrumented(Buy.class, credentials);
     }
 }

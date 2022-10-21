@@ -11,13 +11,14 @@ Feature: Demo Screenplay
     Then verifica que el mensaje sea "PRODUCTS"
 
   Scenario: Realizar compra de un artículo en Sauce Demo
-    Given "Darlene" navega a la pagina "https://www.saucedemo.com/inventory.html"
-    When selecciona el producto "Sauce Labs Fleece Jacket" y diligencia los campos del formulario de checkout con los datos
+    Given "Darlene" selecciona el producto "Sauce Labs Bike Light"
+    When diligencia los campos del formulario de checkout con los datos
       | Darlene | Alderson | 10002 |
     Then verifica que el mensaje mostrado "THANK YOU FOR YOUR ORDER"
 
   #Scenario: Realizar compra de artículos menores de $20.00 en Sauce Demo
     #Given "Darlene" navega a la pagina "https://www.saucedemo.com/inventory.html"
-    #When selecciona el producto y diligencia los campos del formulario de checkout con los datos
-      #| Darlene | Alderson | 10002 |
+    #When selecciona los productos con precio menor a "$20.00"
+    #And diligencia los campos del formulario de checkout con los datos
+     # | Darlene | Alderson | 10002 |
     #Then verifica que el mensaje mostrado "THANK YOU FOR YOUR ORDER"
