@@ -10,3 +10,4 @@ public class UserInformation {
     private String lastname;
     private String postalCode;
 }
+

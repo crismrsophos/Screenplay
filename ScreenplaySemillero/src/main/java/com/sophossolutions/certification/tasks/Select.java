@@ -20,6 +20,8 @@ public class Select implements Task {
         btnGoToCart = BTN_GO_TO_CART;
     }
 
+
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -31,3 +33,4 @@ public class Select implements Task {
         return Tasks.instrumented(Select.class, product);
     }
 }
+

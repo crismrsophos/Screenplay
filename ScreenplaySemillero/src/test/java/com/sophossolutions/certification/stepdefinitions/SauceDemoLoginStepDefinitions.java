@@ -3,19 +3,23 @@ package com.sophossolutions.certification.stepdefinitions;
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
 import static com.sophossolutions.certification.userinfaces.HomeSauceDemoPage.*;
 import static org.hamcrest.core.StringContains.containsStringIgnoringCase;
 
 import com.sophossolutions.certification.models.UserCredential;
 import com.sophossolutions.certification.questions.GetText;
 import com.sophossolutions.certification.tasks.Login;
+
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+
 
 public class SauceDemoLoginStepDefinitions {
     @Before
@@ -39,3 +43,7 @@ public class SauceDemoLoginStepDefinitions {
                 .should(GivenWhenThen.seeThat(GetText.theField(TITLE_SAUCE), containsStringIgnoringCase(msg)));
     }
 }
+
+
+
+

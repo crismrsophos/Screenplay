@@ -1,8 +1,10 @@
 package com.sophossolutions.certification.tasks;
 
+
 import static com.sophossolutions.certification.userinfaces.CartSauceDemoPage.BTN_CHECKOUT;
 import static com.sophossolutions.certification.userinfaces.CheckoutStepOneSauceDemoPage.*;
 import static com.sophossolutions.certification.userinfaces.CheckoutStepTwoSauceDemoPage.BTN_FINISH;
+
 
 import com.sophossolutions.certification.models.UserInformation;
 import net.serenitybdd.screenplay.Actor;
@@ -13,6 +15,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class Buy implements Task {
+
     private String firstname;
     private String lastname;
     private String postalCode;
@@ -45,3 +48,4 @@ public class Buy implements Task {
         return Tasks.instrumented(Buy.class, credentials);
     }
 }
+
