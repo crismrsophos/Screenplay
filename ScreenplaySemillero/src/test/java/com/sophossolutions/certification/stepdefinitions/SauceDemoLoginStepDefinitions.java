@@ -37,7 +37,7 @@ public class SauceDemoLoginStepDefinitions {
 	@When("ingresa los siguientes datos")
 	public void ingresaLosSiguientesDatos(UserCredential credentials) {
 		theActorInTheSpotlight().attemptsTo(Login.in(credentials));
-		//theActorInTheSpotlight().attemptsTo(CheckoutInfo.in(information));
+
 
 	}
 

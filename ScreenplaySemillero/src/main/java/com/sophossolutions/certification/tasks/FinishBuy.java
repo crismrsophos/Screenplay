@@ -15,7 +15,7 @@ import static com.sophossolutions.certification.userinfaces.CheckoutOverviewPage
 public class FinishBuy implements Task {
     private Target btnFinish;
 
-    public FinishBuy (UserCredential credentials) {
+    public FinishBuy () {
         super();
         btnFinish = BTN_FINISH;
     }

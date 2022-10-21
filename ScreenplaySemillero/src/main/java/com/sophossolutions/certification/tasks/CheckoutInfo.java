@@ -41,8 +41,8 @@ public class CheckoutInfo implements Task {
         return Tasks.instrumented(CheckoutInfo.class, information);
     }
 
-    public static CheckoutInfo in() {
-        return Tasks.instrumented(CheckoutInfo.class);
+    public static CheckoutInfo in(UserInformation information) {
+        return Tasks.instrumented(CheckoutInfo.class, information);
     }
 
     }
