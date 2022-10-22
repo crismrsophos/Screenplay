@@ -1,4 +1,4 @@
-#Author: your.email@your.domain.com
+#Author: cristian.monsalve@sophossolutions.com
 Feature: Iniciar sesion en Sauce Demo
   Yo como aprendiz
   Necesito crear una plantilla

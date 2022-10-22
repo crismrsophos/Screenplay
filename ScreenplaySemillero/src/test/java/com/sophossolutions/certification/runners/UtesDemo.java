@@ -1,8 +1,8 @@
 package com.sophossolutions.certification.runners;
-import org.junit.runner.RunWith;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
@@ -10,10 +10,10 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
         		"com.sophossolutions.certification.stepdefinitions",
         		"com.sophossolutions.certification.hooks"
         },
-        features = "src/test/resources/features/sauce_demo_login.feature",
+        features = "src/test/resources/features/utest_register_user.feature",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 
-public class SauceDemoLogin {
+public class UtesDemo {
 
 }

@@ -47,3 +47,4 @@ public class SauceDemoBuyStepDefinitions {
                .should(GivenWhenThen.seeThat(GetText.theField(TITTLE_PURCHARSE), containsStringIgnoringCase(message)));
     }
 }
+
