@@ -18,7 +18,7 @@ import static com.sophossolutions.certification.userinfaces.UtestSignUpAddresPag
 //import static com.sophossolutions.certification.userinfaces.UtestSignUpAddresPage.BTN_USER_COUNTRY;
 //import static com.sophossolutions.certification.userinfaces.UtestSignUpAddresPage.BTN_SELECT_COUNTRY;
 import static com.sophossolutions.certification.userinfaces.UtestSignUpAddresPage.BTN_NEXTDEVICES;
-
+import static com.sophossolutions.certification.userinfaces.UtestSignUpCompletePage.BTN_LAST_STEP;
 
 
 
@@ -27,11 +27,13 @@ public class UTestAddres implements Task {
     private String zipCode;
 
     private Target btnNextDevices;
+    private Target btnLastStep;
 
     public UTestAddres (UtestUserAddres UTadress) {
         super();
         zipCode = UTadress.getZipCode();
         btnNextDevices = BTN_NEXTDEVICES;
+        btnLastStep = BTN_LAST_STEP;
 
 
     }
@@ -40,7 +42,7 @@ public class UTestAddres implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(WaitUntil.the(btnNextDevices, isVisible()).forNoMoreThan(10).seconds(),
                 Enter.theValue(zipCode).into(USER_ZIP_CODE),
-                Click.on(btnNextDevices));
+                Click.on(btnNextDevices), Click.on(btnLastStep));
     }
 
     public static UTestAddres in (UtestUserAddres Uaddress) {

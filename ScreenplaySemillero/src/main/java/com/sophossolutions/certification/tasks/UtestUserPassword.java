@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
 
+
 import static com.sophossolutions.certification.userinfaces.UtestSignUpCompletePage.PASSWORD;
 import static com.sophossolutions.certification.userinfaces.UtestSignUpCompletePage.CONFIRM_PASSWORD;
 import static com.sophossolutions.certification.userinfaces.UtestSignUpCompletePage.CLIC_TERMINOS;
@@ -16,6 +17,7 @@ import static com.sophossolutions.certification.userinfaces.UtestSignUpCompleteP
 
 
 public class UtestUserPassword implements Task {
+
     private String password;
     private String confirmPassword;
 
@@ -28,11 +30,13 @@ public class UtestUserPassword implements Task {
 
     public UtestUserPassword (UtesPassword UTpasswprd) {
         super();
+
         password = UTpasswprd.getPassword();
         confirmPassword = UTpasswprd.getPassword();
         clicTerminos = CLIC_TERMINOS;
         clicPoliticas = CLIC_POLITICAS_PRIVACY;
         btnCompleteSetup = BTN_COMPLETE_SETUP;
+
 
 
 

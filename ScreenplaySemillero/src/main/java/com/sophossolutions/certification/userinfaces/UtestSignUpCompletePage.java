@@ -4,6 +4,8 @@ package com.sophossolutions.certification.userinfaces;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class UtestSignUpCompletePage {
+    public static final Target BTN_LAST_STEP = Target.the("clic en el boton").locatedBy("//*[text()='Next: Last Step']");
+
     public static final Target PASSWORD = Target.the("ingrese la contraseña").locatedBy("id:password");
 
     public static final Target CONFIRM_PASSWORD = Target.the("confirme la contraseña").locatedBy("id:confirmPassword");
