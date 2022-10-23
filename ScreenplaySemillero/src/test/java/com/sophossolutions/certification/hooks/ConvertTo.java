@@ -2,11 +2,8 @@ package com.sophossolutions.certification.hooks;
 
 import java.util.List;
 
-import com.sophossolutions.certification.models.UserCredential;
+import com.sophossolutions.certification.models.*;
 
-import com.sophossolutions.certification.models.UserInformation;
-import com.sophossolutions.certification.models.UtestUserInfo;
-import com.sophossolutions.certification.models.UtestUserAddres;
 import io.cucumber.java.DataTableType;
 
 public class ConvertTo {
@@ -29,5 +26,10 @@ public class ConvertTo {
 	@DataTableType
 	public UtestUserAddres UTadress(List<String> entry){
 		return new UtestUserAddres(entry.get(0), entry.get(1), entry.get(2));
+	}
+
+	@DataTableType
+	public UtesPassword UTpassword(List<String> entry){
+		return new UtesPassword(entry.get(0), entry.get(1));
 	}
 }

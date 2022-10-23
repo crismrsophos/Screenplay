@@ -1,5 +1,7 @@
 package com.sophossolutions.certification.stepdefinitions;
+import com.sophossolutions.certification.models.UtestUserInfo;
 import com.sophossolutions.certification.tasks.UTestHome;
+import com.sophossolutions.certification.tasks.UTestPersonalInfo;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -16,8 +18,8 @@ public class UtestStepDefinitions {
 
 
     @When("suministra los siguientes datos")
-    public void suministraLosSiguientesDatos() {
-        theActorInTheSpotlight().attemptsTo(UTestHome.in());
+    public void suministraLosSiguientesDatos(UtestUserInfo Uinfo) {
+        theActorInTheSpotlight().attemptsTo(UTestHome.in(), UTestPersonalInfo.in(Uinfo));
     }
     @When("suministra los datos de direccion")
     public void suministraLosDatosDeDireccion() {

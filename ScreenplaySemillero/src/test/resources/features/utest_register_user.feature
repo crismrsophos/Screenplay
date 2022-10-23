@@ -10,5 +10,7 @@ Feature: Iniciar sesion en Sauce Demo
       | Camus | Acuario | camus@yopmail.com | Febrero | 7 | 2000 | English | French |
     And suministra los datos de direccion
       | Medellin | 050044 | Colombia |
+    And suministra la contraseña
+      | Madrid1315 | Madrid1315 |
     Then verifica que el mensaje sea "Welcome to the world's largest community of freelance software testers!"
 
