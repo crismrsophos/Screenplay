@@ -1,6 +1,7 @@
 package com.sophossolutions.certification.stepdefinitions;
 import com.sophossolutions.certification.tasks.UTestHome;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,15 +13,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class UtestStepDefinitions {
 
-    @Before
-    public void setup() {
-        setTheStage(new OnlineCast());
-    }
 
 
-    @Given("{string} navega a la pagina {string}")
-    public void ingresaALaPagina(String string, String string2) {
-    }
     @When("suministra los siguientes datos")
     public void suministraLosSiguientesDatos() {
         theActorInTheSpotlight().attemptsTo(UTestHome.in());
@@ -29,4 +23,6 @@ public class UtestStepDefinitions {
     public void suministraLosDatosDeDireccion() {
 
     }
+
+
 }

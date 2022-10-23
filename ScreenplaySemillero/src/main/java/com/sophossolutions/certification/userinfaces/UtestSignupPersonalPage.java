@@ -12,12 +12,16 @@ public class UtestSignupPersonalPage {
 
     public static final Target BTN_MONTH_BIRTH = Target.the("mes de nacimiento").locatedBy("name:birthMonth");
 
-    public static final Target BTN_SELECT_MONTH = Target.the("mes de nacimiento").locatedBy("name:birthMonth");
+    public static final Target BTN_SELECT_MONTH = Target.the("mes de nacimiento").locatedBy("//*[text()='February']");
 
-    public static final Target DATE_DAY_BIRTH = Target.the("mes de nacimiento").locatedBy("name:birthDay");
+    public static final Target BTN_DATE_DAY_BIRTH = Target.the("mes de nacimiento").locatedBy("name:birthDay");
 
-    public static final Target DATE_DAY_YEAR = Target.the("mes de nacimiento").locatedBy("name:birthYear");
+    public static final Target BTN_SELECT_DAY_BIRTH = Target.the("mes de nacimiento").locatedBy("//*[text()='7']");
 
-    public static final Target BUTTON_NEXLOCATION = Target.the("boton nextlocation").locatedBy("//*[@id=regs_container]/div/div[2]/div/div[2]/div/form/div[2]/a");
+    public static final Target BTN_YEAR_BIRTH = Target.the("mes de nacimiento").locatedBy("name:birthYear");
+
+    public static final Target BTN_SELECT_YEAR = Target.the("mes de nacimiento").locatedBy("//*[text()='2000']");
+
+    public static final Target BUTTON_NEXT_LOCATION = Target.the("boton nextlocation").locatedBy("//*[text()='Next: Location']");
 
 }

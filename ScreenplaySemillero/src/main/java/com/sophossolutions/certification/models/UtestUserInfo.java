@@ -3,14 +3,16 @@ package com.sophossolutions.certification.models;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.lang.annotation.Target;
-
 @Getter
 @AllArgsConstructor
 
-public class UserPersonalInfo {
+public class UtestUserInfo {
     private String firtsName;
     private String lastName;
     private String emailAddress;
-    private Target dateOfBirth;
+    private String monthDate;
+    private String dayDate;
+    private String dateYear;
+    private String englishLanguaje;
+    private String frenchLanguaje;
 }

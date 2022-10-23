@@ -14,10 +14,9 @@ public class UTestHome implements Task {
 
 
 
-    public  UTestHome () {
+    public UTestHome(){
         super();
         btnBecomeTester = BTN_BECOME_TESTER;
-
     }
 
     @Override
