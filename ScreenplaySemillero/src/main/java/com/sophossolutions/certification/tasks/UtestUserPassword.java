@@ -44,7 +44,7 @@ public class UtestUserPassword implements Task {
                 Click.on(clicTerminos),Click.on(clicPoliticas),Click.on(btnCompleteSetup));
     }
 
-    public static UtestUserPassword in (UtestUserPassword Uinfo) {
+    public static UtestUserPassword in (UtesPassword Uinfo) {
         return Tasks.instrumented(UtestUserPassword.class, Uinfo);
     }
 }

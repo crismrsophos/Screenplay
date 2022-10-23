@@ -1,16 +1,12 @@
 package com.sophossolutions.certification.stepdefinitions;
+import com.sophossolutions.certification.models.UtesPassword;
+import com.sophossolutions.certification.models.UtestUserAddres;
 import com.sophossolutions.certification.models.UtestUserInfo;
+import com.sophossolutions.certification.tasks.UTestAddres;
 import com.sophossolutions.certification.tasks.UTestHome;
 import com.sophossolutions.certification.tasks.UTestPersonalInfo;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import com.sophossolutions.certification.tasks.UtestUserPassword;
 import io.cucumber.java.en.When;
-import io.cucumber.java.Before;
-import net.serenitybdd.screenplay.actors.OnlineCast;
-
-import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class UtestStepDefinitions {
@@ -22,9 +18,15 @@ public class UtestStepDefinitions {
         theActorInTheSpotlight().attemptsTo(UTestHome.in(), UTestPersonalInfo.in(Uinfo));
     }
     @When("suministra los datos de direccion")
-    public void suministraLosDatosDeDireccion() {
-
+    public void suministraLosDatosDeDireccion(UtestUserAddres Adress) {
+        theActorInTheSpotlight().attemptsTo(UTestAddres.in(Adress));
     }
+
+   @When("suministra la contraseña")
+    public void suministraLaContraseña(UtesPassword Password) {
+       theActorInTheSpotlight().attemptsTo(UtestUserPassword.in(Password));
+   }
+
 
 
 }
