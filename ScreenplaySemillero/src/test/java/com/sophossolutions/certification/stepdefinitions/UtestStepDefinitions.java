@@ -15,7 +15,7 @@ public class UtestStepDefinitions {
 
     @When("suministra los siguientes datos")
     public void suministraLosSiguientesDatos(UtestUserInfo Uinfo) {
-        theActorInTheSpotlight().attemptsTo(UTestHome.in(), UTestPersonalInfo.in(Uinfo));
+        theActorInTheSpotlight().attemptsTo(UTestPersonalInfo.in(Uinfo));
     }
     @When("suministra los datos de direccion")
     public void suministraLosDatosDeDireccion(UtestUserAddres Adress) {

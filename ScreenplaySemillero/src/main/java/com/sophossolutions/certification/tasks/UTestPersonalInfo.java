@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
 
+import static com.sophossolutions.certification.userinfaces.UtestHomePage.BTN_BECOME_TESTER;
 import static com.sophossolutions.certification.userinfaces.UtestSignupPersonalPage.FIRST_NAME;
 import static com.sophossolutions.certification.userinfaces.UtestSignupPersonalPage.LAST_NAME;
 import static com.sophossolutions.certification.userinfaces.UtestSignupPersonalPage.EMAIL_ADDRESS;
@@ -23,6 +24,8 @@ import static com.sophossolutions.certification.userinfaces.UtestSignupPersonalP
 
 
 public class UTestPersonalInfo implements Task {
+
+    private Target btnBecomeTester;
     private String firstName;
     private String lastNameUser;
     private String emailUser;
@@ -41,6 +44,7 @@ public class UTestPersonalInfo implements Task {
 
     public UTestPersonalInfo (UtestUserInfo informationUser) {
         super();
+        btnBecomeTester = BTN_BECOME_TESTER;
         firstName = informationUser.getFirtsName();
         lastNameUser = informationUser.getLastName();
         emailUser = informationUser.getEmailAddress();
@@ -57,7 +61,7 @@ public class UTestPersonalInfo implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Enter.theValue(firstName).into(FIRST_NAME), Enter.theValue(lastNameUser).into(LAST_NAME),
+        actor.attemptsTo(Click.on(btnBecomeTester),Enter.theValue(firstName).into(FIRST_NAME), Enter.theValue(lastNameUser).into(LAST_NAME),
                 Enter.theValue(emailUser).into(EMAIL_ADDRESS), Click.on(btnMonthBirth), Click.on(btnSelectMonthBirth),
                 Click.on(btnDaybirth), Click.on(btnSelectDay), Click.on(btnYearBirth), Click.on(btnSelectYear),Click.on(btnNextLocation));
     }
