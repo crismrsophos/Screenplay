@@ -1,22 +1,21 @@
 package com.sophossolutions.certification.tasks;
 
-import org.apache.http.HttpHeaders;
-
 import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.rest.interactions.Patch;
+import org.apache.http.HttpHeaders;
 
 
-public class ExecutePatchToken implements Task {
+public class ExecutePostToken implements Task {
 
 	private String token;
 	private String endpoint;
 	private Object body;
 
-	public ExecutePatchToken(String token, String endpoint, Object body) {
+	public ExecutePostToken(String token, String endpoint, Object body) {
 		super();
 		this.token = token;
 		this.endpoint = endpoint;
@@ -30,7 +29,7 @@ public class ExecutePatchToken implements Task {
 		SerenityRest.lastResponse().prettyPeek();
 	}
 
-	public static ExecutePatchToken setInfoUser(String token, String endpoint, Object body) {
-		return Tasks.instrumented(ExecutePatchToken.class, token, endpoint, body);
+	public static ExecutePostToken setInfoUser(String token, String endpoint, Object body) {
+		return Tasks.instrumented(ExecutePostToken.class, token, endpoint, body);
 	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.sophossolutions.certification.models.User;
+import com.sophossolutions.certification.models.UserPost;
 import com.sophossolutions.certification.models.*;
 
 import io.cucumber.java.DataTableType;
@@ -38,5 +39,10 @@ public class ConvertTo {
 	@DataTableType
 	public User toUserModel(Map<String, String> entry) {
 		return new User(entry.get("name"), entry.get("email"), entry.get("status"), entry.get("gender"));
+	}
+
+	@DataTableType
+	public UserPost toUserPost(Map<String, String> entry){
+		return new UserPost (entry.get("name"), entry.get("email"),entry.get("comments"));
 	}
 }

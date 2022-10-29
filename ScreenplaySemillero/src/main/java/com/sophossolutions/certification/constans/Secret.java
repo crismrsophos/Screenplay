@@ -2,6 +2,6 @@ package com.sophossolutions.certification.constans;
 
 public class Secret {
 
-    public static final String TOKEN_GO_REST = "a57167f352934c4cbb1ff868084bfe08dc026966a518edfbc682c73cf4e0f1d1";
+    public static final String TOKEN_GO_REST = "8dfcb6f0f86d4431c250caf93afc027fe64c78c20bfdc02f9ae7fffb175f6b0a";
 
 }

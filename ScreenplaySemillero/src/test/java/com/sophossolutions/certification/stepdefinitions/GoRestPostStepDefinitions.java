@@ -1,2 +1,4 @@
-package com.sophossolutions.certification.stepdefinitions;public class GoRestPostStepDefinitions {
+package com.sophossolutions.certification.stepdefinitions;
+
+public class GoRestPostStepDefinitions {
 }
