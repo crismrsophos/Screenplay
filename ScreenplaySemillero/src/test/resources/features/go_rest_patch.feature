@@ -18,4 +18,4 @@ Feature: Automatización de Patch
 
     Examples:
       | baseUrl                               | id   | name          | email                          | status   | gender |
-      | https://gorest.co.in/public/v2/users/ | 4712 | Carlos Amparo | carlos.amparo@peligrositos.com | inactive | male   |
+      | https://gorest.co.in/public/v2/users/ | 3489 | Carlos Amparo | carlos.amparo@peligrositos.com | inactive | male   |

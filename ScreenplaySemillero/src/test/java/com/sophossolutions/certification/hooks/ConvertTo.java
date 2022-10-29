@@ -43,6 +43,6 @@ public class ConvertTo {
 
 	@DataTableType
 	public UserPost toUserPost(Map<String, String> entry){
-		return new UserPost (entry.get("name"), entry.get("email"),entry.get("comments"));
+		return new UserPost (entry.get("name"), entry.get("email"),entry.get("body"));
 	}
 }
