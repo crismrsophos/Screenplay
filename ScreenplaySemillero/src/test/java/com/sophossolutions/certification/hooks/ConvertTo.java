@@ -45,4 +45,13 @@ public class ConvertTo {
 	public UserPost toUserPost(Map<String, String> entry){
 		return new UserPost (entry.get("name"), entry.get("email"),entry.get("body"));
 	}
+
+	@DataTableType
+	public Booking toUserBooking(Map<String, String> entry){
+		return new Booking (
+				entry.get("firstname"), entry.get("lastname"),entry.get("totalprice"), entry.get("depositpaid"),
+				new BookingDates(entry.get("checkin"),entry.get("checkout")),entry.get("additionalneeds"));
+	}
+
+
 }
