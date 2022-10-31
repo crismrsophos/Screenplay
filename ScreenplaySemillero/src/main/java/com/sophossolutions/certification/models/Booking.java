@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 
 public class Booking {
-    private String firtsname;
+    private String firstname;
     private String lastname;
     private String totalprice;
     private String depositpaid;

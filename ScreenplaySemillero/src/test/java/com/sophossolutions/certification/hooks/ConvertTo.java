@@ -49,8 +49,12 @@ public class ConvertTo {
 	@DataTableType
 	public Booking toUserBooking(Map<String, String> entry){
 		return new Booking (
-				entry.get("firstname"), entry.get("lastname"),entry.get("totalprice"), entry.get("depositpaid"),
-				new BookingDates(entry.get("checkin"),entry.get("checkout")),entry.get("additionalneeds"));
+				entry.get("firstname"),
+				entry.get("lastname"),
+				entry.get("totalprice"),
+				entry.get("depositpaid"),
+				new BookingDates(entry.get("checkin"),entry.get("checkout"))
+				,entry.get("additionalneeds"));
 	}
 
 

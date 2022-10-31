@@ -27,7 +27,6 @@ public class ExecutePatchToken implements Task {
 	public <T extends Actor> void performAs(T actor) {
 		actor.attemptsTo(Patch.to(endpoint).with(
 				request -> request.header(HttpHeaders.CONTENT_TYPE, ContentType.JSON).auth().oauth2(token).body(body)));
-		SerenityRest.lastResponse().prettyPeek();
 	}
 
 	public static ExecutePatchToken setInfoUser(String token, String endpoint, Object body) {

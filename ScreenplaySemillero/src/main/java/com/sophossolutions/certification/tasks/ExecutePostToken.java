@@ -26,7 +26,6 @@ public class ExecutePostToken implements Task {
 	public <T extends Actor> void performAs(T actor) {
 		actor.attemptsTo(Post.to(endpoint).with(
 				request -> request.header(HttpHeaders.CONTENT_TYPE, ContentType.JSON).auth().oauth2(token).body(body)));
-		SerenityRest.lastResponse().prettyPeek();
 	}
 
 	public static ExecutePostToken setInfoUser(String token, String endpoint, Object body) {
