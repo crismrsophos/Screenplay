@@ -1,4 +1,4 @@
-#Author: rigoberto.henao@sophossolutions.com
+#Author: cristian.monsalve@sophossolutions.com
 Feature: Automatización de Patch
   Yo como alumno
   Deseo crear una muestra de como se automatizan servicios

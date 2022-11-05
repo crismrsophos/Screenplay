@@ -57,5 +57,22 @@ public class ConvertTo {
 				,entry.get("additionalneeds"));
 	}
 
+	@DataTableType
+	public UserQa toUserQA (Map<String, String> entry){
+		return new UserQa(
+				entry.get("name"),
+				entry.get("lastname"),
+				entry.get("email"),
+				entry.get("gender"),
+				entry.get("mobileNumber"),
+				entry.get("dateOfbirth"),
+				entry.get("subjects"),
+				entry.get("hobbies"),
+				entry.get("pictures"),
+				entry.get("address"),
+				entry.get("state"),
+				entry.get("city"));
+	}
+
 
 }

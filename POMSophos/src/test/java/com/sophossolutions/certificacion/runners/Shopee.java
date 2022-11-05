@@ -8,14 +8,14 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-		glue = "com.sophossolutions.certificacion.stepdefinitions", 
-		features = "src/test/resources/features/guru_login.feature",
-		
-		snippets = SnippetType.CAMELCASE, 
-        monochrome = true, 
-        dryRun = false 
-		)
+        glue = "com.sophossolutions.certificacion.stepdefinitions",
+        features = "src/test/resources/features/ali_express.feature",
 
-public class GuruLogin {
+        snippets = SnippetType.CAMELCASE,
+        monochrome = true,
+        dryRun = false
+)
 
+
+public class AllieExpress {
 }
