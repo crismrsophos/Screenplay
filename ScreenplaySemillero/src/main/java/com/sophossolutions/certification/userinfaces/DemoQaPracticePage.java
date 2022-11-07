@@ -14,6 +14,8 @@ public class DemoQaPracticePage {
 
     public static final Target MOBILE_PHONE = Target.the("campo de numero").locatedBy("//*[@id='userNumber']");
 
+    public static final Target CLIC_DATE_OF_BIRTH = Target.the("clic campo de fecha de nacimiento").locatedBy("(//*[@id='dateOfBirthInput'])");
+
     public static final Target DATE_OF_BIRTH = Target.the("campo de fecha de nacimiento").locatedBy("(//*[@id='dateOfBirthInput' and value()='07 Feb 2022'])");
 
     public static final Target CLIC_SUBJECTS = Target.the("clic a subjects").locatedBy("(//*[@id='subjectsContainer'])");

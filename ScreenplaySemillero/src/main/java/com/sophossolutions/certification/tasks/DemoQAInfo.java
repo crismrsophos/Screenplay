@@ -8,26 +8,10 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
 
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.NAME;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.LAST_NAME;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.EMAIL;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.GENDER;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.MOBILE_PHONE;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.DATE_OF_BIRTH;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.CLIC_SUBJECTS;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.SELECT_SUBJECTS;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.SELECT_HOBBIES;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.BTN_SELECT_FILE;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.ADDRESS;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.CLIC_STATE;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.SELECT_STATE;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.CLIC_CITY;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.SELECT_CITY;
-import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.BTN_SUBMIT;
+import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.*;
 
 
-
-    public class DemoQAInfo implements Task {
+public class DemoQAInfo implements Task {
 
 
         private String name;
@@ -35,6 +19,8 @@ import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.B
         private String email;
         private Target gender;
         private String mobile;
+
+        private Target clicDateOfBirth;
         private String dateOfBirth;
 
         private Target clicSubjects;
@@ -60,6 +46,7 @@ import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.B
             email = infoUser.getEmail();
             gender = GENDER;
             mobile = infoUser.getMobileNumber();
+            clicDateOfBirth = CLIC_DATE_OF_BIRTH;
             dateOfBirth = infoUser.getDateOfbirth();
             clicSubjects = CLIC_SUBJECTS;
             selecSubjects =infoUser.getSubjects();
@@ -80,8 +67,9 @@ import static com.sophossolutions.certification.userinfaces.DemoQaPracticePage.B
             actor.attemptsTo(Enter.theValue(name).into(NAME),
                     Enter.theValue(lastNameUser).into(LAST_NAME),
                     Enter.theValue(email).into(EMAIL),
-                    Click.on(GENDER),
+                    Click.on(gender),
                     Enter.theValue(mobile).into(MOBILE_PHONE),
+                    Click.on(clicDateOfBirth),
                     Enter.theValue(dateOfBirth).into(DATE_OF_BIRTH),
                     Click.on(clicSubjects),
                     Enter.theValue(selecSubjects).into(SELECT_SUBJECTS),
