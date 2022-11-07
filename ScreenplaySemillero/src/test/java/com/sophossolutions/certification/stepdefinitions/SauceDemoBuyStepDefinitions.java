@@ -41,10 +41,10 @@ public class SauceDemoBuyStepDefinitions {
         theActorInTheSpotlight().attemptsTo(Select.in(), Buy.info(information),FinishBuy.in());
 
     }
-   @Then("Verifica que el mensaje sea {string}")
+  /* @Then("Verifica que el mensaje sea {string}")
     public void verificaQueElMensajeSea(String message) {
        theActorInTheSpotlight()
-               .should(GivenWhenThen.seeThat(GetText.theField(TITTLE_PURCHARSE), containsStringIgnoringCase(message)));
+               .should(GivenWhenThen.seeThat(GetText.theField(TITTLE_PURCHARSE), containsStringIgnoringCase(message)));*/
     }
-}
+
 

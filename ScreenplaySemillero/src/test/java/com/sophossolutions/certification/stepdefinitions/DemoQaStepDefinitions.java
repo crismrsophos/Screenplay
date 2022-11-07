@@ -1,15 +1,19 @@
 package com.sophossolutions.certification.stepdefinitions;
 
+import com.sophossolutions.certification.models.UserQa;
+import com.sophossolutions.certification.tasks.DemoQAInfo;
+import com.sophossolutions.certification.tasks.DemoQaButtons;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
 public class DemoQaStepDefinitions {
-    @Given("{string} desea navegar en la siguiente https:\\/\\/www.advantageonlineshopping.com\\/#\\/")
-    public void deseaNavegarEnLaSiguienteHttpsWwwAdvantageonlineshoppingCom(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("Ingresa los siguientes datos de usuario")
-    public void ingresaLosSiguientesDatosDeUsuario(io.cucumber.datatable.DataTable dataTable) {
-    }
+
+        @When("Ingresa los siguientes datos de usuario")
+        public void ingresaLosSiguientesDatosDeUsuario(UserQa userqa) {
+            theActorInTheSpotlight().attemptsTo(DemoQaButtons.in(),
+                    DemoQAInfo.in(userqa));
+        }
 }

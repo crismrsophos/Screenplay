@@ -10,7 +10,11 @@ public class DemoQaPracticePage {
 
     public static final Target EMAIL = Target.the("campo de email").locatedBy("(//*[@id='userEmail'])");
 
-    public static final Target DATE_OF_BIRTH = Target.the("campo de fecha de nacimiento").locatedBy("(//*[@id='dateOfBirthInput'])");
+    public static final Target GENDER = Target.the("campo de genero").locatedBy("//*[@class='custom-control-label' and text()='Male']");
+
+    public static final Target MOBILE_PHONE = Target.the("campo de numero").locatedBy("//*[@id='userNumber']");
+
+    public static final Target DATE_OF_BIRTH = Target.the("campo de fecha de nacimiento").locatedBy("(//*[@id='dateOfBirthInput' and value()='07 Feb 2022'])");
 
     public static final Target CLIC_SUBJECTS = Target.the("clic a subjects").locatedBy("(//*[@id='subjectsContainer'])");
 
@@ -30,6 +34,6 @@ public class DemoQaPracticePage {
 
     public static final Target SELECT_CITY = Target.the("campo de email").locatedBy("");
 
-
+    public static final Target BTN_SUBMIT = Target.the("campo de email").locatedBy("(//*[@class='btn btn-primary'])");
 
 }
