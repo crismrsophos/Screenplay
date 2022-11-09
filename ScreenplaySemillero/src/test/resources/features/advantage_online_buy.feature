@@ -10,7 +10,6 @@ Feature: Automatización de Patch
       | category   | product   | color   | quantity   |
       | <category> | <product> | <color> | <quantity> |
     And ingrese los siguientes datos
-      | username   | password   |
       | <username> | <password> |
     Then  verifica que el mensaje sea "Welcome to the world's largest community of freelance software testers!"
     Examples:

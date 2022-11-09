@@ -21,7 +21,7 @@ public class Login implements Task {
 
 	public Login(UserCredential credentials) {
 		super();
-		user = credentials.getUser();
+		user = credentials.getUsername();
 		password = credentials.getPassword();
 		btnLogin = BTN_LOGIN;
 	}

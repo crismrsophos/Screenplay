@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class UserCredential {
 
-	private String user;
+	private String username;
 	private String password;
 
 }

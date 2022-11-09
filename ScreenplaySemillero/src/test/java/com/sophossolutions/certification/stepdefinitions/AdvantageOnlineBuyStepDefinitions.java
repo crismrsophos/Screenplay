@@ -1,5 +1,8 @@
 package com.sophossolutions.certification.stepdefinitions;
 import com.sophossolutions.certification.models.ProductAdvantage;
+import com.sophossolutions.certification.models.UserCredential;
+import com.sophossolutions.certification.tasks.AdvantageFullfillData;
+import com.sophossolutions.certification.tasks.AdvantageLogin;
 import com.sophossolutions.certification.tasks.AdvantageSelectProduct;
 import io.cucumber.java.en.When;
 
@@ -11,7 +14,8 @@ public class AdvantageOnlineBuyStepDefinitions {
         theActorInTheSpotlight().attemptsTo(AdvantageSelectProduct.in(selectProduct));
     }
     @When("ingrese los siguientes datos")
-    public void ingreseLosSiguientesDatos(io.cucumber.datatable.DataTable dataTable) {
+    public void ingreseLosSiguientesDatos(UserCredential credential) {
+        theActorInTheSpotlight().attemptsTo(AdvantageLogin.in(credential), AdvantageFullfillData.in());
 
     }
 

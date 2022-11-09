@@ -32,6 +32,7 @@ public class AdvantageSelectProduct implements Task {
 
     private Target btnSelectArticle;
 
+    private String color;
     private Target btnColor;
 
     private String quantity;
@@ -47,8 +48,9 @@ public class AdvantageSelectProduct implements Task {
         btnSelectCategory = BTN_CHOOSE_CATEGORY.of(category);
         product = products.getProduct();
         btnSelectArticle = BTN_CHOOSE_TABLET.of(product);
-        btnColor = COLOR;
-        quantity = products.getQuantity();
+        color=products.getColor();
+        btnColor = COLOR.of(color);
+        //quantity = products.getQuantity();
         btnAddCart = BTN_ADD_TO_CART;
         btnCheckout = BTN_CHECKOUT;
 
@@ -59,7 +61,7 @@ public class AdvantageSelectProduct implements Task {
        actor.attemptsTo(Click.on(btnSelectCategory),
                Click.on(btnSelectArticle),
                Click.on(btnColor),
-               Enter.theValue(quantity).into(QUANTITY),
+               //Enter.theValue(quantity).into(QUANTITY),
                Click.on(btnAddCart),
                Click.on(BTN_CHECKOUT));
     }
