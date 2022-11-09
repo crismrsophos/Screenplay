@@ -32,11 +32,11 @@ public class DemoQaPracticePage {
 
     public static final Target CLIC_STATE = Target.the("campo de estado").locatedBy("(//*[@id='state'])");
 
-    public static final Target SELECT_STATE = Target.the("campo seleccionar estado").locatedBy("(//*[@class=' css-1hwfws3'])[1]");
+    public static final Target SELECT_STATE = Target.the("campo seleccionar estado").locatedBy("//*[text()='Haryana']");
 
     public static final Target CLIC_CITY = Target.the("campo de clic ciudad").locatedBy("(//*[@id='city'])");
 
-    public static final Target SELECT_CITY = Target.the("campo de seleccionar ciudad").locatedBy("");
+    public static final Target SELECT_CITY = Target.the("campo de seleccionar ciudad").locatedBy("//*[text()='Panipat']");
 
     public static final Target BTN_SUBMIT = Target.the("campo de boton submit").locatedBy("(//*[@class='btn btn-primary'])");
 

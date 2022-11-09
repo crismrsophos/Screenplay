@@ -10,9 +10,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
                 "com.sophossolutions.certification.stepdefinitions",
                 "com.sophossolutions.certification.hooks"
         },
-        features = "src/test/resources/features/advantage_demo.feature",
+        features = "src/test/resources/features/advantage_online_buy.feature",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 
-public class AdvantageDemoBuy {
+public class AdvantageOnlineBuy {
 }

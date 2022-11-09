@@ -8,7 +8,7 @@ Feature: Automatización de Patch
     When Ingresa los siguientes datos de usuario
       | name   | lastName   | email   | gender   | mobileNumber   | dateOfBirthday   | subjects   | hobbies   | picture   | address   | state   | city   |
       | <name> | <lastName> | <email> | <gender> | <mobileNumber> | <dateOfBirthday> | <subjects> | <hobbies> | <picture> | <address> | <state> | <city> |
-    Then valida que el código de respuesta sea 200 y contenga los valores
+    Then verifica que el mensaje sea "Thanks for submitting the form"
     Examples:
       | name   | lastName | email                 | gender | mobileNumber | dateOfBirthday | subjects | hobbies | picture   | address | state   | city    |
       | Erling | Haaland  | manunited@yopmail.com | Male   | 3163408249   | 07 Feb 2000    | Maths    | Sports  | anuel.jpg | Av 42b  | Haryana | Panipat |

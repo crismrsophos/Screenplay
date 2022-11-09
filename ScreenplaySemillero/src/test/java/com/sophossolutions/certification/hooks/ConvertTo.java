@@ -74,5 +74,14 @@ public class ConvertTo {
 				entry.get("city"));
 	}
 
+	@DataTableType
+	public ProductAdvantage toProduct (Map<String, String> entry){
+		return new ProductAdvantage(
+				entry.get("category"),
+				entry.get("product"),
+				entry.get("color"),
+				entry.get("quantity"));
+	}
+
 
 }
