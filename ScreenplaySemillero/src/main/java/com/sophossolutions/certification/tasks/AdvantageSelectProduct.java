@@ -8,7 +8,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.Keys;
 
 import static com.sophossolutions.certification.userinfaces.AdavantageOnlineBuyHomePage.BTN_CHOOSE_CATEGORY;
 import static com.sophossolutions.certification.userinfaces.AdvantageOnlineBuyCategoryPage.BTN_CHOOSE_TABLET;
@@ -50,7 +52,7 @@ public class AdvantageSelectProduct implements Task {
         btnSelectArticle = BTN_CHOOSE_TABLET.of(product);
         color=products.getColor();
         btnColor = COLOR.of(color);
-        //quantity = products.getQuantity();
+        quantity = products.getQuantity();
         btnAddCart = BTN_ADD_TO_CART;
         btnCheckout = BTN_CHECKOUT;
 
@@ -61,7 +63,8 @@ public class AdvantageSelectProduct implements Task {
        actor.attemptsTo(Click.on(btnSelectCategory),
                Click.on(btnSelectArticle),
                Click.on(btnColor),
-               //Enter.theValue(quantity).into(QUANTITY),
+               Hit.the(Keys.BACK_SPACE).into(QUANTITY),
+               Enter.theValue(quantity).into(QUANTITY),
                Click.on(btnAddCart),
                Click.on(BTN_CHECKOUT));
     }

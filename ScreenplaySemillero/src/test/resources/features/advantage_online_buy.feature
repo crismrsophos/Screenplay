@@ -11,7 +11,7 @@ Feature: Automatización de Patch
       | <category> | <product> | <color> | <quantity> |
     And ingrese los siguientes datos
       | <username> | <password> |
-    Then  verifica que el mensaje sea "Welcome to the world's largest community of freelance software testers!"
+    Then  verifica que el mensaje sea "Your order number is" en "advantage"
     Examples:
       | category | product                    | color | quantity | username      | password  |
-      | tablets  | HP Elite x2 1011 G1 Tablet | GRAY  | 1        | CristianoSIUU | Bicho1315 |
+      | tablets  | HP Elite x2 1011 G1 Tablet | GRAY  | 5        | CristianoSIUU | Bicho1315 |

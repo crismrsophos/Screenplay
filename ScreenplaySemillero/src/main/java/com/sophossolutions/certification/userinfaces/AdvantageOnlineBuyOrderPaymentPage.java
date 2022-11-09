@@ -10,4 +10,6 @@ public class AdvantageOnlineBuyOrderPaymentPage {
 
     public static final Target BTN_PAY_NOW = Target.the("boton de seleccionar methodo de pago").locatedBy("//*[@id='pay_now_btn_MasterCredit']");
 
+    public static final Target ORDER_ADVANTAGE = Target.the("verificar mensaje").locatedBy("id:orderPaymentSuccess");
+
 }

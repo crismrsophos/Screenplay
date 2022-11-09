@@ -8,11 +8,11 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.targets.Target;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.sophossolutions.certification.userinfaces.AdvantageOnlineBuyOrderPaymentPage.BTN_NEXT;
-import static com.sophossolutions.certification.userinfaces.AdvantageOnlineBuyOrderPaymentPage.BTN_PAYMENT_METHOD;
-import static com.sophossolutions.certification.userinfaces.AdvantageOnlineBuyOrderPaymentPage.BTN_PAY_NOW;
+import static com.sophossolutions.certification.userinfaces.AdvantageOnlineBuyOrderPaymentPage.*;
 import static com.sophossolutions.certification.userinfaces.UtestHomePage.BTN_BECOME_TESTER;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 
 public class AdvantageFullfillData implements Task {
@@ -35,7 +35,9 @@ public class AdvantageFullfillData implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(btnNext),
-                Click.on(btnMethod),Click.on(payNow));
+                Click.on(btnMethod),
+                Click.on(payNow),
+                WaitUntil.the(ORDER_ADVANTAGE,isVisible()).forNoMoreThan(8).seconds());
     }
 
     public static AdvantageFullfillData in() {
