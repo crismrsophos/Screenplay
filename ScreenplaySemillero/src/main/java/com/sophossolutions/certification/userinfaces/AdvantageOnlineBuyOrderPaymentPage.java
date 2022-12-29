@@ -12,4 +12,5 @@ public class AdvantageOnlineBuyOrderPaymentPage {
 
     public static final Target ORDER_ADVANTAGE = Target.the("verificar mensaje").locatedBy("id:orderPaymentSuccess");
 
+
 }
